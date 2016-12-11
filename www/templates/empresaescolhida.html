@@ -1,0 +1,43 @@
+<ion-view>
+	<ion-nav-title>Detalhes da empresa</ion-nav-title>
+	<ion-content>
+		<div class="card">
+			<div class="item item-divider">
+				Ótima Escolha
+			</div>
+			<div class="item item-text-wrap">
+				{{listaDeEmpresaId.nome}}
+
+				<div class="list card">
+
+					<div class="item item-avatar">
+						<img src="mcfly.jpg">
+						<h2>{{listaDeEmpresaId.nome}}</h2>
+						<p>{{listaDeEmpresaId.telefone}}</p>
+					</div>
+
+					<div class="item item-body">
+						<img class="full-image" src="delorean.jpg">
+						<p>
+							{{listaDeEmpresaId.observacao}}
+						</p>
+						<p>
+							<a href="#" class="subdued">{{listaDeEmpresaId.email}}</a>
+							<a href="#" class="subdued">{{listaDeEmpresaId.Estado}}-{{listaDeEmpresaId.estado}}</a>
+						</p>
+					</div>
+
+				</div>
+
+			</div>
+		<!-- <div class="item item-divider">
+			R{{carroEscolhido.preco | currency}}
+		</div> -->
+		
+
+	</div>
+
+	<!-- <a class="button button-positive button-full" href="#/finalizarpedido/{{carroEscolhido}}" >Finalizar pedido</a> -->
+
+</ion-content>
+</ion-view>

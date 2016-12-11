@@ -1,0 +1,11 @@
+
+<ion-view>
+	<ion-nav-title>Boas opcoes</ion-nav-title>
+	<ion-content>
+      <ion-list>
+        <ion-item ng-repeat="empresa in listaDeEmpresas" href="#/empresaescolhida/{{empresa._id}}" >
+          {{empresa.nome}}
+        </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

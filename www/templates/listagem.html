@@ -1,4 +1,3 @@
-
 <ion-view>
 	<ion-nav-title>Boas opcoes</ion-nav-title>
 	<ion-content>
@@ -10,8 +9,22 @@
 			</label>
 		</div>
 		<ion-list>
-			<ion-item ng-repeat="empresa in listaDeEmpresas | filter:search" href="#/empresaescolhida/{{empresa._id}}" >
-				{{empresa.nome}}
+			<ion-item ng-repeat="empresa in listaDeEmpresas | filter:search">
+				<a class="item item-avatar" href="#/empresaescolhida/{{empresa._id}}">
+					<img src="img/img_avatar2.png">
+					<h2>{{empresa.nome}}</h2>
+					<p>{{empresa.observacao}}</p>
+					<p>{{empresa.endereco}}</p>
+					<p>
+						<button class="button button-small button-royal">
+  							{{empresa.categoria}}
+						</button>
+					</p>
+					<a href="#" class="item item-icon-left">
+						<i class="icon ion-ios-telephone"></i> {{empresa.telefone}}
+					</a>
+				</a>
+				
 			</ion-item>
 		</ion-list>
 	</ion-content>

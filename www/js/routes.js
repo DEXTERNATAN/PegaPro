@@ -17,16 +17,6 @@ $stateProvider
 	controller: 'EmpresaEscolhidaController'
 });
 
-// .state('finalizarpedido',{
-// 	url : '/finalizarpedido/:carro',
-// 	templateUrl : 'templates/finalizarpedido.html',
-// 	controller : 'FinalizarPedidoController'
-// })
 
-// .state('login', {
-// 	url : '/login',
-// 	templateUrl : 'templates/login.html',
-// 	controller : 'LoginController'
-// })
 
 })

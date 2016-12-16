@@ -12,9 +12,9 @@
 
 					<div class="item item-avatar">
 						<img src="img/img_avatar2.png">
-						<h2>{{listaDeEmpresaId.nome}}</h2>
-						<p>{{listaDeEmpresaId.telefone}}</p>
-						<p>{{listaDeEmpresaId.endereco}}</p>
+						<h2>{{listaDeEmpresaId.firstName}}&nbsp;{{listaDeEmpresaId.lastName}}</h2>
+						<p>{{listaDeEmpresaId.phone.mobile}}</p>
+						<p>{{listaDeEmpresaId.address}}</p>
 						<p>{{listaDeEmpresaId.cidade}} - {{listaDeEmpresaId.estado}}</p>
 					</div>
 
@@ -77,3 +77,71 @@
 
 	</ion-content>
 </ion-view>
+<!-- CODIGO ANTIGO -->
+<!-- <ion-view>
+	<ion-nav-title>Detalhes do empregado</ion-nav-title>
+	<ion-content>
+		<div class="card">
+			<div class="item item-divider">
+				Ótima Escolha
+			</div>
+			<div class="item item-text-wrap">
+
+				<div class="list card">
+
+					<div class="item item-avatar">
+						<img src="img/img_avatar2.png">
+						<h2>{{listaDeEmpresaId.nome}}</h2>
+						<p>{{listaDeEmpresaId.telefone}}</p>
+						<p>{{listaDeEmpresaId.endereco}}</p>
+						<p>{{listaDeEmpresaId.cidade}} - {{listaDeEmpresaId.estado}}</p>
+					</div>
+
+					<div class="item item-body">
+						<p>
+							Avaliação:
+							<i class="icon ion-star" style="font-size: 20px; color: #ffc900;"></i>
+							<i class="icon ion-star" style="font-size: 20px; color: #ffc900;"></i>
+							<i class="icon ion-star" style="font-size: 20px; color: #ffc900;"></i>
+							<i class="icon ion-star" style="font-size: 20px; color: #ffc900;"></i>
+							<i class="icon ion-star" style="font-size: 20px; color: #ffc900;"></i> ( 32 avaliações )
+						</p>
+					</div>
+					<div class="item item-body">
+						<h2>Perfil profissional:</h2>
+						<p>
+							<ion-list>
+								<ion-checkbox ng-init="filter.red=true" ng-model="filter.red" readonly>Faxineira</ion-checkbox>
+								<ion-checkbox ng-init="filter.yellow=true" ng-model="filter.yellow" readonly>Passadeira</ion-checkbox>
+								<ion-checkbox ng-init="filter.pink=true" ng-model="filter.pink" readonly>Diarista</ion-checkbox>
+							</ion-list>
+						</p>
+					</div>
+					<div class="item item-body">
+						<h2>Resumo profissional:</h2>
+						<p>
+							{{listaDeEmpresaId.observacao}}
+						</p>
+					</div>
+					<div class="item item-body">
+						<h2>Compartilhar Perfil:</h2>
+						<p>
+							<div class="item item-avatar">
+								<div class="text-center">
+									<i class="icon ion-social-whatsapp" style="font-size: 35px; color: #33cd5f; padding-right: 40px;"></i>
+									<i class="icon ion-social-facebook" style="font-size: 35px; color: #387ef5; padding-right: 40px;"></i>
+									<i class="icon ion-social-instagram" style="font-size: 35px; color: #886aea; padding-right: 40px;"></i>
+									<i class="icon ion-social-twitter" style="font-size: 35px; color: #11c1f3; padding-right: 40px;"></i>
+								</div>
+							</div>
+						</p>
+					<button class="button button-block button-positive">
+  						Entrar em contato
+					</button>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</ion-content>
+</ion-view> -->

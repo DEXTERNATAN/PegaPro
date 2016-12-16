@@ -1,7 +1,37 @@
 <ion-view>
 	<ion-nav-title>Boas opcoes</ion-nav-title>
 	<ion-content>
-		<!-- Botão de pesquisa das empresas -->
+		<div class="list list-inset">
+			<label class="item item-input">
+				<i class="icon ion-search placeholder-icon"></i>
+				<input type="text" placeholder="Search" ng-model="search">
+			</label>
+		</div>
+		<ion-list>
+			<ion-item ng-repeat="empresa in listaDeEmpresas | filter:search">
+				<a class="item item-avatar" href="#/empresaescolhida/{{empresa._id}}">
+					<img src="img/img_avatar2.png">
+					<h2>{{empresa.firstName}}&nbsp;{{empresa.lastName}}</h2>
+					<!-- <p>{{empresa.observacao}}</p> -->
+					<p>{{empresa.address}}</p>
+					<p>
+						<button class="button button-small button-royal">
+  							{{empresa.profissao}}
+						</button>
+					</p>
+					<a href="#" class="item item-icon-left">
+						<i class="icon ion-ios-telephone"></i> {{empresa.phone.mobile}}
+					</a>
+				</a>
+				
+			</ion-item>
+		</ion-list>
+	</ion-content>
+</ion-view>
+<!-- CODIGO ANTIGO apagar depois-->
+<!-- <ion-view>
+	<ion-nav-title>Boas opcoes</ion-nav-title>
+	<ion-content>
 		<div class="list list-inset">
 			<label class="item item-input">
 				<i class="icon ion-search placeholder-icon"></i>
@@ -28,4 +58,4 @@
 			</ion-item>
 		</ion-list>
 	</ion-content>
-</ion-view>
+</ion-view> -->

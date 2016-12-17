@@ -1,2 +1,2 @@
-# mob-boasopcoes
-Código do projeto Boas Opções para mobile. 
+# mob-PegaPro
+Código do projeto PegaPro para mobile. 

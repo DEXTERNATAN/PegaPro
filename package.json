@@ -1,7 +1,7 @@
 {
-  "name": "boasopcoes",
+  "name": "PegaPro",
   "version": "1.1.1",
-  "description": "BoasOpcoes: An Ionic project",
+  "description": "PegaPro: An Ionic project",
   "dependencies": {
     "gulp": "^3.5.6",
     "gulp-sass": "^2.0.4",

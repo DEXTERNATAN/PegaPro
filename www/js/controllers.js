@@ -30,7 +30,7 @@ angular.module('starter')
 	.controller('EmpresaEscolhidaController', function($stateParams, $scope, EmpresaService, $ionicLoading) {
 
 		$scope.idEmpresa = $stateParams.empresa;
-		$scope.ratingAtual = 2 || $scope.listaDeEmpresaId;
+		$scope.ratingAtual = 2 || $scope.listaDeEmpresaId.rating;
 		// Rating - set the rate and max variables
 		$scope.ratingsObject = {
 			iconOn: 'ion-ios-star',
@@ -49,7 +49,6 @@ angular.module('starter')
 			console.log('Selected rating is : ', rating);
 			$scope.ratingAtual = rating;
 		};
-
 
 		// Loading
 		$scope.show = function() {

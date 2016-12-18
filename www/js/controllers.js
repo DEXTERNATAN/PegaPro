@@ -37,7 +37,7 @@ angular.module('starter')
 			iconOff: 'ion-ios-star-outline',
 			iconOnColor: 'rgb(255, 201, 0)',
 			iconOffColor: 'rgb(255, 201, 0)',
-			rating: 2 || $scope.listaDeEmpresaId,
+			rating: 2 || $scope.listaDeEmpresaId.rating,
 			minRating: 1,
 			callback: function(rating) {
 				$scope.ratingsCallback(rating);

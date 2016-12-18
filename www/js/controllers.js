@@ -65,6 +65,7 @@ angular.module('starter')
 
 		EmpresaService.obterEmpresaId($scope.idEmpresa).then(function(response) {
 			$scope.listaDeEmpresaId = response;
+			$scope.ratingAtual = $scope.listaDeEmpresaId.rating;
 
 		}).catch(function(fallback) {
 			var alertPopup = $ionicPopup.alert({

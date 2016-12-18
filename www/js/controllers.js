@@ -30,14 +30,14 @@ angular.module('starter')
 	.controller('EmpresaEscolhidaController', function($stateParams, $scope, EmpresaService, $ionicLoading) {
 
 		$scope.idEmpresa = $stateParams.empresa;
-		$scope.ratingAtual = 2 || $scope.listaDeEmpresaId.rating;
+
 		// Rating - set the rate and max variables
 		$scope.ratingsObject = {
 			iconOn: 'ion-ios-star',
 			iconOff: 'ion-ios-star-outline',
 			iconOnColor: 'rgb(255, 201, 0)',
 			iconOffColor: 'rgb(255, 201, 0)',
-			rating: 2 || $scope.listaDeEmpresaId.rating,
+			rating: 2,
 			minRating: 1,
 			callback: function(rating) {
 				$scope.ratingsCallback(rating);
@@ -65,7 +65,12 @@ angular.module('starter')
 
 		EmpresaService.obterEmpresaId($scope.idEmpresa).then(function(response) {
 			$scope.listaDeEmpresaId = response;
-			$scope.ratingAtual = $scope.listaDeEmpresaId.rating;
+			console.log(response.rating);
+			if (response.rating !== undefined) {
+				$scope.ratingsObject.rating = response.rating;
+			} else {
+				$scope.ratingsObject.rating = 1;
+			};
 
 		}).catch(function(fallback) {
 			var alertPopup = $ionicPopup.alert({
@@ -87,19 +92,19 @@ angular.module('starter')
 		$scope.realizarLogin = function() {
 
 			var dadosDoLogin = {
-				params : {
-					email : $scope.user.username,
-					senha : $scope.user.password,
-					ativo : $scope.user.ativo
+				params: {
+					email: $scope.user.username,
+					senha: $scope.user.password,
+					ativo: $scope.user.ativo
 				}
 			};
 
-			EmpresaService.realizarLogin(dadosDoLogin).then(function(dados){
+			EmpresaService.realizarLogin(dadosDoLogin).then(function(dados) {
 				$state.go('listagem');
-			},function(erro){
+			}, function(erro) {
 				$ionicPopup.alert({
-					title : 'Login Falhou',
-					template : 'E-mail ou senha incorretos.'
+					title: 'Login Falhou',
+					template: 'E-mail ou senha incorretos.'
 				});
 			});
 

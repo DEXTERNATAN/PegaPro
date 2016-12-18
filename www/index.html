@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-    <title></title>
+    <title>PegaPro</title>
 
     <link rel="manifest" href="manifest.json">
 
@@ -18,6 +18,7 @@
 
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <link href="css/custom-app.css" rel="stylesheet">
 
     <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
     <link href="css/ionic.app.css" rel="stylesheet">
@@ -36,26 +37,25 @@
     <script src="js/service.js"></script>
     <script src="lib/angular-br-filters/release/angular-br-filters.min.js"></script>
     <script src="lib/angular-i18n/angular-locale_pt-br.js"></script>
+    <!--<script src="lib/ionic-rating/ionic-rating.min.js"></script>-->
+    <!--<script src="lib/ionic-rating/ionic-rating.css"></script>-->
+    <script src="lib/ionic-ratings/dist/ionic-ratings.min.js"></script>
 
 
   </head>
   <body ng-app="starter" ng-controller="ListagemController">
-    <ion-pane>
+    <!--<ion-pane>-->
       <ion-nav-view>
         <ion-nav-bar class="bar bar-positive">
           <ion-nav-back-button></ion-nav-back-button>
         </ion-nav-bar>
       </ion-nav-view>
-    
-    <!-- Barra superio do aplicativo -->    
-    <div class="bar bar-positive">
-        <button class="button icon ion-navicon"></button>
-        <h1 class="title">PegaPro</h1>
-    </div> 
 
       
-      <ion-footer-bar class="bar-stable">
+      <!--
+        <ion-footer-bar class="bar-stable">
         <h1 class="title">Todos os direitos reservados</h1>
       </ion-footer-bar>
-    </ion-pane>
+      -->
+    <!--</ion-pane>-->
 </body></html>

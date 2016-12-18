@@ -1,9 +1,15 @@
 angular.module('starter')
 .config(function($stateProvider, $urlRouterProvider){
 
-$urlRouterProvider.otherwise('listagem');
+$urlRouterProvider.otherwise('login');
 
 $stateProvider
+
+.state('login',{
+	url : '/login',
+	templateUrl : 'templates/login.html',
+	controller: 'LoginController'
+})
 
 .state('listagem',{
 	url : '/listagem',

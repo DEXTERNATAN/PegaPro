@@ -20,15 +20,8 @@
 					</div>
 
 					<div class="item item-body">
-						<!--<img class="full-image" src="https://pbs.twimg.com/profile_images/795319730915549185/9UOYiFK7_normal.jpg" width="150px" height="150px">-->
-						<p>
-							Avaliação:
-							<i class="icon ion-star" style="font-size: 20px; color: #ffc900;"></i>
-							<i class="icon ion-star" style="font-size: 20px; color: #ffc900;"></i>
-							<i class="icon ion-star" style="font-size: 20px; color: #ffc900;"></i>
-							<i class="icon ion-star" style="font-size: 20px; color: #ffc900;"></i>
-							<i class="icon ion-star" style="font-size: 20px; color: #ffc900;"></i>&nbsp;(32 avaliações)
-						</p>
+							Avaliação: {{ratingAtual}}
+							<ionic-ratings ratingsobj="ratingsObject" index="$index"></ionic-ratings>
 					</div>
 					<div class="item item-body">
 						<h2>Perfil profissional:</h2>
@@ -61,6 +54,12 @@
 						</p>
 					<button class="button button-block button-positive">
   						Entrar em contato
+					</button>
+					<button class="button button-block button-positive">
+  						Localizar agora
+					</button>
+					<button class="button button-block button-positive">
+  						chat real time
 					</button>
 					</div>
 					

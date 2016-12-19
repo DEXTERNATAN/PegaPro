@@ -23,6 +23,9 @@
 						<button class="button button-small button-royal">
   							{{empresa.profissao}}
 						</button>
+						<button class="button button-small button-energized" ng-show="$index==0">
+  							Destaque
+						</button>
 					</p>
 					<a href="tel:{{empresa.phone.mobile}}" class="item item-icon-left">
 						<i class="icon ion-ios-telephone"></i> {{empresa.phone.mobile | brPhoneNumber}}

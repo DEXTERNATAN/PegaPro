@@ -1,7 +1,7 @@
 angular.module('starter')
 .config(function($stateProvider, $urlRouterProvider){
 
-$urlRouterProvider.otherwise('listagem');
+$urlRouterProvider.otherwise('login');
 
 $stateProvider
 

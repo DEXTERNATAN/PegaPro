@@ -15,12 +15,12 @@
 						<h2>{{listaDeEmpresaId.firstName}}&nbsp;{{listaDeEmpresaId.lastName}}</h2>
 						<p>{{listaDeEmpresaId.phone.mobile  | brPhoneNumber}}</p>
 						<p>{{listaDeEmpresaId.address}}</p>
-						<p>Preço Médio: <span style="color: red;">{{listaDeEmpresaId.precoServico | finance:true:2}}</span></p>
+						<p>{{listaDeEmpresaId.TipoPreco}}: <span style="color: red;">{{listaDeEmpresaId.precoServico | finance:true:2}}</span></p>
 						<p>Disponibilidade: <span style="color: red;">{{listaDeEmpresaId.disponibilidade}}</span></p>
 					</div>
 
 					<div class="item item-body">
-							Avaliação: {{listaDeEmpresaId.rating || ratingsObject.rating}}
+							<!--Avaliação: {{listaDeEmpresaId.rating || ratingsObject.rating}}-->
 							<ionic-ratings ratingsobj="ratingsObject" index="$index"></ionic-ratings>
 					</div>
 					<div class="item item-body">
@@ -36,7 +36,7 @@
 					<div class="item item-body">
 						<h2>Resumo profissional:</h2>
 						<p>
-							{{listaDeEmpresaId.observacao}}
+							{{listaDeEmpresaId.resumo}}
 						</p>
 					</div>
 					<div class="item item-body">

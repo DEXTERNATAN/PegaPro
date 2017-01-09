@@ -113,3 +113,33 @@ angular.module('starter')
 		};
 
 	});
+
+angular.module('starter')
+	.controller('ContatoController', function($scope, $ionicPopup, $state) {
+
+		$scope.contato = {};
+		
+		$scope.enviarMensagem = function() {
+
+			// var dadosDoLogin = {
+			// 	params: {
+			// 		email: $scope.user.username,
+			// 		senha: $scope.user.password,
+			// 		ativo: $scope.user.ativo
+			// 	}
+			// };
+
+			// EmpresaService.realizarLogin(dadosDoLogin).then(function(dados) {
+			// 	$state.go('listagem');
+			// }, function(erro) {
+			// 	$ionicPopup.alert({
+			// 		title: 'Login Falhou',
+			// 		template: 'E-mail ou senha incorretos.'
+			// 	});
+			// });
+
+			console.log('Valor: ', $scope.contato);
+
+		};
+
+	});	

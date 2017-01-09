@@ -17,6 +17,12 @@ $stateProvider
 	controller: 'ListagemController'
 })
 
+.state('contato',{
+	url : '/contato',
+	templateUrl : 'templates/contato.html',
+	controller: 'ContatoController'
+})
+
 .state('empresaescolhida',{
 	url : '/empresaescolhida/:empresa',
 	templateUrl: 'templates/empresaescolhida.html',

@@ -27,7 +27,7 @@ angular.module('starter')
   });
 
 angular.module('starter')
-  .controller('EmpresaEscolhidaController', function ($stateParams, $scope, EmpresaService, $ionicLoading) {
+  .controller('EmpresaEscolhidaController', function ($stateParams, $scope, EmpresaService, $ionicLoading, $cordovaSocialSharing) {
 
     $scope.idEmpresa = $stateParams.empresa;
 
@@ -80,6 +80,19 @@ angular.module('starter')
     }).finally(function ($ionicLoading) {
       $scope.hide($ionicLoading);
     });
+
+    // Compartilhamento em redes sociais
+    $scope.shareAnywhere = function() {
+        //$cordovaSocialSharing.share("This is your message", "This is your subject", "www/imagefile.png", "https://www.thepolyglotdeveloper.com");
+        $cordovaSocialSharing
+    .share("This is your message",  "This is your subject", "www/imagefile.png", "https://www.thepolyglotdeveloper.com") // Share via native share sheet
+    .then(function(result) {
+      // Success!
+    }, function(err) {
+      // An error occured. Show a message to the user
+    });
+    }
+
 
   });
 

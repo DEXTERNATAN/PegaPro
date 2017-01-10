@@ -1,9 +1,7 @@
 angular.module('starter')
 .service('EmpresaService', function($http){
 
-	//var url = 'https://aluracar.herokuapp.com/';
-	//var url = 'http://www.boasopcoes.com.br/contatos';
-	var url = 'https://pegaproweb.herokuapp.com/profissional';
+var url = 'https://pegaproweb.herokuapp.com/profissional';
 
 	return{
 		obterEmpresas : function(){

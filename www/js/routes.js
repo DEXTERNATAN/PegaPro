@@ -23,6 +23,12 @@ $stateProvider
 	controller: 'ContatoController'
 })
 
+.state('mapa', {
+	url: '/mapa',
+	templateUrl: 'templates/map.html',
+	controller: 'MapCtrl'
+})
+
 .state('empresaescolhida',{
 	url : '/empresaescolhida/:empresa',
 	templateUrl: 'templates/empresaescolhida.html',

@@ -82,15 +82,15 @@ angular.module('starter')
     });
 
     // Compartilhamento em redes sociais
-    $scope.shareAnywhere = function() {
-        //$cordovaSocialSharing.share("This is your message", "This is your subject", "www/imagefile.png", "https://www.thepolyglotdeveloper.com");
-        $cordovaSocialSharing
-    .share("This is your message",  "This is your subject", "www/imagefile.png", "https://www.thepolyglotdeveloper.com") // Share via native share sheet
-    .then(function(result) {
-      // Success!
-    }, function(err) {
-      // An error occured. Show a message to the user
-    });
+    $scope.shareAnywhere = function () {
+      //$cordovaSocialSharing.share("This is your message", "This is your subject", "www/imagefile.png", "https://www.thepolyglotdeveloper.com");
+      $cordovaSocialSharing
+        .share("This is your message", "This is your subject", "www/imagefile.png", "https://www.thepolyglotdeveloper.com") // Share via native share sheet
+        .then(function (result) {
+          // Success!
+        }, function (err) {
+          // An error occured. Show a message to the user
+        });
     }
 
 
@@ -105,7 +105,7 @@ angular.module('starter')
     $scope.realizarLogin = function () {
 
       if ($scope.user.username && $scope.user.password) {
-        
+
         var dadosDoLogin = {
           params: {
             email: $scope.user.username,
@@ -117,7 +117,7 @@ angular.module('starter')
         EmpresaService.realizarLogin(dadosDoLogin).then(function (dados) {
 
           $state.go('listagem');
-          
+
         }, function (erro) {
           $ionicPopup.alert({
             title: 'Login Falhou',
@@ -171,4 +171,29 @@ angular.module('starter')
 
 
 
+  });
+
+
+angular.module('starter')
+  .controller('MapCtrl', function ($scope, $state, $cordovaGeolocation) {
+    var options = {
+      timeout: 10000,
+      enableHighAccuracy: true
+    };
+
+    $cordovaGeolocation.getCurrentPosition(options).then(function (position) {
+
+      var latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+
+      var mapOptions = {
+        center: latLng,
+        zoom: 15,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      };
+
+      $scope.map = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+    }, function (error) {
+      console.log("Could not get location");
+    });
   });

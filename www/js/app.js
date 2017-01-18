@@ -22,3 +22,5 @@ angular.module('starter', ['ionic', 'idf.br-filters', 'ionic-ratings', 'ngCordov
       }
     });
   })
+  .constant('google', google);
+  ;

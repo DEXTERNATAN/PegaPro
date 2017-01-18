@@ -1,7 +1,6 @@
 {
   "name": "PegaPro",
   "app_id": "3d64d066",
-
   "gulpStartupTasks": [
     "sass",
     "watch"

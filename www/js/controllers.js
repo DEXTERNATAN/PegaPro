@@ -2,9 +2,9 @@ angular.module('starter')
   .controller('ListagemController', function ($scope, EmpresaService, $ionicLoading, $ionicPopup) {
 
     $scope.show = function () {
-      $ionicLoading.show({
-        template: '<p>Aguarde...</p><ion-spinner icon="lines"></ion-spinner>'
-      });
+      // $ionicLoading.show({
+      //   template: '<p>Aguarde...</p><ion-spinner icon="lines"></ion-spinner>'
+      // });
     };
 
     $scope.hide = function () {
@@ -52,9 +52,9 @@ angular.module('starter')
 
     // Loading
     $scope.show = function () {
-      $ionicLoading.show({
-        template: '<p>Aguarde...</p><ion-spinner icon="lines"></ion-spinner>'
-      });
+      // $ionicLoading.show({
+      //   template: '<p>Aguarde...</p><ion-spinner icon="lines"></ion-spinner>'
+      // });
     };
 
     $scope.hide = function () {

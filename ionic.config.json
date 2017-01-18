@@ -1,12 +1,7 @@
 {
   "name": "PegaPro",
   "app_id": "3d64d066",
-  "proxies": [
-    {
-      "path": "/maps",
-      "proxyUrl": "https://maps.googleapis.com/maps/api/js?key=AIzaSyAUMT0tahydrS-B1Z9546yjWikkE5LZf7Y&callback=initMap"
-    }
-  ] ,
+
   "gulpStartupTasks": [
     "sass",
     "watch"

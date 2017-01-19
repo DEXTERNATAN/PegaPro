@@ -1,39 +1,37 @@
-angular.module('starter')
-.config(function($stateProvider, $urlRouterProvider){
+angular.module('pegapro')
+  .config(configRoutes);
 
-$urlRouterProvider.otherwise('login');
+function configRoutes($stateProvider, $urlRouterProvider) {
+  // Default:
+  $urlRouterProvider.otherwise('login');
 
-$stateProvider
+  $stateProvider
+    .state('login', {
+      url: '/login',
+      templateUrl: 'templates/login.html',
+      controller: 'LoginController'
+    })
 
-.state('login',{
-	url : '/login',
-	templateUrl : 'templates/login.html',
-	controller: 'LoginController'
-})
+    .state('listagem', {
+      url: '/listagem',
+      templateUrl: 'templates/listagem.html',
+      controller: 'ListagemController'
+    })
 
-.state('listagem',{
-	url : '/listagem',
-	templateUrl : 'templates/listagem.html',
-	controller: 'ListagemController'
-})
+    .state('mensagens', {
+      url: '/mensagens',
+      templateUrl: 'templates/mensagens.html'
+    })
 
-.state('mensagens',{
-	url : '/mensagens',
-	templateUrl : 'templates/mensagens.html'
-})
+    .state('mapa', {
+      url: '/mapa',
+      templateUrl: 'templates/map.html',
+      controller: 'MapCtrl'
+    })
 
-.state('mapa', {
-	url: '/mapa',
-	templateUrl: 'templates/map.html',
-	controller: 'MapCtrl'
-})
-
-.state('empresaescolhida',{
-	url : '/empresaescolhida/:empresa',
-	templateUrl: 'templates/empresaescolhida.html',
-	controller: 'EmpresaEscolhidaController'
-});
-
-
-
-})
+    .state('empresaescolhida', {
+      url: '/empresaescolhida/:empresa',
+      templateUrl: 'templates/empresaescolhida.html',
+      controller: 'EmpresaEscolhidaController'
+    });
+}

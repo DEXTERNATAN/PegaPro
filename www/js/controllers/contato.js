@@ -1,7 +1,8 @@
 angular.module('pegapro')
   .controller('ContatoController', ContatoController);
 
-function ContatoController($scope, $cordovaEmailComposer) {
+function ContatoController($scope, $cordovaEmailComposer, $log) {
+  $log.debug('[ContatoController] constructor()');
 
   $scope.contato = {};
 

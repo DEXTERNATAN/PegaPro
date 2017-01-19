@@ -1,12 +1,24 @@
 angular.module('pegapro')
-  .controller('MapCtrl', MapCtrl);
+  .controller('MapController', MapController);
 
-function MapCtrl($scope, $state, $cordovaGeolocation) {
+function MapController($scope, $state, $cordovaGeolocation, $log) {
+  $log.debug('[MapController] constructor()');
   var options = { timeout: 10000, enableHighAccuracy: true };
 
   $cordovaGeolocation.getCurrentPosition(options).then(function (position) {
+    showMap(position);
+  }, function (error) {
+    $log.warn('Could not get location');
+    showMap();
+  });
 
-    var latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+  function showMap(position) {
+    var latLng;
+    if (position) {
+      latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+    } else {
+      latLng = new google.maps.LatLng(-15.8011747,-47.8610199);
+    }
 
     var mapOptions = {
       center: latLng,
@@ -32,10 +44,7 @@ function MapCtrl($scope, $state, $cordovaGeolocation) {
       google.maps.event.addListener(marker, 'click', function () {
         infoWindow.open($scope.map, marker);
       });
-
     });
-  }, function (error) {
-    console.log("Could not get location");
-  });
+  }
 }
 

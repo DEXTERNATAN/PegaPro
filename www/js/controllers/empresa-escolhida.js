@@ -1,7 +1,8 @@
 angular.module('pegapro')
   .controller('EmpresaEscolhidaController', EmpresaEscolhidaController);
 
-function EmpresaEscolhidaController($stateParams, $scope, EmpresaService, $ionicLoading, $cordovaSocialSharing) {
+function EmpresaEscolhidaController($stateParams, $scope, EmpresaService, $ionicLoading, $cordovaSocialSharing, $log) {
+  $log.debug('[EmpresaEscolhidaController] constructor()');
 
   $scope.idEmpresa = $stateParams.empresa;
 

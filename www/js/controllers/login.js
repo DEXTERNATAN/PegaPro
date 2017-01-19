@@ -1,7 +1,8 @@
 angular.module('pegapro')
   .controller('LoginController', LoginController);
 
-function LoginController($scope, EmpresaService, $ionicPopup, $state) {
+function LoginController($scope, EmpresaService, $ionicPopup, $state, $log) {
+  $log.debug('[LoginController] constructor()');
 
   $scope.user = {};
   $scope.user.ativo = true;

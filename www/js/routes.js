@@ -26,7 +26,7 @@ function configRoutes($stateProvider, $urlRouterProvider) {
     .state('mapa', {
       url: '/mapa',
       templateUrl: 'templates/map.html',
-      controller: 'MapCtrl'
+      controller: 'MapController'
     })
 
     .state('empresaescolhida', {

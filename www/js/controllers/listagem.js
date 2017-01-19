@@ -1,7 +1,8 @@
 angular.module('pegapro')
   .controller('ListagemController', ListagemController);
 
-function ListagemController($scope, EmpresaService, $ionicLoading, $ionicPopup) {
+function ListagemController($scope, EmpresaService, $ionicLoading, $ionicPopup, $log) {
+  $log.debug('[ListagemController] constructor()');
 
   $scope.show = function () {
     $ionicLoading.show({

@@ -1,4 +1,5 @@
-angular.module('pegapro').config(configRoutes);
+angular.module('pegapro')
+  .config(configRoutes);
 
 function configRoutes($stateProvider, $urlRouterProvider) {
   // Default:

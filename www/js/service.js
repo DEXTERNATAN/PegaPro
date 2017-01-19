@@ -1,4 +1,4 @@
-angular.module('starter')
+angular.module('pegapro')
 .service('EmpresaService', function($http){
 
 var url = 'https://pegaproweb.herokuapp.com/profissional';

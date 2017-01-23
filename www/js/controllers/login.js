@@ -100,7 +100,7 @@ function LoginController($scope, EmpresaService, $ionicPopup, $state, $log, $ion
         picture : "http://graph.facebook.com/" + authResponse.userID + "/picture?type=large"
       });
       $ionicLoading.hide();
-      $state.go('app.home');
+      $state.go('listagem');
     }, function(fail){
       // Fail get profile info
       console.log('profile info fail', fail);
@@ -140,9 +140,9 @@ function LoginController($scope, EmpresaService, $ionicPopup, $state, $log, $ion
         console.log('getLoginStatus', success.status);
 
     		// Check if we have our user saved
-    		var user = UserService.getUser('facebook');
-
-    		if(!user.userID){
+    		//var user = UserService.getUser('facebook');
+        $state.go('listagem');
+    		/*if(!user.userID){
 					getFacebookProfileInfo(success.authResponse)
 					.then(function(profileInfo) {
 						// For the purpose of this example I will store user data on local storage
@@ -159,9 +159,11 @@ function LoginController($scope, EmpresaService, $ionicPopup, $state, $log, $ion
 						// Fail get profile info
 						console.log('profile info fail', fail);
 					});
+          $state.go('listagem');
 				}else{
-					$state.go('app.home');
+					$state.go('listagem');
 				}
+        */
       } else {
         // If (success.status === 'not_authorized') the user is logged in to Facebook,
 				// but has not authenticated your app

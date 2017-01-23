@@ -21,10 +21,7 @@
     "cordova-plugin-device",
     "cordova-plugin-splashscreen",
     "ionic-plugin-keyboard",
-    {
-      "id": "phonegap-facebook-plugin",
-      "locator": "/Users/tiago/ionic/phonegap-facebook-plugin"
-    }
+    "cordova-plugin-facebook4"
   ],
   "cordovaPlatforms": []
 }

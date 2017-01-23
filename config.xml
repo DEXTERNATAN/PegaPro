@@ -8,7 +8,6 @@
       Natanael de Sousa Leite
     </author>
     <content src="index.html" />
-    
     <access origin="*" />
     <preference name="webviewbounce" value="false" />
     <preference name="UIWebViewBounce" value="false" />
@@ -76,5 +75,9 @@
     </platform>
     <plugin name="cordova-plugin-googleplus" spec="https://github.com/EddyVerbruggen/cordova-plugin-googleplus">
         <variable name="REVERSED_CLIENT_ID" value="com.googleusercontent.apps.153588436292-8f8um3as5uc0d3cd5ugn6jjb0lleu1l0" />
+    </plugin>
+    <plugin name="cordova-plugin-facebook4" spec="~1.7.4">
+        <variable name="APP_ID" value="1713714338646122" />
+        <variable name="APP_NAME" value="pegapro" />
     </plugin>
 </widget>

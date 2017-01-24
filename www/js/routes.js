@@ -23,6 +23,11 @@ function configRoutes($stateProvider, $urlRouterProvider) {
       templateUrl: 'templates/mensagens.html'
     })
 
+    .state('registrar', {
+      url: '/registrar',
+      templateUrl: 'templates/registrar.html'
+    })    
+
     .state('mapa', {
       url: '/mapa',
       templateUrl: 'templates/map.html',

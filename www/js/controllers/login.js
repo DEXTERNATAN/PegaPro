@@ -39,5 +39,6 @@ function LoginController($scope, EmpresaService, $ionicPopup, $state, $log) {
     }
 
   };
+  
 
 }

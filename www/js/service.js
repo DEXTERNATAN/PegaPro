@@ -3,16 +3,16 @@ angular.module('pegapro')
 
 function EmpresaService($http) {
 
-  var url = 'https://pegaproweb.herokuapp.com/profissional';
-
+  var urlProd = 'https://pegaproweb.herokuapp.com/profissional';
+  
   return {
     obterEmpresas: function () {
-      return $http.get(url).then(function (response) {
+      return $http.get(urlProd).then(function (response) {
         return response.data;
       });
     },
     obterEmpresaId: function (id) {
-      return $http.get(url + '/' + id).then(function (response) {
+      return $http.get(urlProd + '/' + id).then(function (response) {
         return response.data;
       });
     },

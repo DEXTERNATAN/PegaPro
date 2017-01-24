@@ -17,7 +17,7 @@ function LoginController($scope, EmpresaService, $ionicPopup, $state, $log) {
           senha: $scope.user.password,
           ativo: $scope.user.ativo
         }
-      }
+      };
 
       EmpresaService.realizarLogin(dadosDoLogin).then(function (dados) {
 

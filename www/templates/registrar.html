@@ -4,28 +4,30 @@
     <button class="button icon ion-navicon"></button>
     <h1 class="title">PegaPro</h1>
   </div>
-  <ion-nav-title>PegaPro GO!</ion-nav-title>
+  <ion-nav-title>Registrar usuário</ion-nav-title>
   <ion-content>
-    <div class="list">
-      <label class="item item-input item-stacked-label">
-    <span class="input-label">Nome</span>
-    <input type="text" placeholder="John">
-  </label>
-      <label class="item item-input item-stacked-label">
-    <span class="input-label">Sobrenome</span>
-    <input type="text" placeholder="Suhr">
-  </label>
-      <label class="item item-input item-stacked-label">
-    <span class="input-label">Email</span>
-    <input type="text" placeholder="john@suhr.com">
-  </label>
-    </div>
-    <ion-list>
-  <ion-radio ng-model="choice" ng-value="'A'">Trabalhar</ion-radio>
-  <ion-radio ng-model="choice" ng-value="'B'">Contratar</ion-radio>
-</ion-list>
-    <div class="padding">
-      <button class="button button-block button-positive activated">Cadastre-se</button>
-    </div>
+    <form name="FrmRegisterUser" novalidate>
+      <div class="list">
+        <label class="item item-input item-stacked-label">
+			<span class="input-label">Nome</span>
+    		<input type="text" name="nome" placeholder="John" ng-model="user.nome" required>
+		</label>
+        <label class="item item-input item-stacked-label">
+    		<span class="input-label">Sobrenome</span>
+    		<input type="text" name="sobrenome" placeholder="Suhr" ng-model="user.sobrenome" required>
+  		</label>
+        <label class="item item-input item-stacked-label">
+    		<span class="input-label">Email</span>
+    		<input type="email" name="email" placeholder="john@suhr.com" ng-model="user.email" required>
+  		</label>
+      </div>
+      <ion-list>
+        <ion-radio ng-model="user.choice" ng-value="'trabalhar'" required>Trabalhar</ion-radio>
+        <ion-radio ng-model="user.choice" ng-value="'contratar'" required>Contratar</ion-radio>
+      </ion-list>
+      <div class="padding">
+        <button class="button button-block button-positive activated" ng-click="registerUser(user)">Cadastre-se</button>
+      </div>
+    </form>
   </ion-content>
 </ion-view>

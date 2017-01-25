@@ -5,7 +5,6 @@ function LoginController($scope, EmpresaService, $ionicPopup, $state, $log) {
   $log.debug('[LoginController] constructor()');
 
   $scope.user = {};
-  $scope.user.ativo = true;
 
   $scope.realizarLogin = function () {
 
@@ -15,7 +14,7 @@ function LoginController($scope, EmpresaService, $ionicPopup, $state, $log) {
         params: {
           email: $scope.user.username,
           senha: $scope.user.password,
-          ativo: $scope.user.ativo
+          ativo: true
         }
       };
 
@@ -30,7 +29,6 @@ function LoginController($scope, EmpresaService, $ionicPopup, $state, $log) {
         });
       });
 
-
     } else {
       $ionicPopup.alert({
         title: 'Login Falhou',
@@ -39,6 +37,42 @@ function LoginController($scope, EmpresaService, $ionicPopup, $state, $log) {
     }
 
   };
-  
+
+
+  $scope.registerUser = function () {
+    $log.debug('registerUser');
+    if ($scope.user.nome && $scope.user.sobrenome && $scope.user.email && $scope.user.choice) {
+      
+
+        var dadosUsuario = {
+          // params: {
+          //   nome: $scope.user.nome,
+          //   sobrenome: $scope.user.sobrenome,
+          //   email: $scope.user.email,
+          //   choice: $scope.user.choice,
+          //   ativo: true
+          // }
+          name: $scope.user.nome
+        };
+      
+      $log.debug('registerUser', dadosUsuario);
+      EmpresaService.registerUsers(dadosUsuario).then(function (dados) {
+        
+        //$state.go('listagem');
+      }, function (erro) {
+        $ionicPopup.alert({
+          title: 'Usuario não cadastrado',
+          template: 'Error:' + erro.message
+        });
+      });
+
+    } else {
+      $ionicPopup.alert({
+        title: 'Dados não informandos',
+        template: 'Preencha os campos por favor!'
+      });
+    }
+
+  };
 
 }

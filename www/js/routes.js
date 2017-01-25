@@ -25,7 +25,8 @@ function configRoutes($stateProvider, $urlRouterProvider) {
 
     .state('registrar', {
       url: '/registrar',
-      templateUrl: 'templates/registrar.html'
+      templateUrl: 'templates/registrar.html',
+      controller: 'LoginController'
     })    
 
     .state('mapa', {

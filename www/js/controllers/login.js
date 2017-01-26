@@ -45,14 +45,11 @@ function LoginController($scope, EmpresaService, $ionicPopup, $state, $log) {
       
 
         var dadosUsuario = {
-          // params: {
-          //   nome: $scope.user.nome,
-          //   sobrenome: $scope.user.sobrenome,
-          //   email: $scope.user.email,
-          //   choice: $scope.user.choice,
-          //   ativo: true
-          // }
-          name: $scope.user.nome
+            nome: $scope.user.nome,
+            sobrenome: $scope.user.sobrenome,
+            email: $scope.user.email,
+            choice: $scope.user.choice,
+            ativo: true
         };
       
       $log.debug('registerUser', dadosUsuario);

@@ -22,7 +22,7 @@ function EmpresaService($http) {
       });
     },
     registerUsers: function (dadosUsuario) {
-      return $http.post('http://10.12.102.147:3000/user/add?api_key=1234', dadosUsuario).then(function (response) {
+      return $http.post('https://pegaproweb.herokuapp.com/user?api_key=1234', dadosUsuario).then(function (response) {
         return response.data;
       });
     }    

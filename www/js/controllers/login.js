@@ -53,6 +53,7 @@ function LoginController($scope, EmpresaService, $ionicPopup, $state, $log) {
               username:"natal",
               password:"123456",
               token: "dfasdfasdfasdf",
+              cidade: $scope.user.cidade,
               ativo: true
         };
       

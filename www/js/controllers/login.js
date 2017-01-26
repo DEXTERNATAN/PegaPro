@@ -45,21 +45,25 @@ function LoginController($scope, EmpresaService, $ionicPopup, $state, $log) {
       
 
         var dadosUsuario = {
-            nome: $scope.user.nome,
-            sobrenome: $scope.user.sobrenome,
-            email: $scope.user.email,
-            choice: $scope.user.choice,
-            ativo: true
+            name: $scope.user.nome
+            // ,
+            // sobrenome: $scope.user.sobrenome,
+            // email: $scope.user.email,
+            // choice: $scope.user.choice,
+            // ativo: true
         };
       
       $log.debug('registerUser', dadosUsuario);
       EmpresaService.registerUsers(dadosUsuario).then(function (dados) {
-        
-        //$state.go('listagem');
+        $ionicPopup.alert({
+          title: 'Cadastro de usuario',
+          template: 'Usuario cadastrado com sucesso !'
+        });
+        $state.go('listagem');
       }, function (erro) {
         $ionicPopup.alert({
-          title: 'Usuario não cadastrado',
-          template: 'Error:' + erro.message
+          title: 'Cadastro de usuario',
+          template: 'Error: Usuário não cadastrado!'
         });
       });
 

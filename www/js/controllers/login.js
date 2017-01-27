@@ -20,7 +20,7 @@ function LoginController($scope, EmpresaService, $ionicPopup, $state, $log) {
 
       EmpresaService.realizarLogin(dadosDoLogin).then(function (dados) {
         console.log(dados);
-        //$state.go('listagem');
+        $state.go('login');
 
       }, function (erro) {
         //console.log(erro.data);

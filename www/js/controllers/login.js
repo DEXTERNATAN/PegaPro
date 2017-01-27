@@ -13,19 +13,20 @@ function LoginController($scope, EmpresaService, $ionicPopup, $state, $log) {
       var dadosDoLogin = {
         params: {
           email: $scope.user.username,
-          senha: $scope.user.password
+          password: $scope.user.password
           //ativo: true
         }
       };
 
       EmpresaService.realizarLogin(dadosDoLogin).then(function (dados) {
-
-        $state.go('listagem');
+        console.log(dados);
+        //$state.go('listagem');
 
       }, function (erro) {
+        //console.log(erro.data);
         $ionicPopup.alert({
           title: 'Login Falhou',
-          template: 'E-mail ou senha incorretos.'
+          template: 'Usuário ou senha inválidos.'
         });
       });
 

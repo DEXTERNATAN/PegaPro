@@ -17,17 +17,15 @@ function EmpresaService($http) {
       });
     },
     realizarLogin: function (dadosDoLogin) {
-      return $http.get('https://pegaproweb.herokuapp.com/' + 'user', dadosDoLogin).then(function (response) {
+      return $http.get('https://pegaproweb.herokuapp.com/user/login', dadosDoLogin).then(function (response) {
         return response.data;
       });
     },
     registerUsers: function (dadosUsuario) {
-      //return $http.post('https://pegaproweb.herokuapp.com/user?api_key=1234', dadosUsuario).then(function (response) {
-        return $http.post('https://pegaproweb.herokuapp.com:443/user/login?email=' + dadosUsuario.email + '&password=' + dadosUsuario.senha ).
+        return $http.post('https://pegaproweb.herokuapp.com/user/login?email=' + dadosUsuario.email + '&password=' + dadosUsuario.senha ).
         then(function (response) {
           return response.data;
         });
     }    
-
   }
 }

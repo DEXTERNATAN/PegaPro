@@ -20,13 +20,19 @@
     		<span class="input-label">Email</span>
     		<input type="email" name="email" placeholder="john@suhr.com" ng-model="user.email" required>
   		</label>
-      
-      
-      <div class="item item-input item-select">
-        <div class="input-label">
-          Cidade
-        </div>
-        <select ng-model="user.cidade">
+        <label class="item item-input item-stacked-label">
+    		<span class="input-label">Senha</span>
+    		<input type="password" name="password" placeholder="" ng-model="user.password" required>
+  		</label>
+        <label class="item item-input item-stacked-label">
+    		<span class="input-label">Celular</span>
+    		<input type="tel" name="celular" placeholder="(99) 9999-9999" ng-model="user.celular" required>
+  		</label>
+        <div class="item item-input item-select">
+          <div class="input-label">
+            Cidade
+          </div>
+          <select ng-model="user.cidade">
               <option>Gama</option>
               <option selected="">Santa Maria</option>
               <option>Asa Sul</option>
@@ -35,12 +41,11 @@
               <option>Ceilandia</option>
               <option>Samambaia</option>
             </select>
-      </div>
-      
-      <ion-list>
-        <ion-radio ng-model="user.choice" ng-value="'trabalhar'" required>Trabalhar</ion-radio>
-        <ion-radio ng-model="user.choice" ng-value="'contratar'" required>Contratar</ion-radio>
-      </ion-list>
+        </div>
+        <ion-list>
+          <ion-radio ng-model="user.choice" ng-value="'trabalhar'" required>Trabalhar</ion-radio>
+          <ion-radio ng-model="user.choice" ng-value="'contratar'" required>Contratar</ion-radio>
+        </ion-list>
       </div>
       <div class="padding">
         <button class="button button-block button-positive activated" ng-click="registerUser(user)">Cadastre-se</button>

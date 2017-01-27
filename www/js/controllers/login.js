@@ -19,9 +19,7 @@ function LoginController($scope, EmpresaService, $ionicPopup, $state, $log) {
       };
 
       EmpresaService.realizarLogin(dadosDoLogin).then(function (dados) {
-        console.log(dados);
-        $state.go('login');
-
+        $state.go('listagem');
       }, function (erro) {
         //console.log(erro.data);
         $ionicPopup.alert({
@@ -48,12 +46,12 @@ function LoginController($scope, EmpresaService, $ionicPopup, $state, $log) {
         var dadosUsuario = {
               name: $scope.user.nome,
               sobrenome: $scope.user.sobrenome,
-              celular: "33943030",
+              celular: $scope.user.celular,
               email: $scope.user.email,
               choice: $scope.user.choice,
-              username: "natal",
-              password: "123456",
-              token: "dfasdfasdfasdf",
+              username: $scope.user.nome,
+              password: $scope.user.password,
+              token: 'dfasdfasdfasdf',
               cidade: $scope.user.cidade,
               ativo: true
         };
@@ -64,7 +62,7 @@ function LoginController($scope, EmpresaService, $ionicPopup, $state, $log) {
           title: 'Cadastro de usuario',
           template: 'Usuario cadastrado com sucesso !'
         });
-        $state.go('listagem');
+        $state.go('login');
       }, function (erro) {
         $ionicPopup.alert({
           title: 'Cadastro de usuario',

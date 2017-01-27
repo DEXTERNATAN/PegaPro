@@ -11,7 +11,14 @@
 	<!--NEW-->
     <ion-list>
       <ion-item class="item-thumbnail-left item-text-wrap" ng-repeat="empresa in listaDeEmpresas | filter:search track by $index" ng-href="#/empresaescolhida/{{empresa._id}}">
-        <img src="img/img_avatar2.png" alt="Poster" class="customized-image" style="border-radius: 50%;">
+        <img src="img/img_avatar2.png" alt="Poster" class="customized-image" style="position: absolute;
+    top: 16px;
+    left: 16px;
+    max-width: 40px;
+    max-height: 40px;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;">
         <h2>{{empresa.firstName}}&nbsp;{{empresa.lastName}}</h2>
         <h2>{{empresa.profissao}}</h2>
         <p>{{empresa.email}}</p>

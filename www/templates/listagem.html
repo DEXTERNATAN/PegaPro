@@ -6,10 +6,9 @@
   </div>
   <ion-nav-title>PegaPro GO!</ion-nav-title>
   <ion-content>
-
-
-	<!--NEW-->
-    <ion-list>
+		
+    <!--NEW-->
+    <!--<ion-list>
       <ion-item class="item-thumbnail-left item-text-wrap" ng-repeat="empresa in listaDeEmpresas | filter:search track by $index" ng-href="#/empresaescolhida/{{empresa._id}}">
         <img src="img/img_avatar2.png" alt="Poster" class="customized-image" style="position: absolute;
     top: 16px;
@@ -23,20 +22,23 @@
         <h2>{{empresa.profissao}}</h2>
         <p>{{empresa.email}}</p>
       </ion-item>
-    </ion-list>
+    </ion-list>-->
 
-
-
-	<!--OLD-->
-    <!--<div class="list list-inset">
+    <div class="list card">
+      <div class="item item-avatar" ng-repeat="empresa in listaDeEmpresas | filter:search track by $index" ng-href="#/empresaescolhida/{{empresa._id}}">
+        <img src="http://ionicframework.com/img/docs/mcfly.jpg">
+        <h2>{{empresa.firstName}}&nbsp;{{empresa.lastName}}</h2>
+        <h2>{{empresa.profissao}}</h2>
+        <p>{{empresa.email}}</p>
+      </div>
+      <!--OLD-->
+      <!--<div class="list list-inset">
 			<label class="item item-input">
 				<i class="icon ion-search placeholder-icon"></i>
 				<input type="text" placeholder="Search" ng-model="search">
 			</label>
 		</div>-->
-
-
-    <!--<ion-list>
+      <!--<ion-list>
 			<ion-item ng-repeat="empresa in listaDeEmpresas | filter:search track by $index">
 				<a class="item item-avatar" href="#/empresaescolhida/{{empresa._id}}">
 					<img src="img/img_avatar2.png">

@@ -3,7 +3,7 @@ angular.module('pegapro')
 
 function configRoutes($stateProvider, $urlRouterProvider) {
   // Default:
-  $urlRouterProvider.otherwise('login');
+  $urlRouterProvider.otherwise('listagem');
 
   $stateProvider
     .state('login', {

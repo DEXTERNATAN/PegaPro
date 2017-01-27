@@ -13,8 +13,8 @@ function LoginController($scope, EmpresaService, $ionicPopup, $state, $log) {
       var dadosDoLogin = {
         params: {
           email: $scope.user.username,
-          senha: $scope.user.password,
-          ativo: true
+          senha: $scope.user.password
+          //ativo: true
         }
       };
 
@@ -47,11 +47,11 @@ function LoginController($scope, EmpresaService, $ionicPopup, $state, $log) {
         var dadosUsuario = {
               name: $scope.user.nome,
               sobrenome: $scope.user.sobrenome,
-              celular:"33943030",
+              celular: "33943030",
               email: $scope.user.email,
               choice: $scope.user.choice,
-              username:"natal",
-              password:"123456",
+              username: "natal",
+              password: "123456",
               token: "dfasdfasdfasdf",
               cidade: $scope.user.cidade,
               ativo: true

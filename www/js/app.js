@@ -1,6 +1,6 @@
 angular.module('pegapro', ['ionic', 'idf.br-filters', 'ionic-ratings', 'ngCordova'])
   // Declara as lib externas (ex. jQuery, GoogleAPI, lodash, moment, etc.)
-  .constant('google', google)
+  //.constant('google', google)
   // .constant('jQuery', jQuery)
   // .constant('_', lodash)
   // .constant('moment', moment)

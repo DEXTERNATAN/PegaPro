@@ -5,39 +5,78 @@ function configRoutes($stateProvider, $urlRouterProvider) {
   // Default:
   $urlRouterProvider.otherwise('login');
 
-  $stateProvider
-    .state('login', {
-      url: '/login',
-      templateUrl: 'templates/login.html',
-      controller: 'LoginController'
-    })
+// NEW CODE
+$stateProvider
 
-    .state('listagem', {
-      url: '/listagem',
-      templateUrl: 'templates/listagem.html',
-      controller: 'ListagemController'
-    })
+.state('app', {
+	url : '/app',
+	templateUrl : 'templates/menu.html',
+	abstract: true,
+	controller: 'MenuController'
+})
 
-    .state('mensagens', {
-      url: '/mensagens',
-      templateUrl: 'templates/mensagens.html'
-    })
+.state('app.listagem',{
+	url : '/listagem',
+	views : {
+		'menuContent' : {
+			templateUrl : 'templates/listagem.html',
+			controller: 'ListagemController'
+		}
+	}
+})
 
-    .state('registrar', {
-      url: '/registrar',
-      templateUrl: 'templates/registrar.html',
-      controller: 'LoginController'
-    })    
+.state('app.perfil', {
+  url : '/perfil',
+  views : {
+    'menuContent' : {
+        templateUrl : 'templates/perfil.html'
+    } 
+  }
+})
 
-    .state('mapa', {
-      url: '/mapa',
-      templateUrl: 'templates/map.html',
-      controller: 'MapController'
-    })
+.state('login', {
+	url : '/login',
+	templateUrl : 'templates/login.html',
+	controller : 'LoginController'
+});
 
-    .state('empresaescolhida', {
-      url: '/empresaescolhida/:empresa',
-      templateUrl: 'templates/empresaescolhida.html',
-      controller: 'EmpresaEscolhidaController'
-    });
+
+// CODE OLD
+  // $stateProvider
+  //   .state('login', {
+  //     url: '/login',
+  //     templateUrl: 'templates/login.html',
+  //     controller: 'LoginController'
+  //   })
+
+  //   .state('listagem', {
+  //     url: '/listagem',
+  //     templateUrl: 'templates/listagem.html',
+  //     controller: 'ListagemController'
+  //   })
+
+  //   .state('mensagens', {
+  //     url: '/mensagens',
+  //     templateUrl: 'templates/mensagens.html'
+  //   })
+
+  //   .state('registrar', {
+  //     url: '/registrar',
+  //     templateUrl: 'templates/registrar.html',
+  //     controller: 'LoginController'
+  //   })    
+
+  //   .state('mapa', {
+  //     url: '/mapa',
+  //     templateUrl: 'templates/map.html',
+  //     controller: 'MapController'
+  //   })
+
+  //   .state('empresaescolhida', {
+  //     url: '/empresaescolhida/:empresa',
+  //     templateUrl: 'templates/empresaescolhida.html',
+  //     controller: 'EmpresaEscolhidaController'
+  //   });
+
+
 }

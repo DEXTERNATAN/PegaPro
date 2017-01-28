@@ -1,7 +1,7 @@
 angular.module('pegapro')
   .controller('LoginController', LoginController);
 
-function LoginController($scope, EmpresaService, $ionicPopup, $state, $log) {
+function LoginController($scope, EmpresaService, $ionicPopup, $state, $log, $rootScope) {
   $log.debug('[LoginController] constructor()');
 
   $scope.user = {};
@@ -19,7 +19,8 @@ function LoginController($scope, EmpresaService, $ionicPopup, $state, $log) {
       };
 
       EmpresaService.realizarLogin(dadosDoLogin).then(function (dados) {
-        $state.go('listagem');
+        $rootScope.usuario = dados;
+        $state.go('app.listagem');
       }, function (erro) {
         //console.log(erro.data);
         $ionicPopup.alert({
@@ -107,7 +108,7 @@ function LoginController($scope, EmpresaService, $ionicPopup, $state, $log) {
 
         // Check if we have our user saved
         //var user = UserService.getUser('facebook');
-        $state.go('listagem');
+        $state.go('app.listagem');
         /*if(!user.userID){
           getFacebookProfileInfo(success.authResponse)
           .then(function(profileInfo) {

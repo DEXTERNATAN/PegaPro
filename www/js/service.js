@@ -3,7 +3,7 @@ angular.module('pegapro')
 
 function EmpresaService($http) {
 
-  var urlProd = 'https://pegaproweb.herokuapp.com/profissional';
+  var urlProd = 'https://pegaproweb.herokuapp.com/';
   //var urlProd = 'http://localhost:3000/';
   
   return {

@@ -1,13 +1,5 @@
 <ion-side-menus>
 	<ion-side-menu-content>
-		<!--
-		<div class="bar bar-header bar-assertive">
-      		<button class="button button-icon icon ion-navicon"></button>
-      		<div class="h1 title">PegaPro</div>
-      		<button class="button button-clear button-positive">Edit</button>
-    	</div>
-		-->
-
 		<ion-nav-bar class="bar bar-header bar-assertive" align-title="center">
 			<ion-nav-buttons side="left">
 				<button class="button button-icon button-clear ion-navicon" menu-toggle="center"></button>
@@ -33,30 +25,35 @@
 				<div class="item item-body"></div>
 			</div>
 			<ion-list>
-				
+	
+				<ion-item item-type="item-icon-left" nav-clear menu-close href="#/app/listagem">
+					<i class="icon ion-android-home"></i>
+					<span style="font-weight: 600;"> Home</span>
+				</ion-item>
+
 				<ion-item item-type="item-icon-left" nav-clear menu-close href="#/app/Profissionais">
 					<i class="icon ion-briefcase"></i>
-					<span>Profissionais</span>
+					<span style="font-weight: 600;"> Profissionais</span>
 				</ion-item>
 				
 				<ion-item item-type="item-icon-left" nav-clear menu-close href="#/app/favoritos">
 					<i class="icon ion-star"></i>
-					<span>Favoritos</span>
+					<span style="font-weight: 600;">Favoritos</span>
 				</ion-item>
 				
 				<ion-item item-type="item-icon-left" nav-clear menu-close href="#/app/perfil">
 					<i class="icon ion-person"></i>
-					<span>Perfil</span>
+					<span style="font-weight: 600;">Perfil</span>
 				</ion-item>
 
 				<ion-item item-type="item-icon-left" nav-clear menu-close href="#/app/ajuda">
 					<i class="icon ion-help-circled"></i>
-					<span>Ajuda</span>
+					<span style="font-weight: 600;">Ajuda</span>
 				</ion-item>
 				
 				<ion-item item-type="item-icon-left" nav-clear menu-close href="#/app/Perfil">
-					<i class="icon ion-log-out"></i>
-					<span>Sair</span>
+					<i class="icon ion-power"></i>
+					<span style="font-weight: 600;">Sair</span>
 				</ion-item>
 
 			</ion-list>

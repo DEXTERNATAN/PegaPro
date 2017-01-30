@@ -2,57 +2,58 @@ angular.module('pegapro')
   .config(configRoutes);
 
 function configRoutes($stateProvider, $urlRouterProvider) {
-  // Default:
+  
   $urlRouterProvider.otherwise('login');
 
-// NEW CODE
-$stateProvider
+  $stateProvider
+  .state('app', {
+      url: '/app',
+      templateUrl: 'templates/menu.html',
+      abstract: true,
+      controller: 'MenuController'
+    })
 
-.state('app', {
-	url : '/app',
-	templateUrl : 'templates/menu.html',
-	abstract: true,
-	controller: 'MenuController'
-})
+    .state('app.listagem', {
+      url: '/listagem',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/listagem.html',
+          controller: 'ListagemController'
+        }
+      }
+    })
 
-.state('app.listagem',{
-	url : '/listagem',
-	views : {
-		'menuContent' : {
-			templateUrl : 'templates/listagem.html',
-			controller: 'ListagemController'
-		}
-	}
-})
+    .state('app.perfil', {
+      url: '/perfil',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/perfil.html',
+          controller: 'PerfilController'
+        }
+      }
+    })
 
-.state('app.perfil', {
-  url : '/perfil',
-  views : {
-    'menuContent' : {
-        templateUrl : 'templates/perfil.html',
-			  controller: 'PerfilController'
-    } 
-  }
-})
-
-
-
-    .state('empresaescolhida', {
+    .state('app.profissionais', {
       url: '/empresaescolhida/:empresa',
-      templateUrl: 'templates/empresaescolhida.html',
-      controller: 'EmpresaEscolhidaController'
+      views : {
+        'menuContent' : {
+          templateUrl: 'templates/empresaescolhida.html',
+          controller: 'EmpresaEscolhidaController'
+        }
+      }
+      
     })
 
 
 
-.state('login', {
-	url : '/login',
-	templateUrl : 'templates/login.html',
-	controller : 'LoginController'
-});
+    .state('login', {
+      url: '/login',
+      templateUrl: 'templates/login.html',
+      controller: 'LoginController'
+    });
 
 
-// CODE OLD
+  // CODE OLD
   // $stateProvider
   //   .state('login', {
   //     url: '/login',

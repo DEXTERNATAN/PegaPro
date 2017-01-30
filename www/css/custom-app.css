@@ -118,3 +118,30 @@ button.button.button-block.btn-login-twitter {
   text-align: center;
   top: 433px;
 }
+
+
+/* Fim da area de login */
+
+
+/* Página de favoritos*/
+.has-header-favoritos {
+    top: 20px;
+}
+
+/* Lista do acordeon */
+
+.list .item.item-accordion {
+  line-height: 38px;
+  padding-top: 0;
+  padding-bottom: 0;
+  transition: 0.09s all linear;
+}
+.list .item.item-accordion.ng-hide {
+  line-height: 0px;
+}
+.list .item.item-accordion.ng-hide-add,
+.list .item.item-accordion.ng-hide-remove {
+  display: block !important;
+}
+
+/* Fim da lista do acordeon */

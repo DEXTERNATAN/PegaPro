@@ -2,11 +2,11 @@ angular.module('pegapro')
   .config(configRoutes);
 
 function configRoutes($stateProvider, $urlRouterProvider) {
-  
+
   $urlRouterProvider.otherwise('login');
 
   $stateProvider
-  .state('app', {
+    .state('app', {
       url: '/app',
       templateUrl: 'templates/menu.html',
       abstract: true,
@@ -33,15 +33,24 @@ function configRoutes($stateProvider, $urlRouterProvider) {
       }
     })
 
-    .state('app.profissionais', {
-      url: '/empresaescolhida/:empresa',
-      views : {
-        'menuContent' : {
-          templateUrl: 'templates/empresaescolhida.html',
-          controller: 'EmpresaEscolhidaController'
+    .state('app.favoritos', {
+      url: '/favoritos',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/favoritos.html'
+          //,controller: 'FavoritosController'
         }
       }
-      
+    })
+
+    .state('app.ajuda', {
+      url: '/ajuda',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/ajuda.html',
+          controller: 'AjudaController'
+        }
+      }
     })
 
 

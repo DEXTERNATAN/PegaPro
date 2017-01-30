@@ -35,6 +35,16 @@ $stateProvider
   }
 })
 
+
+
+    .state('empresaescolhida', {
+      url: '/empresaescolhida/:empresa',
+      templateUrl: 'templates/empresaescolhida.html',
+      controller: 'EmpresaEscolhidaController'
+    })
+
+
+
 .state('login', {
 	url : '/login',
 	templateUrl : 'templates/login.html',

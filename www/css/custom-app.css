@@ -65,11 +65,22 @@ button.button.button-block.btn-login {
 }
 
 button.button.button-block.btn-login-facebook {
-  background-color: #80d5f2;
+  /*background-color: #80d5f2;*/ /*Old*/
+  background-color: #4C729F;
   color: white;
   top: -10px;
   height: 43px;
 }
+
+button.button.button-block.btn-login-twitter {
+  /*background-color: #80d5f2;*/ /* Old */
+  background-color: #54ABEE;
+  color: white;
+  top: -10px;
+  height: 43px;
+}
+
+
 
 .divOr {
   margin-top: 157px;

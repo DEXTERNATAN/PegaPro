@@ -1,32 +1,24 @@
-<ion-view>
-  <ion-nav-title>Detalhes do empregado</ion-nav-title>
+<ion-view view-title="Detalhes do profissional">
   <ion-content>
     <div class="card">
       <div class="item item-divider">
         Ótima Escolha
       </div>
       <div class="item item-text-wrap">
-        <!-- {{listaDeEmpresaId.nome}} -->
         <div class="list card">
           <div class="item item-avatar">
             <img src="img/img_avatar2.png">
             <h2>{{listaDeEmpresaId.firstName}}&nbsp;{{listaDeEmpresaId.lastName}}</h2>
             <p>{{listaDeEmpresaId.phone.mobile | brPhoneNumber}}</p>
             <p>{{listaDeEmpresaId.TipoPreco}}: <span style="color: red;">{{listaDeEmpresaId.precoServico | finance:true:2}}</span></p>
-            <!--<p>Disponibilidade: <span style="color: red;">{{listaDeEmpresaId.disponibilidade}}</span></p>-->
-            <!--<p>{{listaDeEmpresaId.cidade}} - {{listaDeEmpresaId.estado}}</p>-->
           </div>
           <div class="item item-body">
-            <!--Avaliação: {{listaDeEmpresaId.rating || ratingsObject.rating}}-->
             <ionic-ratings ratingsobj="ratingsObject" index="$index"></ionic-ratings>
           </div>
           <div class="item item-body">
             <h2>Perfil profissional:</h2>
             <p>
               <ion-list>
-                <!--<ion-checkbox ng-init="filter.red=true" ng-model="filter.red" readonly>Faxineira</ion-checkbox>-->
-                <!--<ion-checkbox ng-init="filter.yellow=true" ng-model="filter.yellow" readonly>Passadeira</ion-checkbox>
-								<ion-checkbox ng-init="filter.pink=true" ng-model="filter.pink" readonly>Diarista</ion-checkbox>-->
                 <ion-item>Faxineira, Passadeira, Diarista</ion-item>
               </ion-list>
             </p>
@@ -40,7 +32,6 @@
           <div class="item item-body">
             <h2>Compartilhar Perfil:</h2>
             <p>
-              <!--<i class="icon ion-star" style="font-size: 20px; color: #ffc900;"></i>-->
               <div class="item item-avatar">
                 <div class="">
                   <i class="icon ion-social-whatsapp" style="font-size: 35px; color: #33cd5f; padding-right: 12px; padding-left: 0px;"></i>
@@ -48,18 +39,13 @@
                   <i class="icon ion-social-instagram" style="font-size: 35px; color: #886aea; padding-right: 12px; padding-left: 0px;"></i>
                   <i class="icon ion-social-twitter" style="font-size: 35px; color: #11c1f3; padding-right: 12px; padding-left: 0px;"></i>
                 </div>
-                <!--<button class="button" ng-click="shareAnywhere()">Share anywhere</button>
-                <button class="button" ng-click="shareViaTwitter('some message', null, 'https://www.thepolyglotdeveloper.com')">Share on Twitter</button>-->
               </div>
             </p>
             <a class="button button-positive button-full" href="#/mensagens">Mensages</a>
             <a class="button button-positive button-full" href="#/mapa">Visualizar no mapa</a>
-            <!--<a class="button button-positive button-full" href="#/finalizarpedido/{{carroEscolhido}}">Bater papo</a>-->
           </div>
         </div>
       </div>
     </div>
-    <!-- <a class="button button-positive button-full" href="#/finalizarpedido/{{carroEscolhido}}" >Finalizar pedido</a> -->
-
   </ion-content>
 </ion-view>

@@ -59,7 +59,19 @@ function configRoutes($stateProvider, $urlRouterProvider) {
       url: '/login',
       templateUrl: 'templates/login.html',
       controller: 'LoginController'
-    });
+    })
+
+    .state('app.profissionalDetalhes', {
+      url: '/profissionalDetalhes/:empresa',
+      views: {
+        'menuContent': {
+           templateUrl: 'templates/profissionalDetalhes.html',
+           controller: 'EmpresaEscolhidaController'
+        }
+      }      
+//      templateUrl: 'templates/profissionalDetalhes.html',
+//      controller: 'EmpresaEscolhidaController'
+    });    
 
 
   // CODE OLD

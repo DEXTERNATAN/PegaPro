@@ -13,7 +13,7 @@ function EmpresaService($http) {
       });
     },
     obterEmpresaId: function (id) {
-      return $http.get(urlProd + id).then(function (response) {
+      return $http.get(urlProd + 'profissional/' + id).then(function (response) {
         return response.data;
       });
     },

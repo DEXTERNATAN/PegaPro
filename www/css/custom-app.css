@@ -145,3 +145,53 @@ button.button.button-block.btn-login-twitter {
 }
 
 /* Fim da lista do acordeon */
+
+
+/* pagina de detalhe do empregado */
+.card-detalhe-empregado {
+    margin-top: 0px;
+    height: 160px;
+    background-color: #11c1f3;
+    width: 100%;
+    margin-left: 0px;
+    /* margin-right: 230px; */
+}
+
+.item-avatar-detalhes > img:first-child {
+    position: absolute;
+    top: 20px;
+    left: 206px;
+    max-width: 130px;
+    max-height: 130px;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.card-panel-nome-detalhe {
+    overflow: hidden;
+    margin: -20px 0px;
+    border-radius: 2px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+}
+
+.card-empregado-dados  {
+  margin-top: 20px;
+  margin-left: 1px;
+  width: 100%;
+
+}
+
+.card-panel-nome-detalhe h1 {
+    color: #828282;
+    text-align: center;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.card-panel-nome-detalhe h3 {
+    color: #828282;
+    text-align: center;
+    font-weight: 400;
+}

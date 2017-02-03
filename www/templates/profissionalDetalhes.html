@@ -1,5 +1,57 @@
 <ion-view view-title="Detalhes do profissional">
   <ion-content>
+<div class="card card-detalhe-empregado">
+  <!--<div class="item item-text-wrap">-->
+    <a class="item-avatar item-avatar-detalhes" href="#">
+      <img src="img/mcfly.jpg">
+      <!--<h2>Venkman</h2>-->
+      <!--<p>Back off, man. I'm a scientist.</p>-->
+    </a>
+    
+  </div>
+</div>
+
+<div class="card card-panel-nome-detalhe">
+  <div class="item item-text-wrap">
+    <h1>{{listaDeEmpresaId.firstName}}&nbsp;{{listaDeEmpresaId.lastName}}</h1>
+  </div>
+  <div class="item item-text-wrap">
+    <h3>Analista de sistemas</h3>
+  </div>  
+</div>
+
+
+<div class="card card-empregado-dados">
+<div class="list">
+
+  <div class="item item-divider" style="white-space: normal;">
+    Resumo profissional:
+  </div>
+
+  <p class="item" >
+    Apresentar resumo do profissional ...
+  </a>
+
+  <div class="item item-divider">
+    Dados para contato
+  </div>
+
+  <p class="item" >
+    {{listaDeEmpresaId.phone.mobile | brPhoneNumber}}
+  </a>
+
+</div>
+
+</div>
+
+
+
+</ion-content>
+</ion-view>
+
+<!--CODE OLD-->
+<!--<ion-view view-title="Detalhes do profissional">
+  <ion-content>
     <div class="card">
       <div class="item item-divider">
         Ótima Escolha
@@ -48,4 +100,4 @@
       </div>
     </div>
   </ion-content>
-</ion-view>
+</ion-view>-->

@@ -65,7 +65,8 @@ button.button.button-block.btn-login {
 }
 
 button.button.button-block.btn-login-facebook {
-  /*background-color: #80d5f2;*/ /*Old*/
+  /*background-color: #80d5f2;*/
+  /*Old*/
   background-color: #4C729F;
   color: white;
   top: -10px;
@@ -73,14 +74,13 @@ button.button.button-block.btn-login-facebook {
 }
 
 button.button.button-block.btn-login-twitter {
-  /*background-color: #80d5f2;*/ /* Old */
+  /*background-color: #80d5f2;*/
+  /* Old */
   background-color: #54ABEE;
   color: white;
   top: -10px;
   height: 43px;
 }
-
-
 
 .divOr {
   margin-top: 157px;
@@ -109,8 +109,8 @@ button.button.button-block.btn-login-twitter {
 }
 
 .list-inputs-login {
-    top: 120px;
-    margin-bottom: -16px;
+  top: 120px;
+  margin-bottom: -16px;
 }
 
 .signup-login {
@@ -124,9 +124,11 @@ button.button.button-block.btn-login-twitter {
 
 
 /* Página de favoritos*/
+
 .has-header-favoritos {
-    top: 20px;
+  top: 20px;
 }
+
 
 /* Lista do acordeon */
 
@@ -136,62 +138,97 @@ button.button.button-block.btn-login-twitter {
   padding-bottom: 0;
   transition: 0.09s all linear;
 }
+
 .list .item.item-accordion.ng-hide {
   line-height: 0px;
 }
+
 .list .item.item-accordion.ng-hide-add,
 .list .item.item-accordion.ng-hide-remove {
   display: block !important;
 }
 
+
 /* Fim da lista do acordeon */
 
 
 /* pagina de detalhe do empregado */
+
 .card-detalhe-empregado {
-    margin-top: 0px;
-    height: 160px;
-    background-color: #11c1f3;
-    width: 100%;
-    margin-left: 0px;
-    /* margin-right: 230px; */
+  margin-top: 0px;
+  height: 160px;
+  background-color: #11c1f3;
+  width: 100%;
+  margin-left: 0px;
+  /* margin-right: 230px; */
 }
 
-.item-avatar-detalhes > img:first-child {
-    position: absolute;
-    top: 20px;
-    left: 206px;
-    max-width: 130px;
-    max-height: 130px;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
+.item-avatar-detalhes> img:first-child {
+  position: absolute;
+  top: 20px;
+  left: 16px;
+  max-width: 130px;
+  max-height: 130px;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
 }
 
 .card-panel-nome-detalhe {
-    overflow: hidden;
-    margin: -20px 0px;
-    border-radius: 2px;
-    background-color: #fff;
-    border: 1px solid #ccc;
+  overflow: hidden;
+  margin: -20px 0px;
+  border-radius: 2px;
+  background-color: #fff;
+  border: 1px solid #ccc;
 }
 
-.card-empregado-dados  {
+.card-empregado-dados {
   margin-top: 20px;
   margin-left: 1px;
   width: 100%;
-
 }
 
 .card-panel-nome-detalhe h1 {
-    color: #828282;
-    text-align: center;
-    font-weight: bold;
-    font-size: 22px;
+  color: #828282;
+  text-align: center;
+  font-weight: bold;
+  font-size: 22px;
 }
 
 .card-panel-nome-detalhe h3 {
-    color: #828282;
+  color: #828282;
+  text-align: center;
+  font-weight: 400;
+}
+
+/*.item-nome-destaque {
+  margin: 30px 0px 0px 0px !important;
+  margin-left: 60px!important;
+  font-size: 19px;
+  font-weight: bold;
+  background-color: transparent;
+  color: white;
+  border-color: transparent;
+  text-align: center;
+}*/
+
+.item-nome-destaque {
+    margin-top: -37px !important;
+    margin-left: 130px!important;
+    font-size: 19px;
+    font-weight: bold;
+    background-color: transparent;
+    color: white;
+    border-color: transparent;
     text-align: center;
-    font-weight: 400;
+}
+
+.item-rating {
+  background-color: transparent;
+  border-color: transparent;
+  margin: -15px 0px 0px 169px !important;
+  max-width: 40%;
+  background-color: transparent;
+  padding: 3px;
+  font-size: 25px;
 }

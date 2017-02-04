@@ -201,6 +201,7 @@ button.button.button-block.btn-login-twitter {
   font-weight: 400;
 }
 
+
 /*.item-nome-destaque {
   margin: 30px 0px 0px 0px !important;
   margin-left: 60px!important;
@@ -213,14 +214,14 @@ button.button.button-block.btn-login-twitter {
 }*/
 
 .item-nome-destaque {
-    margin-top: -37px !important;
-    margin-left: 130px!important;
-    font-size: 19px;
-    font-weight: bold;
-    background-color: transparent;
-    color: white;
-    border-color: transparent;
-    text-align: center;
+  margin-top: -37px !important;
+  margin-left: 130px!important;
+  font-size: 19px;
+  font-weight: bold;
+  background-color: transparent;
+  color: white;
+  border-color: transparent;
+  text-align: center;
 }
 
 .item-rating {
@@ -231,4 +232,38 @@ button.button.button-block.btn-login-twitter {
   background-color: transparent;
   padding: 3px;
   font-size: 25px;
+}
+
+.icons-barra-menu {
+  background-color: white;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  padding: 4px 8px 2px 5px;
+  
+  margin-top: 10px;
+}
+
+.ico-hearts{
+  color: white;
+  text-align: center;
+  font-size: 20px;
+}
+
+.ico-whatsapp{
+  color: green;
+}
+
+.ico-facebook{
+  color: blue;
+}
+
+.likeAndComments {
+    width: 36%;
+    margin-left: 290px;
+    color: white;
+}
+
+.likeAndComments a {
+  color: white;
 }

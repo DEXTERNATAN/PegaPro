@@ -53,6 +53,25 @@ function configRoutes($stateProvider, $urlRouterProvider) {
       }
     })
 
+   .state('app.mensagens', {
+      url: '/mensagens',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/mensagens.html'
+        }
+      }
+    })
+
+    .state('app.mapa', {
+      url: '/mapa',
+      views:{
+        'menuContent':{
+            templateUrl: 'templates/map.html',
+            controller: 'MapController'
+        }
+      }
+    })
+
 
 
     .state('login', {
@@ -69,6 +88,14 @@ function configRoutes($stateProvider, $urlRouterProvider) {
            controller: 'EmpresaEscolhidaController'
         }
       }      
+
+
+
+
+
+
+
+
 //      templateUrl: 'templates/profissionalDetalhes.html',
 //      controller: 'EmpresaEscolhidaController'
     });    

@@ -267,3 +267,12 @@ button.button.button-block.btn-login-twitter {
 .likeAndComments a {
   color: white;
 }
+
+.comments-input {
+  margin-top: -24px;
+  background-color: #F8F8F8;
+}
+
+.comments-label {
+  background-color: #EEEEEE;
+}

@@ -5,7 +5,7 @@
 	<div class="list list-inset list-inputs-login">
 		<label class="item item-input">
     <i class="icon ion-person placeholder-icon"></i>
-    <input type="text" ng-model="user.username" placeholder="Email">
+    <input type="email" ng-model="user.username" placeholder="Email" onkeyup="this.value=this.value.replace(/[' ']/g,'')">
   </label>
 	</div>
 

@@ -53,11 +53,12 @@ function configRoutes($stateProvider, $urlRouterProvider) {
       }
     })
 
-   .state('app.mensagens', {
-      url: '/mensagens',
+   .state('app.comentarios', {
+      url: '/comentarios',
       views: {
         'menuContent': {
-          templateUrl: 'templates/mensagens.html'
+          templateUrl: 'templates/comentarios.html',
+          controller: 'ComentarioController'
         }
       }
     })

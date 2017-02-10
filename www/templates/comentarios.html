@@ -1,0 +1,109 @@
+<ion-view view-title="Comentários">
+  <ion-content scroll="true">
+
+    <div class="list">
+      
+      <div ng-repeat="comentario in comentarios">
+        <a class="item item-avatar" href="#">
+          <img src="{{comentario.imagem}}">
+          <h2>{{comentario.titulo}}</h2>
+          <p>{{comentario.descricao}}</p>
+        </a>
+      </div>
+      
+      <!--Apagar quando o serviço estiver pronto-->
+      <a class="item item-avatar" href="#">
+        <img src="img/spengler.jpg">
+        <h2>Egon</h2>
+        <p>We're gonna go full stream.</p>
+      </a>
+      <a class="item item-avatar" href="#">
+        <img src="img/stantz.jpg">
+        <h2>Ray</h2>
+        <p>Ugly little spud, isn't he?</p>
+      </a>
+      <a class="item item-avatar" href="#">
+        <img src="img/winston.jpg">
+        <h2>Winston</h2>
+        <p>That's a big Twinkie.</p>
+      </a>
+      <a class="item item-avatar" href="#">
+        <img src="img/tully.jpg">
+        <h2>Tully</h2>
+        <p>Okay, who brought the dog?</p>
+      </a>
+      <a class="item item-avatar" href="#">
+        <img src="img/barrett.jpg">
+        <h2>Dana</h2>
+        <p>I am The Gatekeeper!</p>
+      </a>
+      <a class="item item-avatar" href="#">
+        <img src="img/tully.jpg">
+        <h2>Slimer</h2>
+        <p>Boo!</p>
+      </a>
+      <a class="item item-avatar" href="#">
+        <img src="img/winston.jpg">
+        <h2>Slimer</h2>
+        <p>Boo!</p>
+      </a>
+      <a class="item item-avatar" href="#">
+        <img src="img/barrett.jpg">
+        <h2>Dana</h2>
+        <p>I am The Gatekeeper!</p>
+      </a>
+      <a class="item item-avatar" href="#">
+        <img src="img/tully.jpg">
+        <h2>Slimer</h2>
+        <p>Boo!</p>
+      </a>
+      <a class="item item-avatar" href="#">
+        <img src="img/winston.jpg">
+        <h2>Slimer</h2>
+        <p>Boo!</p>
+      </a>
+      <a class="item item-avatar" href="#">
+        <img src="img/barrett.jpg">
+        <h2>Dana</h2>
+        <p>I am The Gatekeeper!</p>
+      </a>
+      <a class="item item-avatar" href="#">
+        <img src="img/tully.jpg">
+        <h2>Slimer</h2>
+        <p>Boo!</p>
+      </a>
+      <a class="item item-avatar" href="#">
+        <img src="img/winston.jpg">
+        <h2>Slimer</h2>
+        <p>Boo!</p>
+      </a>
+      <a class="item item-avatar" href="#">
+        <img src="img/barrett.jpg">
+        <h2>Dana</h2>
+        <p>I am The Gatekeeper!</p>
+      </a>
+      <a class="item item-avatar" href="#">
+        <img src="img/tully.jpg">
+        <h2>Slimer</h2>
+        <p>Boo!</p>
+      </a>
+      <a class="item item-avatar" href="#">
+        <img src="img/winston.jpg">
+        <h2>Slimer</h2>
+        <p>Boo!</p>
+      </a>
+      <!--Apagar codigo acima quando o servico estiver pronto-->
+
+    </div>
+  </ion-content>
+  <ion-footer-bar align-title="left" class="bar-light">
+    <div class="bar bar-header item-input-inset">
+      <div class="buttons">
+      </div>
+      <label class="item-input-wrapper">
+    <input type="search" placeholder="Enviar seu comentário">
+  </label>
+      <i class="icon ion-ios-paperplane" style="font-size: 26px; padding: 0px 10px;"></i>
+    </div>
+  </ion-footer-bar>
+</ion-view>

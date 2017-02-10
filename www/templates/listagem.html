@@ -2,7 +2,7 @@
   <ion-content>
     <label class="item item-input">
 				<i class="icon ion-search placeholder-icon"></i>
-				<input type="text" placeholder="Pesquisar" ng-model="search">
+				<input type="text" placeholder="Pesquisar profissional ou categoria" ng-model="search">
 			</label>
     <div class="list card">
       <ion-item class="item item-avatar" ng-repeat="empresa in listaDeEmpresas | filter:search track by $index" href="#/app/profissionalDetalhes/{{empresa._id}}">

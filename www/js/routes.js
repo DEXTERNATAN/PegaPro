@@ -17,7 +17,7 @@ function configRoutes($stateProvider, $urlRouterProvider) {
       url: '/listagem',
       views: {
         'menuContent': {
-          templateUrl: 'templates/listagem.html',
+          templateUrl: 'templates/profissionalListagem.html',
           controller: 'ListagemController'
         }
       }

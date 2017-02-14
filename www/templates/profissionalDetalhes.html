@@ -2,24 +2,13 @@
   <ion-content>
     <div class="card card-detalhe-empregado">
       <p class="item-content item-avatar item-avatar-detalhes" href="#">
-        <img src="img/mcfly.jpg">
+        <img src="{{listaDeEmpresaId.urlfoto}}">
         <h2 class="item item-nome-destaque">{{listaDeEmpresaId.firstName}}&nbsp;{{listaDeEmpresaId.lastName}}</h2>
         <div class="item item-body item-rating">
           <ionic-ratings ratingsobj="ratingsObject" index="$index"></ionic-ratings>
-          <!--<div class="list" style="margin-top: 10px; text-align: center;">
-            <i class="icon ion-map"></i>
-            <i class="icon ion-heart ico-hearts"></i>  
-            <i class="icon ion-social-whatsapp ico-whatsapp"></i>  
-            <i class="icon ion-social-facebook ico-facebook"></i>  
-          </div>-->
         </div>
       </p>
       <p class="likeAndComments">
-        <a href="#" class="subdued" title="Likes atribuidos a este profissional">
-          <i class="icon ion-heart ico-hearts">
-          </i>
-          <span>10</span>
-        </a>
         <a href="#/app/comentarios" class="subdued" title="comentarios a respeito deste profissional">
           <i class="icon ion-chatbubbles ico-hearts"></i>
           <span>5</span>
@@ -28,7 +17,7 @@
     </div>
     <div class="card card-panel-nome-detalhe">
       <div class="item item-text-wrap">
-        <h3>Analista de sistemas</h3>
+        <h3>{{listaDeEmpresaId.profissao}}</h3>
       </div>
       <a class="item item-icon-left" href="tel:{{listaDeEmpresaId.phone.mobile | brPhoneNumber}}">
         <i class="icon ion-ios-telephone"></i> Chamar agora
@@ -39,35 +28,51 @@
     </div>
     <div class="card card-empregado-dados">
       <div class="list">
+        <div class="item item-divider">
+          Especialidades:
+        </div>
+        <p class="item" style="white-space: normal;">
+          {{listaDeEmpresaId.especialidades}}
+        </p>
         <div class="item item-divider" style="white-space: normal;">
           Resumo profissional:
         </div>
-        <p class="item">
-          Apresentar resumo do profissional ...
+        <p class="item"  style="white-space: normal;">
+          {{listaDeEmpresaId.resumo}}
         </p>
         <div class="item item-divider">
           Áreas de atuação
         </div>
         <p class="item">
-          Asa Sul, Asa norte
+          {{listaDeEmpresaId.locais}}
         </p>
-        <div class="item item-divider">
+        <!--<div class="item item-divider">
           Depoimentos
         </div>
         <p class="item" style="white-space: normal;">
           profissional excelente já trabalhou pra mim e prestou um excelente serviço. Sempre contrato o mesmo para fazer os meus serviços.
-        </p>
-        <div class="item item-avatar">
-          <div class="">
-            <i class="icon ion-social-whatsapp" style="font-size: 35px; color: #33cd5f; padding-right: 12px; padding-left: 0px;"></i>
-            <i class="icon ion-social-facebook" style="font-size: 35px; color: #387ef5; padding-right: 12px; padding-left: 0px;"></i>
-            <i class="icon ion-social-instagram" style="font-size: 35px; color: #886aea; padding-right: 12px; padding-left: 0px;"></i>
-            <i class="icon ion-social-twitter" style="font-size: 35px; color: #11c1f3; padding-right: 12px; padding-left: 0px;"></i>
-          </div>
-        </div>
+        </p>-->
       </div>
-      <a class="button button-positive button-full" href="#/mensagens">Mensages</a>
+      <div class="item item-divider">
+        Depoimentos
+      </div>
+      <p class="item" style="white-space: normal;">
+        {{listaDeEmpresaId.depoimentos}}
+      </p>
     </div>
+    <!--<a class="button button-positive button-full" href="#/mensagens">Mensages</a>-->
+      <div class="item item-divider">
+        Redes Sociais Compartilhar
+      </div>    
+    <div class="item item-avatar">
+      <div class="">
+        <i class="icon ion-social-whatsapp" style="font-size: 35px; color: #33cd5f; padding-right: 12px; padding-left: 0px;"></i>
+        <i class="icon ion-social-facebook" style="font-size: 35px; color: #387ef5; padding-right: 12px; padding-left: 0px;"></i>
+        <i class="icon ion-social-instagram" style="font-size: 35px; color: #886aea; padding-right: 12px; padding-left: 0px;"></i>
+        <i class="icon ion-social-twitter" style="font-size: 35px; color: #11c1f3; padding-right: 12px; padding-left: 0px;"></i>
+      </div>
+    </div>
+
   </ion-content>
 </ion-view>
 <!--CODE OLD-->

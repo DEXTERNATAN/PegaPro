@@ -1,5 +1,5 @@
 # PegaPro
-Projeto que visa aproximar os profissionais liberais de seus parceiros comerciais. Ou seja, a finalidade do pegapro é aproximar pessoas que procuram prestar serviços ocasionais a pessoas ou empresas que precisam de prestadores de serviços ocasionais ou fixos. Servindo assim para fortalecer o ela entre essas pessoas e gerar fontes de renda.
+Projeto que visa aproximar os profissionais liberais de seus parceiros comerciais. Ou seja, a finalidade do pegapro é aproximar pessoas que procuram prestar serviços ocasionais a pessoas ou empresas que precisam de prestadores de serviços ocasionais ou fixos. Servindo assim para fortalecer o ela entre essas pessoas e gerar fontes de renda. Beneficiando assim que prestar o serviço e quem contrata.
 
 ## FAQ
 

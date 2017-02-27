@@ -8,7 +8,7 @@ Em breve estamos em processo de construção da idéia.
 
 ## Team
 
-Pegapro e um projeto criado por [Natanael de S. Leite](https://github.com/dexternatan/) e com a ajuda de [Tiago Alexandre](https://github.com/tiagoaos) e [Leonardo Merlin](https://github.com/leonardomerlin).
+Pegapro e um projeto criado por [Natanael de S. Leite](https://github.com/dexternatan/) com a ajuda de [Tiago Alexandre](https://github.com/tiagoaos) e [Leonardo Merlin](https://github.com/leonardomerlin).
 
 ## Roadmap
 

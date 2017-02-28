@@ -4,6 +4,7 @@ angular.module('pegapro')
 function configRoutes($stateProvider, $urlRouterProvider) {
 
   $urlRouterProvider.otherwise('login');
+  //$urlRouterProvider.otherwise('signin');
 
   $stateProvider
     .state('app', {
@@ -13,93 +14,106 @@ function configRoutes($stateProvider, $urlRouterProvider) {
       controller: 'MenuController'
     })
 
-    .state('app.listagem', {
-      url: '/listagem',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/profissionalListagem.html',
-          controller: 'ListagemController'
-        }
+  .state('app.listagem', {
+    url: '/listagem',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/profissionalListagem.html',
+        controller: 'ListagemController'
       }
-    })
+    }
+  })
 
-    .state('app.perfil', {
-      url: '/perfil',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/perfil.html',
-          controller: 'PerfilController'
-        }
+  .state('app.perfil', {
+    url: '/perfil',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/perfil.html',
+        controller: 'PerfilController'
       }
-    })
+    }
+  })
 
-    .state('app.favoritos', {
-      url: '/favoritos',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/favoritos.html'
+  .state('app.favoritos', {
+    url: '/favoritos',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/favoritos.html'
           //,controller: 'FavoritosController'
-        }
       }
-    })
+    }
+  })
 
-    .state('app.ajuda', {
-      url: '/ajuda',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/ajuda.html',
-          controller: 'AjudaController'
-        }
+  .state('app.ajuda', {
+    url: '/ajuda',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/ajuda.html',
+        controller: 'AjudaController'
       }
-    })
+    }
+  })
 
-   .state('app.comentarios', {
-      url: '/comentarios',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/comentarios.html',
-          controller: 'ComentarioController'
-        }
+  .state('app.comentarios', {
+    url: '/comentarios',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/comentarios.html',
+        controller: 'ComentarioController'
       }
-    })
+    }
+  })
 
-    .state('app.mapa', {
-      url: '/mapa',
-      views:{
-        'menuContent':{
-            templateUrl: 'templates/map.html',
-            controller: 'MapController'
-        }
+  .state('app.mapa', {
+    url: '/mapa',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/map.html',
+        controller: 'MapController'
       }
-    })
+    }
+  })
+
+  .state('app.mensagens', {
+    url: '/mensagens',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/mensagens.html'
+      }
+    }
+  })
+
+  .state('login', {
+    url: '/login',
+    templateUrl: 'templates/login.html',
+    controller: 'LoginController'
+  })
+
+  .state('listagem', {
+    url: '/listagem',
+    templateUrl: 'templates/profissionalListagem.html',
+    controller: 'ListagemController'
+  })
+
+  .state('app.profissionalDetalhes', {
+    url: '/profissionalDetalhes/:empresa',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/profissionalDetalhes.html',
+        controller: 'EmpresaEscolhidaController'
+      }
+    }
 
 
 
-    .state('login', {
-      url: '/login',
-      templateUrl: 'templates/login.html',
-      controller: 'LoginController'
-    })
-
-    .state('app.profissionalDetalhes', {
-      url: '/profissionalDetalhes/:empresa',
-      views: {
-        'menuContent': {
-           templateUrl: 'templates/profissionalDetalhes.html',
-           controller: 'EmpresaEscolhidaController'
-        }
-      }      
 
 
 
 
 
-
-
-
-//      templateUrl: 'templates/profissionalDetalhes.html',
-//      controller: 'EmpresaEscolhidaController'
-    });    
+    //      templateUrl: 'templates/profissionalDetalhes.html',
+    //      controller: 'EmpresaEscolhidaController'
+  });
 
 
   // CODE OLD

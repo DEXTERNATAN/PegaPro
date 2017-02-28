@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.ionicframework.boasopcoes151077" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.ionicfbapp.app" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>PegaPro</name>
     <description>
         An Ionic Framework and Cordova project.
@@ -8,8 +8,13 @@
       Natanael de Sousa Leite
     </author>
     <content src="index.html" />
-    
     <access origin="*" />
+    <access origin="http://maps.google.com" />
+    <access origin="https://maps.google.com" />
+    <access origin="http://*.googleapis.com" />
+    <access origin="https://*.googleapis.com" />
+    <access origin="*facebook.com*" />
+    <access launch-external="yes" origin="tel:*" />
     <preference name="webviewbounce" value="false" />
     <preference name="UIWebViewBounce" value="false" />
     <preference name="DisallowOverscroll" value="true" />
@@ -21,7 +26,12 @@
     <feature name="StatusBar">
         <param name="ios-package" onload="true" value="CDVStatusBar" />
     </feature>
+    <allow-navigation href="*" />
     <allow-navigation href="http://10.12.102.147:8100" />
+    <allow-navigation href="https://pegaproweb.herokuapp.com/" />
+    <allow-navigation href="https://pegaproweb.herokuapp.com/user" />
+    <allow-navigation href="http://maps.googleapis.com/maps/api/js?key=AIzaSyDdxqusbYqvr6YVFpm6FC6I4Od4N0dJ4Xc" />
+    <allow-intent href="https://maps.googleapis.com" />
     <platform name="android">
         <splash density="land-ldpi" src="resources/android/splash/drawable-land-ldpi-screen.png" />
         <splash density="land-mdpi" src="resources/android/splash/drawable-land-mdpi-screen.png" />
@@ -75,8 +85,11 @@
         <splash height="480" src="resources/ios/splash/Default~iphone.png" width="320" />
     </platform>
     <icon src="resources/android/icon/drawable-xhdpi-icon.png" />
-    <plugin name="cordova-plugin-facebook4" spec="~1.7.4">
-        <variable name="APP_ID" value="1713714338646122" />
-        <variable name="APP_NAME" value="pegapro" />
+    <plugin name="cordova-plugin-googleplus" spec="https://github.com/EddyVerbruggen/cordova-plugin-googleplus">
+        <variable name="REVERSED_CLIENT_ID" value="com.googleusercontent.apps.153588436292-8f8um3as5uc0d3cd5ugn6jjb0lleu1l0" />
+    </plugin>
+    <plugin name="cordova-plugin-facebook4" spec="cordova-plugin-facebook4">
+        <variable name="APP_ID" value="1067360726701947" />
+        <variable name="APP_NAME" value="ionicfbapp" />
     </plugin>
 </widget>

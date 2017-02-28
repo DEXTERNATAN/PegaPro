@@ -1,0 +1,73 @@
+<!--NOVA TELA DE LOGIN-->
+<ion-content padding="true" style="background-color: #46c6f3">
+	<form name="signinForm" ng-submit="vm.signIn(credentials, signinForm.$valid)">
+    <p class="title-login">PegaPro</p>
+
+	<div class="list list-inset list-inputs-login">
+		<label class="item item-input">
+    <i class="icon ion-person placeholder-icon"></i>
+    <input type="email" ng-model="credentials.username" placeholder="Email" onkeyup="this.value=this.value.replace(/[' ']/g,'')">
+  </label>
+	</div>
+
+	<div class="list list-inset list-inputs-login">
+		<label class="item item-input">
+    <i class="icon ion-locked placeholder-icon"></i>
+    <input type="password" ng-model="credentials.password" placeholder="Senha">
+  </label>
+	</div>
+
+	<button type="submit" class="button button-block btn-login" ng-click="realizarLogin();">
+		Acessar
+	</button>
+	<div class="divOr">
+		ou
+	</div>
+	<button class="button ion-social-facebook button-block btn-login-facebook" ng-click="facebookSignIn()"></button>
+	<button class="button ion-social-twitter button-block btn-login-twitter" ng-click="twitterSignIn()"></button>
+	<!--<p class="signup-login"><a href="#/registrar" style="color: white; text-decoration: none;">Não tem uma conta? Cadastre-se</a></p>-->
+	</form>
+</ion-content>
+
+
+<!--CODE OLD-->
+<!--<ion-view class="signin-header">
+    <ion-content scroll="false" layout="column" class="has-header">
+        <div class="text-center">
+            <span class="circle">MM</span>
+            <p class="pb-50">
+                By <a class="pseudo-link" href="http://martinmicunda.com" target="_blank">@martinmicunda</a>
+            </p>
+        </div>
+        <form name="signinForm" ng-submit="vm.signIn(credentials, signinForm.$valid)">
+            <md-content class="md-padding">
+                <md-input-container md-no-float>
+                    <md-icon md-svg-src="img/icons/ic_mail_24px.svg" class="md-default-theme" aria-hidden="true">
+                        <i class="icon ion-email"></i>
+                    </md-icon>
+                    <input ng-model="credentials.email" type="email" name="email" placeholder="Email" ng-required="true">
+                    <div ng-if="signinForm.email.$invalid && signinForm.email.$dirty" ng-messages="signinForm.email.$error" class="messages">
+                        <div ng-message="email">Your email address is invalid.</div>
+                    </div>
+                </md-input-container>
+                <md-input-container md-no-float>
+                    <md-icon md-svg-src="img/icons/ic_lock_24px.svg" class="md-default-theme" aria-hidden="true">
+                        <i class="icon ion-locked"></i>
+                    </md-icon>
+                    <input ng-model="credentials.password" type="password" name="password" placeholder="Password" ng-required="true">
+                    <div ng-if="signinForm.password.$invalid && signinForm.password.$dirty" ng-messages="signinForm.password.$error" class="messages">
+                        <div ng-message="required">This field is required.</div>
+                    </div>
+                </md-input-container>
+            </md-content>
+
+            <div class="padding">
+                <button type="submit" class="button button-block md-raised md-primary md-button md-default-theme">
+                    Sign In
+                </button>
+                <md-button type="submit" class="button button-block md-raised md-primary md-button md-default-theme">Sign In</md-button>
+            </div>
+        </form>
+        <p class="text-center text-muted text-small">Don't have an account yet? <button class="link-button" ng-click="vm.goToSignup()">Sign Up</button></p>
+    </ion-content>
+</ion-view>-->

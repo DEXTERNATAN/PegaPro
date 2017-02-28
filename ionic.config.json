@@ -1,6 +1,12 @@
 {
   "name": "PegaPro",
   "app_id": "3d64d066",
+  "proxies": [
+    {
+        "path": "/api",
+        "proxyUrl": "https://pegaproweb.herokuapp.com/"
+    }
+],
   "gulpStartupTasks": [
     "sass",
     "watch"

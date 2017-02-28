@@ -2,6 +2,18 @@
   "name": "PegaPro",
   "version": "1.1.1",
   "description": "PegaPro: An Ionic project",
+  "author": {
+    "name": "Natanael de Sousa Leite",
+    "url": "http://natanaelleite.com"
+  },
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DEXTERNATAN/PegaPro"
+  },
+  "bugs": {
+    "url": "https://github.com/DEXTERNATAN/PegaPro/issues"
+  },
   "dependencies": {
     "gulp": "^3.5.6",
     "gulp-sass": "^2.0.4",
@@ -20,7 +32,12 @@
     "cordova-plugin-statusbar",
     "cordova-plugin-device",
     "cordova-plugin-splashscreen",
-    "ionic-plugin-keyboard"
+    "ionic-plugin-keyboard",
+    "cordova-plugin-facebook4",
+    "org.apache.cordova.camera",
+    "org.apache.cordova.vibration",
+    "org.apache.cordova.file-transfer",
+    "org.apache.cordova.dialogs"
   ],
-  "cordovaPlatforms": []
+  "cordovaPlatforms": [ "android" ]
 }

@@ -2,7 +2,9 @@
     <ion-content>
         <div class="list card">
             <div class="item item-avatar">
+                <img src="{{ usuarioLogado.urlFoto || 'img/img_avatar2.png'}}" alt="imagem do perfil do usuário" width="110px" height="10px">
                 <h2> {{usuarioLogado.nome}} {{usuarioLogado.sobrenome}} </h2>
+                <button ng-show="estaEditando" class="button button-full button-positive" ng-click="tirarFoto()">Tirar Foto</button>
             </div>
             <div class="item item-body">
                 <div class="list">
@@ -12,7 +14,7 @@
                     
                   </label>
                   <label class="item item-input">
-                      <span ng-show="!estaEditando" class="input-label"> {{usuarioLogado.celular  | brPhoneNumber}} </span>
+                      <span ng-show="!estaEditando" class="input-label"> {{usuarioLogado.celular || '9999999999'  | brPhoneNumber}} </span>
                       <input ng-show="estaEditando" type="text" name="celular" ng-model="usuarioLogado.celular" value="">
                   </label>
                   <label class="item item-input">

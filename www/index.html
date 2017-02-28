@@ -20,10 +20,12 @@
     </script>-->
 
   <!-- Dependências CSS -->
-  
+
   <link href="css/ionic.app.css" rel="stylesheet">
   <link href="css/custom-app.css" rel="stylesheet">
   <link href="css/login.scss" rel="stylesheet">
+
+  <link href="css/style.css" rel="stylesheet">
 
   <!-- Dependências JS -->
   <!-- Google Maps-->
@@ -38,8 +40,16 @@
   <script src="lib/angular-br-filters/release/angular-br-filters.min.js"></script>
   <script src="lib/angular-i18n/angular-locale_pt-br.js"></script>
   <script src="lib/ionic-ratings/dist/ionic-ratings.min.js"></script>
+  <script src="lib/lodash/dist/lodash.js"></script>
+  <script src="lib/restangular/dist/restangular.js"></script>
+  <script src="lib/angular-local-storage/dist/angular-local-storage.js"></script>
+  <!--<script src="lib/angular-aria/angular-aria.js"></script>-->
+  <!--<script src="lib/angular-messages/angular-messages.js"></script>-->
 
   <!-- App -->
+  <!--<script src="js/openfb.js"></script>
+  <script src="js/ngopenfb.js"></script>-->
+
   <script src="js/app.js"></script>
   <script src="js/controllers/main.js"></script>
   <script src="js/controllers/contato.js"></script>
@@ -53,6 +63,20 @@
   <script src="js/controllers/map.js"></script>
   <script src="js/routes.js"></script>
   <script src="js/service.js"></script>
+  <script src="js/fbService.js"></script>
+
+
+  <!--new code - REFACT -->
+  <script src="js/core/core.js"></script>
+  <script src="js/core/config/config.js"></script>
+  <script src="js/core/services/authentication/authentication.service.js"></script>
+  <script src="js/core/services/authentication/base64.service.js"></script>
+  <script src="js/core/services/authentication/interceptor.service.js"></script>
+  <script src="js/core/services/authentication/token.service.js"></script>
+  
+  <script src="js/routes/signin/signin.js"></script>
+  <script src="js/routes/signin/signin.route.js"></script>
+  <script src="js/routes/signin/signin.controller.js"></script>
 
 </head>
 
@@ -68,10 +92,9 @@
 
   <!--</ion-nav-view>-->
 
-  <ion-pane>
-    <ion-nav-view>
-    </ion-nav-view>
-  </ion-pane>
+  <!--<ion-pane>-->
+  <ion-nav-view></ion-nav-view>
+  <!--</ion-pane>-->
 </body>
 
 </html>

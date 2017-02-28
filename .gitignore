@@ -8,6 +8,7 @@ bin/*
 !/plugins/fetch.json
 plugins/*
 platforms/*
+links_importantes.txt
 
 ### Node ###
 # Logs

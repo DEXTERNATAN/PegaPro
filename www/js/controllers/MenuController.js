@@ -1,10 +1,15 @@
 angular.module('pegapro')
-  .controller('MenuController', MenuController);
+	.controller('MenuController', MenuController);
 
-function MenuController($scope, UserService, $ionicPopup, $ionicActionSheet, $state, $log, $rootScope, $ionicLoading) {
-  $scope.usuarioLogado = $rootScope.usuario;
+function MenuController($scope, $ionicPopup, $ionicActionSheet, $state, $http, $log, $rootScope, $ionicLoading, AuthService) {
+	$scope.usuarioLogado = $rootScope.usuario;
 
-  $scope.showLogOutMenu = function() {
+	$scope.logout = function() {
+		AuthService.logout();
+		$state.go('login');
+	};
+
+	$scope.showLogOutMenu = function() {
 		var hideSheet = $ionicActionSheet.show({
 			destructiveText: 'Logout',
 			titleText: 'Are you sure you want to logout? This app is awsome so I recommend you to stay.',
@@ -13,21 +18,21 @@ function MenuController($scope, UserService, $ionicPopup, $ionicActionSheet, $st
 			buttonClicked: function(index) {
 				return true;
 			},
-			destructiveButtonClicked: function(){
+			destructiveButtonClicked: function() {
 				$ionicLoading.show({
-				  template: 'Logging out...'
+					template: 'Logging out...'
 				});
 
-        // Facebook logout
-        facebookConnectPlugin.logout(function(){
-          $ionicLoading.hide();
-          $state.go('login');
-        },
-        function(fail){
-          $ionicLoading.hide();
-        });
+				// Facebook logout
+				facebookConnectPlugin.logout(function() {
+						$ionicLoading.hide();
+						$state.go('login');
+					},
+					function(fail) {
+						$ionicLoading.hide();
+					});
 			}
 		});
 	};
-    
+
 };

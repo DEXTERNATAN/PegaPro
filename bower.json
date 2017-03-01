@@ -9,6 +9,7 @@
     "ionic-ratings": "^0.3.0",
     "restangular": "^1.6.1",
     "angular-local-storage": "^0.5.2",
-    "facebook-connect-plugin": "https://raw.githubusercontent.com/Wizcorp/phonegap-facebook-plugin/master/www/js/facebookConnectPlugin.js"
+    "facebook-connect-plugin": "https://raw.githubusercontent.com/Wizcorp/phonegap-facebook-plugin/master/www/js/facebookConnectPlugin.js",
+    "angular-mocks": "https://github.com/angular/bower-angular-mocks.git"
   }
 }

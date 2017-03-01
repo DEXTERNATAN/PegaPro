@@ -1,18 +1,22 @@
 angular.module('pegapro')
   .config(configRoutes);
 
-function configRoutes($stateProvider, $urlRouterProvider) {
-
-  $urlRouterProvider.otherwise('login');
-  //$urlRouterProvider.otherwise('signin');
+function configRoutes($stateProvider, $urlRouterProvider, USER_ROLES) {
 
   $stateProvider
-    .state('app', {
-      url: '/app',
-      templateUrl: 'templates/menu.html',
-      abstract: true,
-      controller: 'MenuController'
-    })
+
+    .state('login', {
+    url: '/login',
+    templateUrl: 'templates/login.html',
+    controller: 'LoginCtrl'
+  })
+
+  .state('app', {
+    url: '/app',
+    templateUrl: 'templates/menu.html',
+    abstract: true,
+    controller: 'MenuController'
+  })
 
   .state('app.listagem', {
     url: '/listagem',
@@ -22,6 +26,11 @@ function configRoutes($stateProvider, $urlRouterProvider) {
         controller: 'ListagemController'
       }
     }
+    // Se quiser esconder a rota de algum usuario comum e mostrar apenas para usuarios administradores
+    //,
+    // data: {
+    //   authorizedRoles: [USER_ROLES.admin]
+    // }
   })
 
   .state('app.perfil', {
@@ -83,12 +92,6 @@ function configRoutes($stateProvider, $urlRouterProvider) {
     }
   })
 
-  .state('login', {
-    url: '/login',
-    templateUrl: 'templates/login.html',
-    controller: 'LoginController'
-  })
-
   .state('listagem', {
     url: '/listagem',
     templateUrl: 'templates/profissionalListagem.html',
@@ -103,55 +106,11 @@ function configRoutes($stateProvider, $urlRouterProvider) {
         controller: 'EmpresaEscolhidaController'
       }
     }
-
-
-
-
-
-
-
-
-    //      templateUrl: 'templates/profissionalDetalhes.html',
-    //      controller: 'EmpresaEscolhidaController'
   });
 
-
-  // CODE OLD
-  // $stateProvider
-  //   .state('login', {
-  //     url: '/login',
-  //     templateUrl: 'templates/login.html',
-  //     controller: 'LoginController'
-  //   })
-
-  //   .state('listagem', {
-  //     url: '/listagem',
-  //     templateUrl: 'templates/listagem.html',
-  //     controller: 'ListagemController'
-  //   })
-
-  //   .state('mensagens', {
-  //     url: '/mensagens',
-  //     templateUrl: 'templates/mensagens.html'
-  //   })
-
-  //   .state('registrar', {
-  //     url: '/registrar',
-  //     templateUrl: 'templates/registrar.html',
-  //     controller: 'LoginController'
-  //   })    
-
-  //   .state('mapa', {
-  //     url: '/mapa',
-  //     templateUrl: 'templates/map.html',
-  //     controller: 'MapController'
-  //   })
-
-  //   .state('empresaescolhida', {
-  //     url: '/empresaescolhida/:empresa',
-  //     templateUrl: 'templates/empresaescolhida.html',
-  //     controller: 'EmpresaEscolhidaController'
-  //   });
-
+  $urlRouterProvider.otherwise(function($injector, $location) {
+    var $state = $injector.get("$state");
+    $state.go("login");
+  });
 
 }

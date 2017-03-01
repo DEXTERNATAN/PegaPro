@@ -49,13 +49,13 @@
                 StatusBar.styleDefault();
             }
 
-            $rootScope.$on('$stateChangeStart', function (event, toState) {
-                if(toState.data.authenticate && !Authentication.isAuthenticated()) {
-                    console.log('No authorized!');
-                    event.preventDefault();
-                    $location.path('/#/signin');
-                }
-            });
+            // $rootScope.$on('$stateChangeStart', function (event, toState) {
+            //     if(toState.data.authenticate && !Authentication.isAuthenticated()) {
+            //         console.log('No authorized!');
+            //         event.preventDefault();
+            //         $location.path('/#/signin');
+            //     }
+            // });
         });
     }
 

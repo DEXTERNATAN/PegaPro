@@ -1,8 +1,9 @@
 angular.module('pegapro')
 
-.service('AuthService', function($q, $http, USER_ROLES, SERVERS) {
+.service('AuthService', function($q, $http, $rootScope, USER_ROLES, SERVERS) {
     var LOCAL_TOKEN_KEY = 'pegaproTokenKey';
     var username = '';
+    var usuario = '';
     var isAuthenticated = false;
     var role = '';
     var authToken;
@@ -38,6 +39,7 @@ angular.module('pegapro')
     function destroyUserCredentials() {
         authToken = undefined;
         username = '';
+        usuario = '';
         isAuthenticated = false;
         $http.defaults.headers.common['X-Auth-Token'] = undefined;
         window.localStorage.removeItem(LOCAL_TOKEN_KEY);
@@ -63,6 +65,7 @@ angular.module('pegapro')
                     // if ((name == 'admin' && pw == '1') || (name == 'user' && pw == '1')) {
                     // Make a request and receive your auth token from your server
                     //storeUserCredentials(name + '.yourServerToken');
+                    //$scope.usuarioLogado = response.data;
                     storeUserCredentials(name + response.data.token);
                     resolve(response.data);
                 } else {
@@ -109,6 +112,9 @@ angular.module('pegapro')
         },
         username: function() {
             return username;
+        },
+        usuario: function() {
+            return usuario;
         },
         role: function() {
             return role;

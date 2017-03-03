@@ -5,6 +5,7 @@ function MenuController($scope, $ionicPopup, $ionicActionSheet, $state, $http, $
 	$scope.usuarioLogado = $rootScope.usuario;
 
 	$scope.logout = function() {
+		$rootScope.usuario = '';
 		AuthService.logout();
 		$state.go('login');
 	};

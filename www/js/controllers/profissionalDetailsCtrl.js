@@ -1,10 +1,10 @@
 angular.module('pegapro')
-  .controller('EmpresaEscolhidaController', EmpresaEscolhidaController);
+  .controller('profissionalDetailsCtrl', profissionalDetailsCtrl);
 
-function EmpresaEscolhidaController($stateParams, $scope, EmpresaService, $ionicLoading, $cordovaSocialSharing, $log,  $ionicPopup) {
-  $log.debug('[EmpresaEscolhidaController] constructor()');
+function profissionalDetailsCtrl($stateParams, $scope, profissionalService, $ionicLoading, $cordovaSocialSharing, $log,  $ionicPopup) {
+  $log.debug('[profissionalDetailsCtrl] constructor()');
 
-  $scope.idEmpresa = $stateParams.empresa;
+  $scope.idProfissional = $stateParams.empresa;
 
   // Rating - set the rate and max variables
   $scope.ratingsObject = {
@@ -38,8 +38,8 @@ function EmpresaEscolhidaController($stateParams, $scope, EmpresaService, $ionic
 
   $scope.show($ionicLoading);
 
-  EmpresaService.obterEmpresaId($scope.idEmpresa).then(function (response) {
-    $scope.listaDeEmpresaId = response;
+  profissionalService.obterProfissionalId($scope.idProfissional).then(function (response) {
+    $scope.listaProfissionalId = response;
     console.log(response.rating);
     if (response.rating !== undefined) {
       $scope.ratingsObject.rating = response.rating;

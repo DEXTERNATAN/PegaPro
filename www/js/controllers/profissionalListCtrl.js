@@ -1,8 +1,8 @@
 angular.module('pegapro')
-  .controller('ListagemController', ListagemController);
+  .controller('profissionalListCtrl', profissionalListCtrl);
 
-function ListagemController($scope, EmpresaService, $ionicLoading, $ionicPopup, $log) {
-  $log.debug('[ListagemController] constructor()');
+function profissionalListCtrl($scope, profissionalService, $ionicLoading, $ionicPopup, $log) {
+  $log.debug('[profissionalListCtrl] constructor()');
 
   $scope.show = function () {
     $ionicLoading.show({
@@ -16,8 +16,8 @@ function ListagemController($scope, EmpresaService, $ionicLoading, $ionicPopup, 
 
   $scope.show($ionicLoading);
 
-  EmpresaService.obterEmpresas().then(function (response) {
-    $scope.listaDeEmpresas = response;
+  profissionalService.obterProfissional().then(function (response) {
+    $scope.listaProfissional = response;
   }).catch(function (fallback) {
     var alertPopup = $ionicPopup.alert({
       title: 'Problema no servidor!',

@@ -23,7 +23,7 @@ function configRoutes($stateProvider, $urlRouterProvider, USER_ROLES) {
     views: {
       'menuContent': {
         templateUrl: 'templates/profissionalListagem.html',
-        controller: 'ListagemController'
+        controller: 'profissionalListCtrl'
       }
     }
     // Se quiser esconder a rota de algum usuario comum e mostrar apenas para usuarios administradores
@@ -92,10 +92,10 @@ function configRoutes($stateProvider, $urlRouterProvider, USER_ROLES) {
     }
   })
 
-  .state('listagem', {
-    url: '/listagem',
-    templateUrl: 'templates/profissionalListagem.html',
-    controller: 'ListagemController'
+  .state('registrar', {
+    url: '/registrar',
+    templateUrl: 'templates/registrar.html'
+    //,controller: 'profissionalListCtrl'
   })
 
   .state('app.profissionalDetalhes', {
@@ -103,7 +103,7 @@ function configRoutes($stateProvider, $urlRouterProvider, USER_ROLES) {
     views: {
       'menuContent': {
         templateUrl: 'templates/profissionalDetalhes.html',
-        controller: 'EmpresaEscolhidaController'
+        controller: 'profissionalDetailsCtrl'
       }
     }
   });

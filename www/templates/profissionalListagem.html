@@ -5,22 +5,22 @@
 				<input type="text" placeholder="Pesquisar profissional ou categoria" ng-model="search">
 			</label>
     <div class="list card">
-      <ion-item class="item item-avatar" ng-repeat="empresa in listaDeEmpresas | filter:search track by $index" href="#/app/profissionalDetalhes/{{empresa._id}}">
-        <img src="{{empresa.urlfoto}}">
-        <h2>{{empresa.firstName}}&nbsp;{{empresa.lastName}}</h2>
-        <h2>{{empresa.especialidades}}</h2>
-        <p>{{empresa.email}}</p>
+      <ion-item class="item item-avatar" ng-repeat="profissional in listaProfissional | filter:search track by $index" href="#/app/profissionalDetalhes/{{profissional._id}}">
+        <img src="{{profissional.urlfoto}}">
+        <h2>{{profissional.firstName}}&nbsp;{{profissional.lastName}}</h2>
+        <h2>{{profissional.especialidades}}</h2>
+        <p>{{profissional.email}}</p>
         <p>
  
           <!--
-            <a href="#" class="subdued"><i class="icon ion-thumbsup" style="color: #06476D; font-size: 18px;"></i> {{empresa.like}}</a>
-            <a href="#" class="subdued"><i class="icon ion-eye" style="color: #06476D; font-size: 18px;"></i> {{empresa.visualizacoes}}</a>
+            <a href="#" class="subdued"><i class="icon ion-thumbsup" style="color: #06476D; font-size: 18px;"></i> {{profissional.like}}</a>
+            <a href="#" class="subdued"><i class="icon ion-eye" style="color: #06476D; font-size: 18px;"></i> {{profissional.visualizacoes}}</a>
             <a href="#" class="subdued"><i class="icon ion-ios-location" style="color: #06476D; font-size: 18px;"></i> 500 metros</a>
           -->
           
         </p>
         <button class="button button-small button-royal">
-  					{{empresa.profissao}}
+  					{{profissional.profissao}}
 				</button>
         <!--<button class="button button-small icon-left ion-star button-balanced">Like</button>-->
         <!--

@@ -8,7 +8,6 @@ function PerfilController($rootScope, $scope, $log, $cordovaCamera) {
   $scope.textoBotao = 'Editar';
   $scope.usuarioLogado = $rootScope.usuario;
   
-
   $scope.tirarFoto = function(){
     var opcoes = {
       correctOrientation: true,

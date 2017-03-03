@@ -21,8 +21,8 @@
 		<ion-content>
 			<div class="list card">
 				<div class="item item-avatar">
-					<h2> {{usuarioLogado.nome}} </h2>
-					<h3> {{usuarioLogado.email}} </h3>
+					<h2> {{usuario.nome || usuario.name}} </h2>
+					<h3> {{usuario.email}} </h3>
 				</div>
 				<div class="item item-body"></div>
 			</div>
@@ -38,10 +38,10 @@
 					<span style="font-weight: 600;"> Profissionais</span>
 				</ion-item>-->
 				
-				<ion-item item-type="item-icon-left" nav-clear menu-close href="#/app/favoritos">
+				<!--<ion-item item-type="item-icon-left" nav-clear menu-close href="#/app/favoritos">
 					<i class="icon ion-star"></i>
 					<span style="font-weight: 600;">Favoritos</span>
-				</ion-item>
+				</ion-item>-->
 				
 				<ion-item item-type="item-icon-left" nav-clear menu-close href="#/app/perfil">
 					<i class="icon ion-person"></i>

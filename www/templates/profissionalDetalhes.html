@@ -2,8 +2,8 @@
   <ion-content>
     <div class="card card-detalhe-empregado">
       <p class="item-content item-avatar item-avatar-detalhes" href="#">
-        <img src="{{listaDeEmpresaId.urlfoto}}">
-        <h2 class="item item-nome-destaque">{{listaDeEmpresaId.firstName}}&nbsp;{{listaDeEmpresaId.lastName}}</h2>
+        <img src="{{listaProfissionalId.urlfoto}}">
+        <h2 class="item item-nome-destaque">{{listaProfissionalId.firstName}}&nbsp;{{listaProfissionalId.lastName}}</h2>
         <div class="item item-body item-rating">
           <ionic-ratings ratingsobj="ratingsObject" index="$index"></ionic-ratings>
         </div>
@@ -17,9 +17,9 @@
     </div>
     <div class="card card-panel-nome-detalhe">
       <div class="item item-text-wrap">
-        <h3>{{listaDeEmpresaId.profissao}}</h3>
+        <h3>{{listaProfissionalId.profissao}}</h3>
       </div>
-      <a class="item item-icon-left" href="tel:{{listaDeEmpresaId.phone.mobile | brPhoneNumber}}">
+      <a class="item item-icon-left" href="tel:{{listaProfissionalId.phone.mobile | brPhoneNumber}}">
         <i class="icon ion-ios-telephone"></i> Chamar agora
       </a>
       <!--
@@ -35,19 +35,19 @@
           Especialidades:
         </div>
         <p class="item" style="white-space: normal;">
-          {{listaDeEmpresaId.especialidades}}
+          {{listaProfissionalId.especialidades}}
         </p>
         <div class="item item-divider" style="white-space: normal;">
           Resumo profissional:
         </div>
         <p class="item"  style="white-space: normal;">
-          {{listaDeEmpresaId.resumo}}
+          {{listaProfissionalId.resumo}}
         </p>
         <div class="item item-divider">
           Áreas de atuação
         </div>
         <p class="item">
-          {{listaDeEmpresaId.locais}}
+          {{listaProfissionalId.locais}}
         </p>
         <!--<div class="item item-divider">
           Depoimentos
@@ -60,13 +60,13 @@
         E-mail
       </div>
       <p class="item" style="white-space: normal;">
-        {{listaDeEmpresaId.email}}
+        {{listaProfissionalId.email}}
       </p>
       <!--<div class="item item-divider">
         Depoimentos
       </div>
       <p class="item" style="white-space: normal;">
-        {{listaDeEmpresaId.depoimentos}}
+        {{listaProfissionalId.depoimentos}}
       </p>-->
     <!--<div class="item item-divider">
         Redes Sociais Compartilhar
@@ -96,9 +96,9 @@
         <div class="list card">
           <div class="item item-avatar">
             <img src="img/img_avatar2.png">
-            <h2>{{listaDeEmpresaId.firstName}}&nbsp;{{listaDeEmpresaId.lastName}}</h2>
-            <p>{{listaDeEmpresaId.phone.mobile | brPhoneNumber}}</p>
-            <p>{{listaDeEmpresaId.TipoPreco}}: <span style="color: red;">{{listaDeEmpresaId.precoServico | finance:true:2}}</span></p>
+            <h2>{{listaProfissionalId.firstName}}&nbsp;{{listaProfissionalId.lastName}}</h2>
+            <p>{{listaProfissionalId.phone.mobile | brPhoneNumber}}</p>
+            <p>{{listaProfissionalId.TipoPreco}}: <span style="color: red;">{{listaProfissionalId.precoServico | finance:true:2}}</span></p>
           </div>
           <div class="item item-body">
             <ionic-ratings ratingsobj="ratingsObject" index="$index"></ionic-ratings>
@@ -114,7 +114,7 @@
           <div class="item item-body">
             <h2>Resumo profissional:</h2>
             <p>
-              {{listaDeEmpresaId.resumo}}
+              {{listaProfissionalId.resumo}}
             </p>
           </div>
           <div class="item item-body">

@@ -1,9 +1,9 @@
 angular.module('pegapro')
   .controller('MainController', MainController);
 
-function MainController($log, $scope, $state, $ionicPopup, AuthService, AUTH_EVENTS) {
+function MainController($log, $scope, $state, $ionicPopup, $rootScope, AuthService, AUTH_EVENTS) {
   $log.debug('[MainController] constructor()');
-
+  
   $scope.username = AuthService.username();
 
   $scope.$on(AUTH_EVENTS.notAuthorized, function(event) {
@@ -26,6 +26,11 @@ function MainController($log, $scope, $state, $ionicPopup, AuthService, AUTH_EVE
     $scope.username = name;
   };
 
+  $scope.setCurrentUser = function(usuario) {
+    $scope.usuario = usuario;
+    $rootScope.usuario = usuario;
+    console.log('setCurrentUser', usuario);
+  };
 
 
 }

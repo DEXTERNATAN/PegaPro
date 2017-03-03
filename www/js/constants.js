@@ -12,6 +12,6 @@ angular.module('pegapro')
 
 .constant('SERVERS', {
   prod: 'https://pegaproweb.herokuapp.com/',
-  dev: ''
+  dev: 'http://localhost:3000/'
 });
 

@@ -1,8 +1,8 @@
 angular.module('pegapro')
   .controller('LoginCtrl', LoginCtrl);
 
-function LoginCtrl($scope, $state, $ionicPopup, $rootScope, AuthService, LoginService) {
-
+function LoginCtrl($scope, $state, $ionicPopup, $rootScope, $log, $ionicLoading, EmpresaService, AuthService, LoginService) {
+  $log.debug('[LoginController] constructor()');
   $scope.data = {};
 
   $scope.login = function(data) {
@@ -16,141 +16,112 @@ function LoginCtrl($scope, $state, $ionicPopup, $rootScope, AuthService, LoginSe
       $scope.setCurrentUsername(data.username);
     }, function(err) {
       var alertPopup = $ionicPopup.alert({
-        title: 'Login failed!',
-        template: 'Please check your credentials!'
+        title: 'Login Falhou!',
+        template: 'Usuário ou senha inválidos!'
       });
     });
   };
 
-}
+  $scope.registerUser = function() {
+    $log.debug('registerUser');
+    if ($scope.user.nome && $scope.user.sobrenome && $scope.user.email && $scope.user.choice) {
 
 
+      var dadosUsuario = {
+        name: $scope.user.nome,
+        sobrenome: $scope.user.sobrenome,
+        celular: $scope.user.celular,
+        email: $scope.user.email,
+        choice: $scope.user.choice,
+        username: $scope.user.nome,
+        password: $scope.user.password,
+        token: 'dfasdfasdfasdf',
+        cidade: $scope.user.cidade,
+        ativo: true
+      };
 
-// function LoginCtrl($scope, $state, $ionicPopup, $rootScope, AuthService, LoginService) {
+      $log.debug('registerUser', dadosUsuario);
+      EmpresaService.registerUsers(dadosUsuario).then(function(dados) {
+        $ionicPopup.alert({
+          title: 'Cadastro de usuario',
+          template: 'Usuario cadastrado com sucesso !'
+        });
+        $state.go('login');
+      }, function(erro) {
+        $ionicPopup.alert({
+          title: 'Cadastro de usuario',
+          template: 'Error: Usuário não cadastrado!'
+        });
+      });
 
-//   $scope.data = {};
+    } else {
+      $ionicPopup.alert({
+        title: 'Dados não informandos',
+        template: 'Preencha os campos por favor!'
+      });
+    }
 
-//   $scope.login = function() {
-//     LoginService.loginUser($scope.data.username, $scope.data.password).success(function(data) {
-//       $rootScope.usuario = data;
-//       $state.go('app.listagem');
-//     }).error(function(data) {
-//       var alertPopup = $ionicPopup.alert({
-//         title: 'Login failed!',
-//         template: 'Please check your credentials!'
-//       });
-//     });
-//   };
-// }
-
-// function LoginController($scope, EmpresaService, $ionicPopup, $state, $log, $rootScope, $ionicLoading) {
-
-//   $log.debug('[LoginController] constructor()');
-
-//   $scope.user = {};
-
-//   $scope.realizarLogin = function() {
-
-//     if ($scope.user.username && $scope.user.password) {
-
-//       var dadosDoLogin = {
-//         params: {
-//           email: $scope.user.username,
-//           password: $scope.user.password
-//         }
-//       };
-
-//       EmpresaService.realizarLogin(dadosDoLogin).then(function(dados) {
-//         $rootScope.usuario = dados;
-//         $state.go('app.listagem');
-//       }, function(erro) {
-//         $ionicPopup.alert({
-//           title: 'Login Falhou',
-//           template: 'Usuário ou senha inválidos.'
-//         });
-//       });
-
-//     } else {
-//       $ionicPopup.alert({
-//         title: 'Login Falhou',
-//         template: 'Informe E-mail e senha para entrar.'
-//       });
-//     }
-
-//   };
+  };
 
 
-//   $scope.registerUser = function() {
-//     $log.debug('registerUser');
-//     if ($scope.user.nome && $scope.user.sobrenome && $scope.user.email && $scope.user.choice) {
+  var fbLoginSuccess = function(userData) {
+    //alert('userData : ' + JSON.stringify(userData.authResponse.accessToken));
+    facebookConnectPlugin.getLoginStatus(function(response) {
+      //alert('valor response: ' + JSON.stringify(response.status));
+      if (response.status == 'connected') {
+        //alert('getLoginStatus' + response.status);
+        facebookConnectPlugin.api('/' + response.authResponse.userID + '?fields=id,name,gender,email,picture', [],
+          function onSuccess(result) {
 
+            $ionicLoading.show({
+              template: 'Aguarde...',
+              duration: 3000
+            }).then(function() {
+              console.log("The loading indicator is now displayed");
+            });
 
-//       var dadosUsuario = {
-//         name: $scope.user.nome,
-//         sobrenome: $scope.user.sobrenome,
-//         celular: $scope.user.celular,
-//         email: $scope.user.email,
-//         choice: $scope.user.choice,
-//         username: $scope.user.nome,
-//         password: $scope.user.password,
-//         token: 'dfasdfasdfasdf',
-//         cidade: $scope.user.cidade,
-//         ativo: true
-//       };
+            //alert(JSON.stringify(result));
+            $rootScope.usuario = {
+              "nome": result.name,
+              "urlFoto": result.picture.data.url,
+              "token": userData.authResponse.accessToken,
+              "email": result.email
+            };
+            //$state.go('listagem');
+            //alert(JSON.stringify($rootScope.usuario.email));
+            //alert(JSON.stringify($rootScope.usuario.token));
 
-//       $log.debug('registerUser', dadosUsuario);
-//       EmpresaService.registerUsers(dadosUsuario).then(function(dados) {
-//         $ionicPopup.alert({
-//           title: 'Cadastro de usuario',
-//           template: 'Usuario cadastrado com sucesso !'
-//         });
-//         $state.go('login');
-//       }, function(erro) {
-//         $ionicPopup.alert({
-//           title: 'Cadastro de usuario',
-//           template: 'Error: Usuário não cadastrado!'
-//         });
-//       });
+            AuthService.loginFacebook($rootScope.usuario.email, $rootScope.usuario.token).then(function(authenticated) {
 
-//     } else {
-//       $ionicPopup.alert({
-//         title: 'Dados não informandos',
-//         template: 'Preencha os campos por favor!'
-//       });
-//     }
+              //alert(JSON.stringify(authenticated));
 
-//   };
+              $state.go('app.listagem', {}, {
+                reload: true
+              });
+              $scope.setCurrentUsername(data.username);
+            }, function(err) {
+              var alertPopup = $ionicPopup.alert({
+                title: 'Login Falhou!',
+                template: 'Usuário ou senha inválidos!'
+              });
+            });
+          },
+          function onError(error) {
+            alert(JSON.stringify(error));
+          });
+      }
+    });
+    //alert($rootScope.usuario);
+  };
 
+  // This is the fail callback from the login method
+  var fbLoginError = function(error) {
+    console.log('fbLoginError', error);
+    $ionicLoading.hide();
+  };
 
-//   var fbLoginSuccess = function(userData) {
+  $scope.facebookSignIn = function() {
+    facebookConnectPlugin.login(['email', 'public_profile'], fbLoginSuccess, fbLoginError);
+  }
 
-//     facebookConnectPlugin.getLoginStatus(function(response) {
-//       //alert('valor response: ' + JSON.stringify(response.status));
-//       if (response.status == 'connected') {
-//         //alert('getLoginStatus' + response.status);
-//         facebookConnectPlugin.api('/' + response.authResponse.userID + '?fields=id,name,gender,email,picture', [],
-//           function onSuccess(result) {
-//             //alert(JSON.stringify(result.picture.data.url));
-//             $rootScope.usuario = { "nome" : result.name, "urlFoto" : result.picture.data.url ,"email" : result.email};
-//             $state.go('app.listagem');
-//           },
-//           function onError(error) {
-//             alert(JSON.stringify(error));
-//           });
-
-//       }
-
-//     });
-//   };
-
-//   // This is the fail callback from the login method
-//   var fbLoginError = function(error) {
-//     console.log('fbLoginError', error);
-//     $ionicLoading.hide();
-//   };
-
-//   $scope.facebookSignIn = function() {
-//     facebookConnectPlugin.login(['email', 'public_profile'], fbLoginSuccess, fbLoginError);
-//   }
-
-// };
+};

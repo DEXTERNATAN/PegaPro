@@ -1,4 +1,5 @@
 angular.module('pegapro', [
+  
   // angular modules
   'idf.br-filters',
   'ionic-ratings',
@@ -9,32 +10,27 @@ angular.module('pegapro', [
   'ngCordova'
 
 ])
-// .run(function($httpBackend){
-//   $httpBackend.whenGET('http://localhost:8100/valid')
-//         .respond({message: 'This is my valid response!'});
-//   $httpBackend.whenGET('http://localhost:8100/notauthenticated')
-//         .respond(401, {message: "Not Authenticated"});
-//   $httpBackend.whenGET('http://localhost:8100/notauthorized')
-//         .respond(403, {message: "Not Authorized"});
- 
-//   $httpBackend.whenGET(/templates\/\w+.*/).passThrough();
-//  })
 
-.run(function ($rootScope, $state, AuthService, AUTH_EVENTS) {
-  $rootScope.$on('$stateChangeStart', function (event,next, nextParams, fromState) {
- 
+.run(function($rootScope, $state, AuthService, AUTH_EVENTS) {
+  $rootScope.$on('$stateChangeStart', function(event, next, nextParams, fromState) {
+
     if ('data' in next && 'authorizedRoles' in next.data) {
+      alert('Passei aqui P0');
       var authorizedRoles = next.data.authorizedRoles;
       if (!AuthService.isAuthorized(authorizedRoles)) {
+        alert('Passei aqui P1');
         event.preventDefault();
-        $state.go($state.current, {}, {reload: true});
+        $state.go($state.current, {}, {
+          reload: true
+        });
         $rootScope.$broadcast(AUTH_EVENTS.notAuthorized);
       }
     }
- 
+
     if (!AuthService.isAuthenticated()) {
       if (next.name !== 'login') {
         event.preventDefault();
+        alert('Passei aqui P2');
         $state.go('login');
       }
     }

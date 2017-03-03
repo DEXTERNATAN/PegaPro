@@ -57,20 +57,14 @@ angular.module('pegapro')
 
             function successCallback(response) {
                 //success code
-                // if (name == response.data.email && pw == response.data.password) {
-                //     deferred.resolve(response.data);
-                // } else {
-                //     deferred.reject('Usuario e senhas invalidos.');
-                // }
                 // validando os dados do Usuario
                 console.log('Usuario: ', response.data);
-                if (name == response.data.email && pw == response.data.password) {                
-                // if ((name == 'admin' && pw == '1') || (name == 'user' && pw == '1')) {
+                if (name == response.data.email && pw == response.data.password) {
+                    // if ((name == 'admin' && pw == '1') || (name == 'user' && pw == '1')) {
                     // Make a request and receive your auth token from your server
                     //storeUserCredentials(name + '.yourServerToken');
                     storeUserCredentials(name + response.data.token);
-                    resolve(response.data)
-                    //resolve('Login success.');
+                    resolve(response.data);
                 } else {
                     reject('Login Failed.');
                 }
@@ -81,6 +75,14 @@ angular.module('pegapro')
                 reject('Login Failed.');
             }
 
+        });
+    };
+
+    var loginFacebook = function(name, pw) {
+        return $q(function(resolve, reject) {
+
+            storeUserCredentials(name + '.' + pw);
+            resolve('login com sucesso');
         });
     };
 
@@ -99,6 +101,7 @@ angular.module('pegapro')
 
     return {
         login: login,
+        loginFacebook: loginFacebook,
         logout: logout,
         isAuthorized: isAuthorized,
         isAuthenticated: function() {
@@ -112,7 +115,6 @@ angular.module('pegapro')
         }
     };
 })
-
 
 .factory('AuthInterceptor', function($rootScope, $q, AUTH_EVENTS) {
     return {

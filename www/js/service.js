@@ -23,7 +23,7 @@ function EmpresaService($http) {
       });
     },
     registerUsers: function (dadosUsuario) {
-        return $http.post(urlProd + 'user?api_key=1234', dadosUsuario ).
+        return $http.post(urlProd + 'user?api_key=291984', dadosUsuario ).
         then(function (response) {
           return response.data;
         });

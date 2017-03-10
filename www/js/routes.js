@@ -94,8 +94,8 @@ function configRoutes($stateProvider, $urlRouterProvider, USER_ROLES) {
 
   .state('registrar', {
     url: '/registrar',
-    templateUrl: 'templates/registrar.html'
-    //,controller: 'profissionalListCtrl'
+    templateUrl: 'templates/registrar.html',
+    controller: 'LoginCtrl'
   })
 
   .state('app.profissionalDetalhes', {

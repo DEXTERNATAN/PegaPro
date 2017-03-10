@@ -6,6 +6,7 @@ function LoginCtrl($scope, $state, $ionicPopup, $rootScope, $log, $ionicLoading,
   $log.debug('[LoginController] constructor()');
   $scope.data = {};
   $rootScope.usuario = {};
+  $scope.user = {};
 
   $scope.login = function(data) {
     AuthService.login(data.username, data.password).then(function(authenticated) {
@@ -23,8 +24,10 @@ function LoginCtrl($scope, $state, $ionicPopup, $rootScope, $log, $ionicLoading,
     });
   };
 
-  $scope.registerUser = function() {
+  $scope.registerUser = function(user) {
     $log.debug('registerUser');
+    
+    console.log('valor do objeto: ', $scope.user);
     if ($scope.user.nome && $scope.user.sobrenome && $scope.user.email && $scope.user.choice) {
 
 

@@ -120,13 +120,14 @@ function LoginCtrl($http, $scope, $state, $ionicPopup, $rootScope, $log, $ionicL
 
 $scope.googleSignIn = function() {
     
-    $ionicLoading.show({
-      template: 'Logging in...'
-    });
+    // $ionicLoading.show({
+    //   template: 'Logging in...'
+    // });
 
-    $cordovaOauth.google("885976366456-skk1cok5v98j66q3oc58fv2tvmf7o9fu.apps.googleusercontent.com", ["email"]).then(function(result) {
+    $cordovaOauth.google("885976366456-skk1cok5v98j66q3oc58fv2tvmf7o9fu.apps.googleusercontent.com", ["email", "profile"]).then(function(result) {
       console.log("Response Object -> " + JSON.stringify(result));
-      $ionicLoading.hide();
+      alert("Response Object -> " + JSON.stringify(result));
+      //$ionicLoading.hide();
     }, function(error) {
       console.log("Error -> " + error);
     });

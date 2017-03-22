@@ -15,6 +15,7 @@ function PerfilController($rootScope, $scope, $log, $cordovaCamera) {
     };
     $cordovaCamera.getPicture(opcoes).then(function(foto){
       $scope.urlFoto = foto;
+      $scope.statusCamera = true;
     },function(erro){
 
     });

@@ -7,7 +7,8 @@ angular.module('pegapro', [
   'ionic',
   'restangular',
   'LocalStorageModule',
-  'ngCordova'
+  'ngCordova',
+  'ngCordovaOauth'
 
 ])
 

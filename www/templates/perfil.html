@@ -2,7 +2,11 @@
     <ion-content>
         <div class="list card">
             <div class="item item-avatar">
-                <img src="{{ usuarioLogado.urlFoto || 'img/img_avatar2.png'}}" alt="imagem do perfil do usuário" width="110px" height="10px">
+                
+                <img ng-if="statusCamera" src="{{urlFoto || 'img/img_avatar2.png'}}" alt="imagem do perfil do usuário" width="110px" height="10px">
+
+                <img ng-if="!statusCamera" src="{{ usuarioLogado.urlFoto || 'img/img_avatar2.png'}}" alt="imagem do perfil do usuário" width="110px" height="10px">
+
                 <h2> {{usuario.nome}} {{usuario.sobrenome}} </h2>
                 <button ng-show="estaEditando" class="button button-full button-positive" ng-click="tirarFoto()">Tirar Foto</button>
             </div>

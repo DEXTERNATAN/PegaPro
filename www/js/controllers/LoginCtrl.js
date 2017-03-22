@@ -1,7 +1,7 @@
 angular.module('pegapro')
   .controller('LoginCtrl', LoginCtrl);
 
-function LoginCtrl($scope, $state, $ionicPopup, $rootScope, $log, $ionicLoading, EmpresaService, AuthService) {
+function LoginCtrl($http, $scope, $state, $ionicPopup, $rootScope, $log, $ionicLoading, $q, $cordovaOauth, EmpresaService, AuthService) {
 
   $log.debug('[LoginController] constructor()');
   $scope.data = {};
@@ -67,7 +67,6 @@ function LoginCtrl($scope, $state, $ionicPopup, $rootScope, $log, $ionicLoading,
 
   };
 
-
   var fbLoginSuccess = function(userData) {
 
     facebookConnectPlugin.getLoginStatus(function(response) {
@@ -119,4 +118,23 @@ function LoginCtrl($scope, $state, $ionicPopup, $rootScope, $log, $ionicLoading,
     facebookConnectPlugin.login(['email', 'public_profile'], fbLoginSuccess, fbLoginError);
   };
 
-};
+$scope.googleSignIn = function() {
+    
+    $ionicLoading.show({
+      template: 'Logging in...'
+    });
+
+    $cordovaOauth.google("885976366456-skk1cok5v98j66q3oc58fv2tvmf7o9fu.apps.googleusercontent.com", ["email"]).then(function(result) {
+      console.log("Response Object -> " + JSON.stringify(result));
+      $ionicLoading.hide();
+    }, function(error) {
+      console.log("Error -> " + error);
+    });
+    
+    // function (msg) {
+    //   $ionicLoading.hide();
+    // }
+
+  };
+  
+}

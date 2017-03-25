@@ -89,6 +89,14 @@ angular.module('pegapro')
         });
     };
 
+    var loginGoogle = function(name, pw) {
+        return $q(function(resolve, reject) {
+
+            storeUserCredentials(name + '.' + pw);
+            resolve('login com sucesso');
+        });
+    };
+
     var logout = function() {
         destroyUserCredentials();
     };
@@ -105,6 +113,7 @@ angular.module('pegapro')
     return {
         login: login,
         loginFacebook: loginFacebook,
+        loginGoogle: loginGoogle,
         logout: logout,
         isAuthorized: isAuthorized,
         isAuthenticated: function() {

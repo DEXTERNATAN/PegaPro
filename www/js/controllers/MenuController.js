@@ -8,7 +8,21 @@ function MenuController($scope, $ionicPopup, $ionicActionSheet, $state, $http, $
 		$rootScope.usuario = '';
 		AuthService.logout();
 		$state.go('login');
+
+		window.plugins.googleplus.logout(
+			function(msg) {
+				document.querySelector("#image").style.visibility = 'hidden';
+				document.querySelector("#feedback").innerHTML = msg;
+			},
+			function(msg) {
+				document.querySelector("#feedback").innerHTML = msg;
+			}
+		);
+
+
 	};
+
+
 
 	$scope.showLogOutMenu = function() {
 		var hideSheet = $ionicActionSheet.show({

@@ -29,7 +29,7 @@ angular.module('pegapro', [
     }
 
     if (!AuthService.isAuthenticated()) {
-      if (next.name !== 'login') {
+      if (next.name !== 'login' && next.name !=="registrar") {    
         event.preventDefault();
         alert('Passei aqui P2');
         $state.go('login');

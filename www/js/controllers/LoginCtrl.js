@@ -24,48 +24,7 @@ function LoginCtrl($http, $scope, $state, $ionicPopup, $rootScope, $log, $ionicL
     });
   };
 
-  $scope.registerUser = function(user) {
-    $log.debug('registerUser');
-
-    console.log('valor do objeto: ', $scope.user);
-    if ($scope.user.nome && $scope.user.sobrenome && $scope.user.email && $scope.user.choice) {
-
-
-      var dadosUsuario = {
-        name: $scope.user.nome,
-        sobrenome: $scope.user.sobrenome,
-        celular: $scope.user.celular,
-        email: $scope.user.email,
-        choice: $scope.user.choice,
-        username: $scope.user.nome,
-        password: $scope.user.password,
-        token: 'dfasdfasdfasdf',
-        cidade: $scope.user.cidade,
-        ativo: true
-      };
-
-      $log.debug('registerUser', dadosUsuario);
-      EmpresaService.registerUsers(dadosUsuario).then(function(dados) {
-        $ionicPopup.alert({
-          title: 'Cadastro de usuario',
-          template: 'Usuario cadastrado com sucesso !'
-        });
-        $state.go('login');
-      }, function(erro) {
-        $ionicPopup.alert({
-          title: 'Cadastro de usuario',
-          template: 'Error: Usuário não cadastrado!'
-        });
-      });
-
-    } else {
-      $ionicPopup.alert({
-        title: 'Dados não informandos',
-        template: 'Preencha os campos por favor!'
-      });
-    }
-
-  };
+  
 
   var fbLoginSuccess = function(userData) {
 

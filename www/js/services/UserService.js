@@ -55,7 +55,7 @@ angular.module('pegapro')
                 }
             };
 
-            var User = $http.get(SERVERS.prod + 'user/login', dadosDoLogin).then(successCallback, errorCallback);
+            var User = $http.get(SERVERS.proxy + 'user/login', dadosDoLogin).then(successCallback, errorCallback);
 
             function successCallback(response) {
                 //success code

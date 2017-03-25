@@ -1,4 +1,20 @@
 {
   "name": "PegaPro",
-  "app_id": ""
+  "app_id": "",
+  "proxies":[
+    {
+      "path": "/apicep",
+      "proxyUrl": "http://www.cepaberto.com/api"
+    },
+    {
+      "path": "/ws",
+      "proxyUrl": "https://viacep.com.br/ws"
+    },
+    {
+      "path": "/api",
+      "proxyUrl": "https://pegaproweb.herokuapp.com"
+    }
+
+    
+  ]
 }

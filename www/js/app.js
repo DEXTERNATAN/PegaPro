@@ -1,14 +1,15 @@
 angular.module('pegapro', [
   
   // angular modules
+  'ionic',
+  'ngCordova',
+  'ngCordovaOauth',
   'idf.br-filters',
   'ionic-ratings',
   'ui.router',
-  'ionic',
   'restangular',
   'LocalStorageModule',
-  'ngCordova',
-  'ngCordovaOauth'
+  
 
 ])
 

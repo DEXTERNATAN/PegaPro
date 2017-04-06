@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.ionicfbapp.app" version="0.0.2" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>PegaPro</name>
+<widget id="com.ionicfbapp.app" version="0.0.4" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>pegaprov1</name>
     <description>
         An Ionic Framework and Cordova project.
     </description>
@@ -90,7 +90,7 @@
         <variable name="APP_ID" value="1067360726701947" />
         <variable name="APP_NAME" value="ionicfbapp" />
     </plugin>
-    <plugin name="cordova-plugin-googleplus" spec="https://github.com/EddyVerbruggen/cordova-plugin-googleplus" source="git">
-        <variable name="REVERSED_CLIENT_ID" value="885976366456-skk1cok5v98j66q3oc58fv2tvmf7o9fu.apps.googleusercontent.com" />
+    <plugin name="cordova-plugin-googleplus" spec="https://github.com/EddyVerbruggen/cordova-plugin-googleplus">
+        <variable name="REVERSED_CLIENT_ID" value="333786602954-gr1rk602j6h3qboakf6h2o5m770ev7qt.apps.googleusercontent.com" />
     </plugin>
 </widget>

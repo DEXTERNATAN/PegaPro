@@ -82,6 +82,54 @@ function LoginCtrl($http, $scope, $state, $ionicPopup, $rootScope, $log, $ionicL
     // Função de login com o google
     $scope.googleSignIn = function() {
 
+        // $ionicLoading.show({
+        //     template: 'Aguarde...',
+        //     duration: 3000
+        // }).then(function() {
+        //     console.log("The loading indicator is now displayed");
+        // });
+
+        // window.plugins.googleplus.login({},
+        //     function(obj) {
+
+        //         $rootScope.usuario = {
+        //             "nome": obj.displayName,
+        //             "urlFoto": obj.imageUrl,
+        //             "token": 'obj',
+        //             "email": obj.email
+        //         };
+
+        //         AuthService.loginGoogle(obj.email, 'token').then(function(authenticated) {
+        //             $state.go('app.listagem', {}, {
+        //                 reload: true
+        //             });
+        //             $scope.setCurrentUsername($rootScope.usuario.nome);
+        //             $scope.setCurrentUser($rootScope.usuario);
+        //             $ionicLoading.hide();
+        //         }, function(err) {
+        //             var alertPopup = $ionicPopup.alert({
+        //                 title: 'Login Falhou!',
+        //                 template: 'Usuário ou senha inválidos!'
+        //             });
+        //         });
+        //         console.log('Logado com sucesso!!!');
+        //     },
+        //     function(msg) {
+        //         alert('error' + JSON.stringify(obj));
+        //     }
+        // );
+
+    };
+
+    // // Funciona no google play
+    $scope.loginGoogle = function() {
+
+        var requestToken = '';
+        var accessToken = '';
+        var clientId = '333786602954-gr1rk602j6h3qboakf6h2o5m770ev7qt.apps.googleusercontent.com';
+        var clientSecret = 'WwkOGHTrqAL6nP99eWqnDS94';
+        var deferred = $q.defer();
+
         $ionicLoading.show({
             template: 'Aguarde...',
             duration: 3000
@@ -89,62 +137,7 @@ function LoginCtrl($http, $scope, $state, $ionicPopup, $rootScope, $log, $ionicL
             console.log("The loading indicator is now displayed");
         });
 
-        window.plugins.googleplus.login({},
-            function(obj) {
-
-                $rootScope.usuario = {
-                    "nome": obj.displayName,
-                    "urlFoto": obj.imageUrl,
-                    "token": 'obj',
-                    "email": obj.email
-                };
-
-                AuthService.loginGoogle(obj.email, 'token').then(function(authenticated) {
-                    $state.go('app.listagem', {}, {
-                        reload: true
-                    });
-                    $scope.setCurrentUsername($rootScope.usuario.nome);
-                    $scope.setCurrentUser($rootScope.usuario);
-                    $ionicLoading.hide();
-                }, function(err) {
-                    var alertPopup = $ionicPopup.alert({
-                        title: 'Login Falhou!',
-                        template: 'Usuário ou senha inválidos!'
-                    });
-                });
-                console.log('Logado com sucesso!!!');
-            },
-            function(msg) {
-                alert('error' + JSON.stringify(obj));
-            }
-        );
-
-    };
-
-
-    $scope.googleLogin = function() {
-        console.log('In My Method');
-        $cordovaOauth.google("885976366456-skk1cok5v98j66q3oc58fv2tvmf7o9fu.apps.googleusercontent.com", ["https://www.googleapis.com/auth/urlshortener",
-                "https://www.googleapis.com/auth/userinfo.email"
-            ])
-            .then(function(result) {
-                console.log(JSON.stringify(result));
-                // results
-            }, function(error) {
-                // error
-                console.log('In Error');
-                console.log(error);
-            });
-    }
-
-
-    $scope.loginGoogle = function() {
-        var requestToken = '';
-        var accessToken = '';
-        var clientId = '885976366456-skk1cok5v98j66q3oc58fv2tvmf7o9fu.apps.googleusercontent.com';
-        var clientSecret = '19HNxZ28aEtikPR5m2qY3ely';
-        var deferred = $q.defer();
-        $cordovaOauth.google(clientId, ['email','profile']).then(function(result) {
+        $cordovaOauth.google(clientId, ['email', 'profile']).then(function(result) {
 
             //$localStorage.accessToken = result.access_token;
             $scope.accessToken = result.access_token;
@@ -181,6 +174,8 @@ function LoginCtrl($http, $scope, $state, $ionicPopup, $rootScope, $log, $ionicL
                 });
                 console.log('Logado com sucesso!!!');
                 deferred.resolve(result.data);
+                $ionicLoading.hide();
+
             }, function(error) {
                 deferred.reject({
                     message: 'here was a problem getting your profile',
@@ -194,7 +189,7 @@ function LoginCtrl($http, $scope, $state, $ionicPopup, $rootScope, $log, $ionicL
                 response: error
             });
         });
-    }
+    };
 
 
 }

@@ -16,7 +16,7 @@ function RegisterCtrl($scope, $ionicPopup, $ionicActionSheet, $state, $http, $lo
 
     if ($scope.user.endereco == null && $scope.user.cep != null && $scope.user.cep.length == 8) {
 
-      $http.get("/ws/" + $scope.user.cep + "/json", {
+      $http.get("https://viacep.com.br/ws/" + $scope.user.cep + "/json", {
         callback: "endereco"
       }
       )

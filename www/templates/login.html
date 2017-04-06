@@ -3,27 +3,19 @@
 	<div class="list list-inset list-inputs-login">
 		<label class="item item-input">
 			<i class="icon ion-person placeholder-icon"></i>
-				<input type="text" ng-model="data.username" placeholder="Email" onkeyup="this.value=this.value.replace(/[' ']/g,'')">
+				<input type="text" ng-model="data.username" placeholder="Email" onkeyup="this.value=this.value.replace(/[' ']/g,'')" lowercase>
 		</label>
 	</div>
 	<div class="list list-inset list-inputs-login">
 		<label class="item item-input">
 			<i class="icon ion-locked placeholder-icon"></i>
-			<input type="password" ng-model="data.password" placeholder="Senha">
+			<input type="password" ng-model="data.password" placeholder="Senha" lowercase>
 		</label>
 	</div>
 	<button class="button button-block btn-login" ng-click="login(data)">Acessar</button>
 	<div class="divOr">ou</div>
-	<button class="button ion-social-facebook button-block btn-login-facebook" ng-click="facebookSignIn()"></button>
-	<!--<button class="button ion-social-googleplus button-block btn-login-googleplus" ng-click="googleSignIn()"></button>-->
-
-	<!--<a class="google-sign-in button button-block" ng-click="googleSignIn()">Entrar com Google</a>
-	
-	<a class="google-sign-in button button-block" ng-click="googleLogin()">Entrar com Google</a>-->
-	
-	<a class="google-sign-in button button-block" ng-click="loginGoogle()">Entrar com Google</a>
-	
-	<!--<a class="google-sign-in button button-block" ng-click="googleLogout()">Sair do Google</a>-->
- 	<p class="signup-login"><a href="#/registrar" style="color: white; text-decoration: none;">Não tem uma conta? Cadastre-se</a></p>
-	
+	<button class="button button-block btn-login-facebook" ng-click="facebookSignIn()">Entrar com Facebook</button>
+	<button class="button button-block btn-login-google" ng-click="loginGoogle()">Entrar com Google</button>
+	<!--<a class="google-sign-in button button-block" ng-click="loginGoogle()">Entrar com Google</a>-->
+ 	<p class="signup-login"><a href="#/registrar" style="color: white; text-decoration: none;">Não tem uma conta? <b>Cadastre-se</b></a></p>
 </ion-content>

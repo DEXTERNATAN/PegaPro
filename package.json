@@ -39,7 +39,11 @@
     "org.apache.cordova.camera",
     "org.apache.cordova.vibration",
     "org.apache.cordova.file-transfer",
-    "org.apache.cordova.dialogs"
+    "org.apache.cordova.dialogs",
+    {
+      "locator": "https://github.com/brodysoft/Cordova-SQLitePlugin.git",
+      "id": "cordova-sqlite-storage"
+    }
   ],
   "cordovaPlatforms": [
     "android"

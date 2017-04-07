@@ -18,6 +18,10 @@ function profissionalListCtrl($scope, profissionalService, $ionicLoading, $ionic
 
   profissionalService.obterProfissional().then(function (response) {
     $scope.listaProfissional = response;
+    angular.forEach($scope.Reports, function(profissional) {
+      var _dateString = profissional.firstName + ", ";
+      console.log("  ccccc "+_dateString);
+    }
   }).catch(function (fallback) {
     var alertPopup = $ionicPopup.alert({
       title: 'Problema no servidor!',

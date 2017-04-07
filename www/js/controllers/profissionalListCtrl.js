@@ -18,7 +18,7 @@ function profissionalListCtrl($scope, profissionalService, $ionicLoading, $ionic
 
   profissionalService.obterProfissional().then(function (response) {
     $scope.listaProfissional = response;
-    angular.forEach($scope.Reports, function(profissional) {
+    angular.forEach($scope.listaProfissional, function(profissional) {
       var _dateString = profissional.firstName + ", ";
       console.log("  ccccc "+_dateString);
 

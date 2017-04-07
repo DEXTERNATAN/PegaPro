@@ -25,6 +25,7 @@
     <preference name="SplashScreen" value="screen" />
     <preference name="OverrideUserAgent" value="Mozilla/5.0 Google" />
     <allow-navigation href="*" />
+    <allow-navigation href="http://*/*" />
     <feature name="StatusBar">
         <param name="ios-package" onload="true" value="CDVStatusBar" />
     </feature>

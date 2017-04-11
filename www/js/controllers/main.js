@@ -1,4 +1,4 @@
-angular.module('pegapro',['sqlite'])
+angular.module('pegapro')
   .controller('MainController', MainController);
 
 function MainController($log, $scope, $state, $ionicPopup, $rootScope, AuthService, AUTH_EVENTS) {

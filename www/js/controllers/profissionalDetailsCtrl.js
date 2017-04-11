@@ -1,7 +1,7 @@
 angular.module('pegapro')
   .controller('profissionalDetailsCtrl', profissionalDetailsCtrl);
 
-function profissionalDetailsCtrl($stateParams, $scope, profissionalService, $ionicLoading, $cordovaSocialSharing, $log,  $ionicPopup) {
+function profissionalDetailsCtrl($stateParams, $scope, profissionalService, $ionicLoading, $cordovaSocialSharing, $log,  $ionicPopup,profissionalSQLFactory) {
   $log.debug('[profissionalDetailsCtrl] constructor()');
 
   $scope.idProfissional = $stateParams.empresa;

@@ -9,6 +9,7 @@ angular.module('pegapro', [
   'ui.router',
   'restangular',
   'LocalStorageModule',
+  'ionic'
   
 
 ])

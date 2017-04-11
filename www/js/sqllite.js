@@ -9,7 +9,7 @@ sqlite.run(function($ionicPlatform, $cordovaSQLite) {
 });
 
 
-sqlite.factory('chatsFactory', function($cordovaSQLite) {
+sqlite.factory('profissionalSQLFactory', function($cordovaSQLite) {
   return {
     insert : function(firstname, lastname, especialidades, email) {
       var query = "INSERT INTO chats (firstname, lastname, especialidades, email) VALUES (?, ?, ?, ?);";

@@ -1,7 +1,7 @@
 angular.module('pegapro')
   .controller('profissionalListCtrl', profissionalListCtrl);
 
-function profissionalListCtrl($scope, profissionalService, $ionicLoading, $ionicPopup, $log) {
+function profissionalListCtrl($scope, profissionalService, $ionicLoading, $ionicPopup, $log,) {
   $log.debug('[profissionalListCtrl] constructor()');
 
   $scope.show = function () {
@@ -21,6 +21,7 @@ function profissionalListCtrl($scope, profissionalService, $ionicLoading, $ionic
     angular.forEach($scope.listaProfissional, function(profissional) {
       var _dateString = profissional.firstName + ", ";
       console.log("  ccccc "+_dateString);
+
 
     });
   }).catch(function (fallback) {

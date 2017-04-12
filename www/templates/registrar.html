@@ -2,16 +2,16 @@
 	<div class="bar bar-header bar-calm">
 		<h1 class="title">Criar conta</h1>
 	</div>
-	<ion-content>
+	<ion-content scroll="false">
 		<br>
 		<br>
 		<form name="FrmRegisterUser" novalidate>
 			<div class="list">
-				<!--<label class="item item-input item-stacked-label">
-					<span class="input-label">Nome</span>
-    				<input type="text" name="nome" placeholder="nome" ng-model="user.nome" required>
-				</label>-->
 				<label class="item item-input item-stacked-label">
+    				<span class="input-label">Nome</span>
+    				<input type="text" name="nome" placeholder="nome" ng-model="user.nome" required>
+  				</label>
+				  <label class="item item-input item-stacked-label">
     				<span class="input-label">Email</span>
     				<input type="email" name="email" placeholder="email" ng-model="user.email" required>
   				</label>
@@ -19,6 +19,7 @@
     				<span class="input-label">Senha</span>
     				<input type="password" name="password" placeholder="senha" ng-model="user.password" required>
   				</label>
+				<!--
 				<label class="item item-input item-stacked-label">
     				<span class="input-label">Celular</span>
     				<input type="tel" name="celular" placeholder="(99) 9999-9999" ng-model="user.celular" required>
@@ -28,60 +29,21 @@
     				<input type="text" name="cpf" placeholder="999.999.999-99" ng-model="user.sobrenome" required>
   				</label>
 
-
-				<!--<label class="item item-input item-stacked-label">
-    		<span class="input-label">CEP</span>
-    		<input type="text" ng-model="user.cep" id="cep" name="cep" placeholder="99999999" ng-blur="searchByCEP()"  min="8" max="8"  required>
-  		</label>
-
-  		</label>
-        <label class="item item-input item-stacked-label">
-    		<span class="input-label">Cidade</span>
-    		<input type="text" name="cidade"  ng-model="user.cidade" ng-readonly="true" required>
-  		</label>
-
-  		</label>
-        <label class="item item-input item-stacked-label">
-    		<span class="input-label">Bairro</span>
-    		<input type="text" name="bairro"  ng-model="user.bairro" ng-readonly="true" required>
-  		</label>-->
-
-
-				<!--</label>
-        <label class="item item-input item-stacked-label">
-    		<span class="input-label">Endereço</span>
-    		<input type="text" name="endereco"  ng-model="user.endereco" ng-readonly="true" required>
-  		</label>
-
-  		</label>
-        <label class="item item-input item-stacked-label">
-    		<span class="input-label">Complemento</span>
-    		<input type="text" name="complemento"   ng-model="user.complemento"  required>
-  		</label>-->
-
-		<label class="item item-input item-select">
-   			<div class = "input-label">
-      			UF
-   			</div>
-
-<!--<select ng-model="user.uf"  ng-disabled="true"  >
-   <option data-ng-repeat="c in estados" value="{{c.id}}" ng-selected="user.uf==c.id">{{c.label}}</option>
-</select>-->
-
-			<select ng-model="user.uf"  ng-disabled="false"  >
-   				<option data-ng-repeat="c in estados" value="{{c.id}}" >{{c.label}}</option>
-			</select>
-
-		</label>
-		<ion-list>
-			<ion-radio ng-model="user.choice" ng-value="'trabalhar'" required>Trabalhar</ion-radio>
-				<ion-radio ng-model="user.choice" ng-value="'contratar'" required>Contratar</ion-radio>
-			</ion-list>
+				<label class="item item-input item-select">
+   					<div class = "input-label">UF</div>
+					<select ng-model="user.uf"  ng-disabled="false"  >
+   						<option data-ng-repeat="c in estados" value="{{c.id}}" >{{c.label}}</option>
+					</select>
+				</label>
+				<ion-list>
+					<ion-radio ng-model="user.choice" ng-value="'trabalhar'" required>Trabalhar</ion-radio>
+					<ion-radio ng-model="user.choice" ng-value="'contratar'" required>Contratar</ion-radio>
+				</ion-list>
+				-->
 			</div>
 			<div class="padding">
 				<button class="button button-block button-calm" ng-click="registerUser(user)">Cadastre-se</button>
 			</div>
-			
 		</form>
 		<p class="signup-login"><a href="#/login" style="color: #11c1f3; text-decoration: none;">Já tem uma conta? <b>Faça login</b></a></p>
 	</ion-content>

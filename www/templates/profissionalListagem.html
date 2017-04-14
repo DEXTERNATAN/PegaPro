@@ -1,46 +1,17 @@
 <ion-view view-title="PegaPro">
-	<ion-content scroll="false">
-		<!--<div>
-      <label class="item item-input">
-				<i class="icon ion-search placeholder-icon"></i>
-				<input type="text" placeholder="Pesquisar profissional ou categoria" ng-model="search">
-			</label>
-    </div>-->
-
-		<!--<search-bar ng-model="search-profissional"></search-bar>-->
-
+	<ion-content class="has-header">
 		<div class="bar bar-header item-input-inset">
 			<i class="icon ion-search placeholder-icon"></i>
 			<input type="text" placeholder=" Pesquisar profissional ou categoria" ng-model="search" style="width:100%; padding-left:11px;" />
 		</div>
-
-	</ion-content>
-
-	<ion-content>
-
-		<!--Novo listView com infinite scroll-->
 		<ion-list>
-			<ion-item class="item-avatar"  ng-repeat="profissional in listaProfissional | filter:search track by $index" href="#/app/profissionalDetalhes/{{profissional._id}}">
+			<ion-item type="item-text-wrap" class="item-avatar" ng-repeat="profissional in listaProfissional | filter:search | limitTo:listlength" href="#/app/profissionalDetalhes/{{profissional._id}}">
 				<img src="{{profissional.urlfoto}}" alt="foto do perfil do profissional">
 				<h2>{{profissional.firstName}}&nbsp;{{profissional.lastName}}</h2>
-				<p>{{profissional.email}}</p>
+				<p>{{profissional.email}}-{{profissional.length}}</p>
 			</ion-item>
 		</ion-list>
-
-		<!--ListView antigo-->
-		<!--<div class="list card list-card-detalhe">
-      <ion-item class="item item-avatar" ng-repeat="profissional in listaProfissional | filter:search track by $index" href="#/app/profissionalDetalhes/{{profissional._id}}">
-        <img src="{{profissional.urlfoto}}">
-        <h2>{{profissional.firstName}}&nbsp;{{profissional.lastName}}</h2>
-        <h2>{{profissional.especialidades}}</h2>
-        <p>{{profissional.email}}</p>
-        <p>
-        </p>
-        <button class="button button-small button-royal">
-  					{{profissional.profissao}}
-				</button>
-
-      </ion-item>
-    </div>-->
+		<ion-infinite-scroll ng-if="listlength<=listaProfissional.length" on-infinite="loadMore()" distance="3%">
+		</ion-infinite-scroll>
 	</ion-content>
 </ion-view>

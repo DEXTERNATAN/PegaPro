@@ -15,11 +15,11 @@
     margin-bottom: 2em;
   }
 
-  .list:last-child{
-        margin-bottom: 0px;
-    margin-top: 3em;
-  }
-
+  /*.list:last-child{
+    margin-bottom: 0px;
+    margin-top: 0em;
+  }*/
+  
   /*.item-input-inset {
     display: -webkit-box;
     display: -webkit-flex;

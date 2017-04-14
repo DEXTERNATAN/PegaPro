@@ -5,6 +5,7 @@
 			<input type="text" placeholder=" Pesquisar profissional ou categoria" ng-model="search" style="width:100%; padding-left:11px;" />
 		</div>
 		<ion-list>
+			<!--VERIFICAR COMO USAR O ION-ITEM PARA ESCREVER OS DADOS ABAIXO-->
 			<ion-item type="item-text-wrap" class="item-avatar" ng-repeat="profissional in listaProfissional | filter:search | limitTo:listlength" href="#/app/profissionalDetalhes/{{profissional._id}}">
 				<img src="{{profissional.urlfoto}}" alt="foto do perfil do profissional">
 				<h2>{{profissional.firstName}}&nbsp;{{profissional.lastName}}</h2>

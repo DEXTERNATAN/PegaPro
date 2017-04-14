@@ -7,12 +7,12 @@ function EmpresaService($http) {
   //var urlProd = 'http://localhost:3000/';
   var urlProd = '/api/';
   return {
-    obterEmpresas: function () {
+    getEmpresas: function () {
       return $http.get(urlProd + 'profissional').then(function (response) {
         return response.data;
       });
     },
-    obterEmpresaId: function (id) {
+    getEmpresaId: function (id) {
       return $http.get(urlProd + 'profissional/' + id).then(function (response) {
         return response.data;
       });

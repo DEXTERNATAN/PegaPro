@@ -18,7 +18,7 @@ function profissionalListCtrl($scope, profissionalService, $ionicLoading, $ionic
 
   $scope.show($ionicLoading);
 
-  profissionalService.obterProfissional().then(function (response) {
+  profissionalService.getProfissional().then(function (response) {
     $scope.listaProfissional = response;
   }).catch(function (fallback) {
     var alertPopup = $ionicPopup.alert({

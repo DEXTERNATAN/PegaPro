@@ -4,12 +4,12 @@ angular.module('pegapro')
 function profissionalService($http, SERVERS) {
   
   return {
-    obterProfissional: function () {
+    getProfissional: function () {
       return $http.get(SERVERS.proxy + 'profissional').then(function (response) {
         return response.data;
       });
     },
-    obterProfissionalId: function (id) {
+    getProfissionalId: function (id) {
       return $http.get(SERVERS.proxy + 'profissional/' + id).then(function (response) {
         return response.data;
       });

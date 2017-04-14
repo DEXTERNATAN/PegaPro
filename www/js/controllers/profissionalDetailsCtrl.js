@@ -38,7 +38,7 @@ function profissionalDetailsCtrl($stateParams, $scope, profissionalService, $ion
 
   $scope.show($ionicLoading);
 
-  profissionalService.obterProfissionalId($scope.idProfissional).then(function (response) {
+  profissionalService.getProfissionalId($scope.idProfissional).then(function (response) {
     $scope.listaProfissionalId = response;
     console.log(response.rating);
     if (response.rating !== undefined) {

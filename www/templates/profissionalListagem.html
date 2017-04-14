@@ -1,32 +1,46 @@
 <ion-view view-title="PegaPro">
-  <ion-content>
-    <label class="item item-input">
+	<ion-content scroll="false">
+		<!--<div>
+      <label class="item item-input">
 				<i class="icon ion-search placeholder-icon"></i>
 				<input type="text" placeholder="Pesquisar profissional ou categoria" ng-model="search">
 			</label>
-    <div class="list card">
+    </div>-->
+
+		<!--<search-bar ng-model="search-profissional"></search-bar>-->
+
+		<div class="bar bar-header item-input-inset">
+			<i class="icon ion-search placeholder-icon"></i>
+			<input type="text" placeholder=" Pesquisar profissional ou categoria" ng-model="search" style="width:100%; padding-left:11px;" />
+		</div>
+
+	</ion-content>
+
+	<ion-content>
+
+		<!--Novo listView com infinite scroll-->
+		<ion-list>
+			<ion-item class="item-avatar"  ng-repeat="profissional in listaProfissional | filter:search track by $index" href="#/app/profissionalDetalhes/{{profissional._id}}">
+				<img src="{{profissional.urlfoto}}" alt="foto do perfil do profissional">
+				<h2>{{profissional.firstName}}&nbsp;{{profissional.lastName}}</h2>
+				<p>{{profissional.email}}</p>
+			</ion-item>
+		</ion-list>
+
+		<!--ListView antigo-->
+		<!--<div class="list card list-card-detalhe">
       <ion-item class="item item-avatar" ng-repeat="profissional in listaProfissional | filter:search track by $index" href="#/app/profissionalDetalhes/{{profissional._id}}">
         <img src="{{profissional.urlfoto}}">
         <h2>{{profissional.firstName}}&nbsp;{{profissional.lastName}}</h2>
         <h2>{{profissional.especialidades}}</h2>
         <p>{{profissional.email}}</p>
         <p>
-          <!--
-            <a href="#" class="subdued"><i class="icon ion-thumbsup" style="color: #06476D; font-size: 18px;"></i> {{profissional.like}}</a>
-            <a href="#" class="subdued"><i class="icon ion-eye" style="color: #06476D; font-size: 18px;"></i> {{profissional.visualizacoes}}</a>
-            <a href="#" class="subdued"><i class="icon ion-ios-location" style="color: #06476D; font-size: 18px;"></i> 500 metros</a>
-          -->
         </p>
         <button class="button button-small button-royal">
   					{{profissional.profissao}}
 				</button>
-        <!--<button class="button button-small icon-left ion-star button-balanced">Like</button>-->
-        <!--
-          <button class="button button-small button-balanced" ng-show="$index==0">
-  					Destaque
-				  </button>
-        -->
+
       </ion-item>
-    </div>
-  </ion-content>
+    </div>-->
+	</ion-content>
 </ion-view>

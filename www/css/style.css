@@ -10,3 +10,29 @@
     max-height: 100px !important;
 }
 
+.list-card-detalhe {
+    margin-top: 4em;
+    margin-bottom: 2em;
+  }
+
+  .list:last-child{
+        margin-bottom: 0px;
+    margin-top: 3em;
+  }
+
+  /*.item-input-inset {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding: 21.66667px;
+}*/

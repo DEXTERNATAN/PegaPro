@@ -1,20 +1,5 @@
 <ion-view view-title="PegaPro">
 	<ion-content class="has-header">
-		
-		<!--<ion-header-bar class="bar-light bar-subheader">
-			<input type="search"
-             placeholder="Filter contacts..."
-             ng-model="search"
-             ng-focus="searchFocused = true"
-             ng-blur="searchFocused = false"
-             ng-change="scrollTop()"
-             class="full-width">
-      		<button ng-if="search.length"
-              class="button button-icon ion-android-close input-button"
-              ng-click="clearSearch()">
-      		</button>
-		</ion-header-bar>-->
-		
 		<div class="bar bar-header item-input-inset">
 			<i class="icon ion-search placeholder-icon"></i>
 			<input type="text" placeholder=" Pesquisar profissional ou categoria" ng-model="search" style="width:100%; padding-left:11px;" />
@@ -23,7 +8,15 @@
 			<ion-item type="item-text-wrap" class="item-avatar" ng-repeat="profissional in listaProfissional | filter:search | limitTo:listlength" href="#/app/profissionalDetalhes/{{profissional._id}}">
 				<img src="{{profissional.urlfoto}}" alt="foto do perfil do profissional">
 				<h2>{{profissional.firstName}}&nbsp;{{profissional.lastName}}</h2>
-				<p>{{profissional.email}}-{{profissional.length}}</p>
+				<!--<p>{{profissional.email}}</p>-->
+				<p>{{profissional.profissao}}</p>
+				<p>
+					<i class="icon ion-star placeholder-icon"></i>
+					<i class="icon ion-star placeholder-icon"></i>
+					<i class="icon ion-star placeholder-icon"></i>
+					<i class="icon ion-star placeholder-icon"></i>
+					<i class="icon ion-star placeholder-icon"></i>
+				</p>
 			</ion-item>
 		</ion-list>
 		<ion-infinite-scroll ng-if="listlength<=listaProfissional.length" on-infinite="loadMore()" distance="3%">

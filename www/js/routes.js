@@ -92,6 +92,15 @@ function configRoutes($stateProvider, $urlRouterProvider, USER_ROLES) {
     }
   })
 
+  .state('app.escolhe-perfil', {
+    url: '/escolhe-perfil',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/escolhe-perfil.html'
+      }
+    }
+  })
+
   .state('registrar', {
     url: '/registrar',
     templateUrl: 'templates/registrar.html',

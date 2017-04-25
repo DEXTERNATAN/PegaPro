@@ -21,10 +21,11 @@ function profissionalListCtrl($scope, profissionalService, $ionicLoading, $ionic
   profissionalService.getProfissional().then(function(response) {
     $scope.listaProfissional = response;
   }).catch(function(fallback) {
-    var alertPopup = $ionicPopup.alert({
-      title: 'Problema no servidor!',
-      template: 'Falha ao carregar os dados!'
-    });
+    // var alertPopup = $ionicPopup.alert({
+    //   title: 'Problema no servidor!',
+    //   template: 'Falha ao carregar os dados!'
+    // });
+    alert('Falha ao carregar os dados!');
   }).finally(function($ionicLoading) {
     $scope.hide($ionicLoading);
   });
@@ -42,11 +43,19 @@ function profissionalListCtrl($scope, profissionalService, $ionicLoading, $ionic
 
   $scope.contratarServico = function() {
     console.log('Contratar serviço');
-    $state.go('app.escolhe-perfil');
+    $state.go('app.contratarServico');
   }
 
   $scope.oferecerServico = function() {
     console.log('Oferecer serviço');
+    $state.go('app.oferecerServico');
   }
+
+
+  $scope.enviarMensagens = function() {
+    console.log('Enviar mensagens');
+    $state.go('app.mensagens');
+  }
+  
 
 }

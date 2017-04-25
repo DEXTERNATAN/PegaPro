@@ -1,9 +1,8 @@
 <ion-view view-title="PegaPro">
-	<div class="bar bar-subheader item-input-inset" no-tap-scroll="true">
-		<!--<ion-search placeholder="Buscar nombre" min-length="3" model="search"></ion-search>-->
+	<!--<div class="bar bar-subheader item-input-inset" no-tap-scroll="true">
 		<i class="icon ion-search placeholder-icon"></i>
 		<input type="text" placeholder=" Pesquisar profissional ou categoria" ng-model="search" style="width:100%; padding-left:11px;" />
-	</div>
+	</div>-->
 
 	<div style="background-color: red !important;"> 
 		<ion-floating-button click="myEvent()" text="teste" has-footer="false" button-color="#387ef5" button-class="btn-icon-fb" icon="ion-plus" icon-color="#fff">
@@ -12,7 +11,7 @@
 		<ion-floating-menu>
 			<ion-floating-item icon="ion-person" click="contratarServico()" text="Contratar serviço" button-class="btn-icon-az" text-class="txt-action-button"></ion-floating-item>
 			<ion-floating-item icon="ion-wrench" click="oferecerServico()" text="Oferecer serviço" button-class="btn-icon-am" text-class="txt-action-button"></ion-floating-item>
-			<ion-floating-item icon="ion-email-unread" click="myEvent()" text="Mensagens" button-class="btn-icon-ve" text-class="txt-action-button"></ion-floating-item>
+			<ion-floating-item icon="ion-email-unread" click="enviarMensagens()" text="Mensagens" button-class="btn-icon-ve" text-class="txt-action-button"></ion-floating-item>
 		</ion-floating-menu>
 
 	</div>

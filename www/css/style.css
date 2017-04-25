@@ -78,3 +78,8 @@
 }
 
 /* Fim do botão flutuante */
+
+.item-bottom {
+  border-bottom: 1px solid;
+  border-color: #ddd;
+}

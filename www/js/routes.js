@@ -92,11 +92,22 @@ function configRoutes($stateProvider, $urlRouterProvider, USER_ROLES) {
     }
   })
 
-  .state('app.escolhe-perfil', {
-    url: '/escolhe-perfil',
+  .state('app.contratarServico', {
+    url: '/contratarServico',
     views: {
       'menuContent': {
-        templateUrl: 'templates/escolhe-perfil.html'
+        templateUrl: 'templates/contratarServico.html'
+      }
+    }
+  })
+
+
+  .state('app.oferecerServico', {
+    url: '/oferecerServico',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/oferecerServico.html',
+        controller: 'RegisterCtrl'
       }
     }
   })

@@ -13,9 +13,6 @@ function LoginCtrl($http, $scope, $state, $ionicPopup, $rootScope, $log, $ionicL
     $scope.login = function(data) {
         AuthService.login(data.username, data.password).then(function(authenticated) {
             $rootScope.usuario = authenticated;
-            // $state.go('app.escolhe-perfil', {}, {
-            //     reload: true
-            // });
             $state.go('app.listagem', {}, {
                 reload: true
             });

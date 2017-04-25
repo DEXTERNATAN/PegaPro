@@ -6616,7 +6616,7 @@ button.item.item-button-right {
   padding-left: 0;
   margin-bottom: 20px;
   /* Alterado por natan*/
-  margin-top: 3em;  
+  /*margin-top: 3em;  */
 }
 
 .list:last-child {

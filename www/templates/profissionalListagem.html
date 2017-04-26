@@ -21,9 +21,10 @@
 		<ion-list>
 			<ion-item type="item-text-wrap" class="item-avatar" ng-repeat="profissional in listaProfissional | filter:search | limitTo:listlength" href="#/app/profissionalDetalhes/{{profissional._id}}">
 				<img src="{{profissional.urlfoto}}" alt="foto do perfil do profissional">
-				<h2>{{profissional.firstName}}&nbsp;{{profissional.lastName}}</h2>
-				<p>{{profissional.email}}</p>
-				<p>{{profissional.profissao}}</p>
+				<h2 style="color: #fe9900; "><b>{{profissional.profissao}}</b></h2>
+				<p>{{profissional.firstName}}&nbsp;{{profissional.lastName}}</p>
+				<!--<p>{{profissional.email}}</p>-->
+				
 				<p>
 					<i class="icon ion-star placeholder-icon"></i>
 					<i class="icon ion-star placeholder-icon"></i>

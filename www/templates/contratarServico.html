@@ -1,57 +1,52 @@
 <ion-view title="Contratar Serviço">
-	<ion-content>
-
+	<ion-content scroll="false">
 		<div class="list padding">
 
-			<label class="item-bottom item-input item-floating-label">
-    			<span class="input-label">Nome</span>
-    			<input type="text" placeholder="Nome">
-  			</label>
+			<div class="list card">
+				<div class="item item-text-wrap ">
+					<div class="item-icon-left">
+						<i class="icon ion-help-circled" style="font-size: 42px; color: #488aff;"></i>
+						Preencha os campos para anunciar sua necessidades aos profissionais e ter um retorno rápido.
+					</div>
+					
+				</div>
+			</div>
 
-			<label class="item-bottom  item-input item-floating-label">
-    			<span class="input-label">Telefone</span>
-    			<input type="tel" placeholder="Telefone">
-			</label>
-
-			<label class="item-bottom  item-input item-floating-label">
-				<span class="input-label">Prazo</span>
-				<input type="date" placeholder="Prazo">
-			</label>
-
-
+			<!--<label class="item-bottom item-input item-floating-label">
+    			<span class="input-label">TÍTULO DO SERVIÇO</span>
+    			<input type="text" placeholder="TÍTULO DO SERVIÇO">
+  			</label>-->
 
 			<label class="item-bottom item-input item-select">
-				<div class="input-label">
-					Cidade
+				<div class="input-label" style="color: #ddd;">
+					QUAL SERVIÇO ?
 				</div>
 				<select>
-				<option>Gama</option>
-				<option selected>Santa Maria</option>
-				<option>Asa Norte</option>
-				</select>
-			</label>
-
-			<label class="item-bottom item-input item-select">
-				<div class="input-label">
-					Serviço
-				</div>
-				<select>
-				<option>Eletriscista</option>
-				<option selected>Pedreiro</option>
+				<option selected></option>
+				<option>Eletricista</option>
+				<option>Pedreiro</option>
 				<option>Marceneiro</option>
 				</select>
 			</label>
 
+			<!--<button class="button button-full button-positive">
+  				Categoria*
+			</button>-->
+
 			<label class="item-bottom  item-input item-floating-label">
-				<span class="input-label">Descrição do trabalho</span>
-				<textarea placeholder="Descrição"></textarea>
+				<span class="input-label">CEP</span>
+				<input type="number" placeholder="CEP">
 			</label>
 
+			<label class="item-bottom  item-input item-floating-label">
+				<span class="input-label">DESCRIÇÃO DO TRABALHO</span>
+				<textarea placeholder="DESCRIÇÃO DO TRABALHO"></textarea>
+			</label>
 
 		</div>
 
 		<div class="padding">
-			<button class="button button-block button-positive">Enviar</button>
+			<button class="button button-block button-positive">Publicar</button>
 		</div>
 
 	</ion-content>

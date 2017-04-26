@@ -50,4 +50,11 @@ function MenuController($scope, $ionicPopup, $ionicActionSheet, $state, $http, $
 		});
 	};
 
+
+	$scope.enviarMensagem = function () {
+		console.log('Enviar mensagens');
+    	$state.go('app.mensagens');
+		
+	}
+
 };

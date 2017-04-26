@@ -8,7 +8,7 @@
     </ion-nav-back-button>
 			<ion-nav-buttons side="right">
 				<!--<button class="button button-icon button-clear ion-android-more-vertical" menu-toggle="center"></button>-->
-				<button class="button button-icon button-clear ion-email-unread" ng-click="" menu-toggle="center"></button>
+				<button class="button button-icon button-clear ion-email-unread" ng-click="enviarMensagem()"></button>
 			</ion-nav-buttons>
 		</ion-nav-bar>
 
@@ -47,6 +47,11 @@
 				<ion-item item-type="item-icon-left" nav-clear menu-close href="#/app/perfil">
 					<i class="icon ion-person"></i>
 					<span style="font-weight: 600;">Perfil</span>
+				</ion-item>
+
+				<ion-item item-type="item-icon-left" nav-clear menu-close href="#/app/mensagens">
+					<i class="icon ion-email"></i>
+					<span style="font-weight: 600;">Mensagens</span>
 				</ion-item>
 
 				<!--<ion-item item-type="item-icon-left" nav-clear menu-close href="#/app/ajuda">

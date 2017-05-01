@@ -9,8 +9,9 @@ angular.module('pegapro', [
   'ui.router',
   'restangular',
   'LocalStorageModule',
-  'ion-floating-menu'
-  
+  'ion-floating-menu',
+  'jett.ionic.filter.bar',
+  'jett.ionic.scroll.sista'
 
 ])
 
@@ -47,6 +48,10 @@ function runApp($ionicPlatform) {
 
   $ionicPlatform.ready(function() {
     
+    // setTimeout(function () {
+    //     navigator.splashscreen.hide();
+    // }, 2000);
+
     if (window.cordova && window.cordova.plugins.Keyboard) {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
       // for form inputs)
@@ -58,7 +63,8 @@ function runApp($ionicPlatform) {
       cordova.plugins.Keyboard.disableScroll(true);
     }
     if (window.StatusBar) {
-      StatusBar.styleDefault();
+      //StatusBar.styleDefault();
+      StatusBar.styleLightContent();
     }
   });
 }

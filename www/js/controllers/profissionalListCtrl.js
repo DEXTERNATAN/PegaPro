@@ -1,7 +1,7 @@
 angular.module('pegapro')
   .controller('profissionalListCtrl', profissionalListCtrl);
 
-function profissionalListCtrl($scope, profissionalService, $ionicLoading, $ionicPopup, $log, $state) {
+function profissionalListCtrl($scope, $rootScope, profissionalService, $ionicLoading, $ionicPopup, $log, $state, $ionicFilterBar, $ionicActionSheet) {
   $log.debug('[profissionalListCtrl] constructor()');
 
   $scope.listlength = 10;
@@ -30,6 +30,29 @@ function profissionalListCtrl($scope, profissionalService, $ionicLoading, $ionic
     $scope.hide($ionicLoading);
   });
 
+  $scope.favorito = function(idProfissional) {
+    console.log('Favoritar', idProfissional);
+  };
+
+
+  $scope.showFilterBar = function() {
+    filterBarInstance = $ionicFilterBar.show({
+      items: $scope.listaProfissional,
+      update: function(filteredItems, filterText) {
+        $scope.listaProfissional = filteredItems;
+        if (filterText) {
+          console.log(filterText);
+        }
+      }
+    });
+  };
+
+
+  $scope.showActionsheet = function() {
+    $scope.AtivarModal = $rootScope.isOpen;
+  };
+
+
   $scope.loadMore = function() {
     if (!$scope.listaProfissional) {
       $scope.$broadcast('scroll.infiniteScrollComplete');
@@ -56,6 +79,6 @@ function profissionalListCtrl($scope, profissionalService, $ionicLoading, $ionic
     console.log('Enviar mensagens');
     $state.go('app.mensagens');
   }
-  
+
 
 }

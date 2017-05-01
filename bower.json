@@ -12,6 +12,7 @@
     "facebook-connect-plugin": "https://raw.githubusercontent.com/Wizcorp/phonegap-facebook-plugin/master/www/js/facebookConnectPlugin.js",
     "angular-mocks": "https://github.com/angular/bower-angular-mocks.git",
     "ng-cordova-oauth": "https://github.com/nraboy/ng-cordova-oauth.git#*",
-    "ion-floating-menu": "https://github.com/pregiotek/ion-floating-menu.git#*"
+    "ion-floating-menu": "https://github.com/pregiotek/ion-floating-menu.git#*",
+    "ionic-filter-bar": "https://github.com/djett41/ionic-filter-bar.git"
   }
 }

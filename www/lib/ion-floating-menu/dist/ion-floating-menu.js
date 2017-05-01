@@ -71,7 +71,7 @@ angular.module('ion-floating-menu', [])
                 {
                     element.find('div').replaceWith(transclude());
                 },
-                controller: function ($scope) {
+                controller: function ($scope, $rootScope) {
                     $scope.isOpen = false;
                     $scope.open = function () {
                         $scope.isOpen = !$scope.isOpen;
@@ -85,11 +85,15 @@ angular.module('ion-floating-menu', [])
                         $scope.buttonColor = menuOpenColor;
                         $scope.icon = menuOpenIcon;
                         $scope.iconColor = menuOpenIconColor;
+                        //console.log('setOpen: ', $scope.isOpen);
+                        $rootScope.isOpen = $scope.isOpen;
                     };
                     $scope.setClose = function () {
                         $scope.buttonColor = menuColor;
                         $scope.icon = menuIcon;
                         $scope.iconColor = menuIconColor;
+                        //console.log('setClose: ', $scope.isOpen);
+                        $rootScope.isOpen = $scope.isOpen;
                     };
                     var menuColor = $scope.menuColor || '#2AC9AA';
                     var menuIcon = $scope.menuIcon || 'ion-plus';
@@ -105,6 +109,8 @@ angular.module('ion-floating-menu', [])
                     } else {
                         $scope.bottomValue = '20px';
                     }
+                    
+
                 }
             };
         })

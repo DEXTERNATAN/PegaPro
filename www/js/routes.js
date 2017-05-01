@@ -1,7 +1,19 @@
 angular.module('pegapro')
   .config(configRoutes);
 
-function configRoutes($stateProvider, $urlRouterProvider, USER_ROLES) {
+function configRoutes($stateProvider, $urlRouterProvider, $ionicFilterBarConfigProvider, $ionicConfigProvider, USER_ROLES) {
+
+    // Definições da directiva ionicFilter
+    $ionicFilterBarConfigProvider.theme('light');
+    $ionicFilterBarConfigProvider.clear('ion-close');
+    $ionicFilterBarConfigProvider.search('ion-search');
+    $ionicFilterBarConfigProvider.backdrop(true);
+    $ionicFilterBarConfigProvider.transition('vertical');
+    $ionicFilterBarConfigProvider.placeholder('Pesquisar...');
+
+    $ionicConfigProvider.backButton.previousTitleText(false);
+    $ionicConfigProvider.backButton.text('');
+
 
   $stateProvider
 

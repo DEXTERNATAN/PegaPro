@@ -1,10 +1,12 @@
 angular.module('pegapro')
   .controller('profissionalListCtrl', profissionalListCtrl);
 
-function profissionalListCtrl($scope, $rootScope, profissionalService, $ionicLoading, $ionicPopup, $log, $state, $ionicFilterBar, $ionicActionSheet) {
+function profissionalListCtrl($scope, $timeout, $rootScope, profissionalService, $ionicLoading, $ionicPopup, $log, $state, $ionicFilterBar, $ionicActionSheet) {
   $log.debug('[profissionalListCtrl] constructor()');
 
+  // Defini quantos registros são carregados na lista de profissionais quando o aplicativo é iniciado
   $scope.listlength = 10;
+  $scope.listaProfissional = [];
 
   $scope.show = function() {
     $ionicLoading.show({
@@ -52,7 +54,16 @@ function profissionalListCtrl($scope, $rootScope, profissionalService, $ionicLoa
     $scope.AtivarModal = $rootScope.isOpen;
   };
 
+  // Função de refresh da listagem de profissionais
+  $scope.doRefresh = function() {
 
+    console.log('Refreshing!');
+    $scope.$broadcast('scroll.refreshComplete');
+
+  };
+
+
+  // Função para carregar mais registros na listagem
   $scope.loadMore = function() {
     if (!$scope.listaProfissional) {
       $scope.$broadcast('scroll.infiniteScrollComplete');

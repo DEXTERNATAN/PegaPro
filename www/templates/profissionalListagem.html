@@ -1,6 +1,7 @@
 <ion-view view-title="PegaPro">
 
 	<div ng-click="showActionsheet()">
+		
 		<ion-floating-button click="showActionsheet()" text="teste" has-footer="false" button-color="#387ef5" button-class="btn-icon-fb" icon="ion-plus" icon-color="#fff">
 		</ion-floating-button>
 
@@ -9,6 +10,7 @@
 			<ion-floating-item icon="ion-wrench" click="oferecerServico()" text="Oferecer serviço" button-class="btn-icon-am" text-class="txt-action-button"></ion-floating-item>
 			<ion-floating-item icon="ion-email-unread" click="enviarMensagens()" text="Mensagens" button-class="btn-icon-ve" text-class="txt-action-button"></ion-floating-item>
 		</ion-floating-menu>
+	
 	</div>
 
 	<ion-nav-buttons side="secondary">
@@ -16,8 +18,9 @@
 	</ion-nav-buttons>
 
 	<ion-content scroll-sista>
+    <ion-refresher on-refresh="doRefresh()"></ion-refresher>
 		<ion-list>
-			<ion-item class="item-remove-animate item-avatar item-thumbnail-left item-icon-right" ng-repeat="profissional in listaProfissional" type="item-text-wrap" href="#/app/profissionalDetalhes/{{profissional._id}}">
+			<ion-item class="item-remove-animate item-avatar item-thumbnail-left item-icon-right" ng-repeat="profissional in listaProfissional | limitTo:listlength" type="item-text-wrap" href="#/app/profissionalDetalhes/{{profissional._id}}">
 				<img ng-src="{{profissional.urlfoto}}" alt="foto do perfil do profissional">
 				<h2>{{profissional.firstName}}&nbsp;{{profissional.lastName}} &nbsp; 
 {{$scope.isOpen}}</h2>
@@ -33,12 +36,8 @@
 			</ion-item>
 		</ion-list>
 
-		<ion-infinite-scroll ng-if="listlength<=listaProfissional.length" on-infinite="loadMore()" distance="3%">
-		</ion-infinite-scroll>
-
-		<div class="action-sheet-backdrop" ng-class="{active: AtivarModal == true}" buttons="buttons">
-		</div>
-
+		<ion-infinite-scroll ng-if="listlength<=listaProfissional.length" on-infinite="loadMore()" distance="3%"></ion-infinite-scroll>
+		<div class="action-sheet-backdrop" ng-class="{active: AtivarModal == true}" buttons="buttons" ng-if="AtivarModal"></div>
 
 	</ion-content>
 </ion-view>

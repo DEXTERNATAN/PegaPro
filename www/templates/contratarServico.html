@@ -5,10 +5,9 @@
 			<div class="list card">
 				<div class="item item-text-wrap ">
 					<div class="item-icon-left">
-						<i class="icon ion-help-circled" style="font-size: 42px; color: #488aff;"></i>
-						Preencha os campos para anunciar sua necessidades aos profissionais e ter um retorno rápido.
+						<i class="icon ion-help-circled" style="font-size: 42px; color: #488aff;"></i> Preencha os campos para anunciar sua necessidades aos profissionais e ter um retorno rápido.
 					</div>
-					
+
 				</div>
 			</div>
 
@@ -17,39 +16,11 @@
     			<input type="text" placeholder="TÍTULO DO SERVIÇO">
   			</label>-->
 
-			<label class="item-bottom item-input item-select">
-				<div class="input-label" style="color: #ddd;">
-					QUAL SERVIÇO ?
-				</div>
-				<select>
-				<option selected></option>
-				<option>Eletricista</option>
-				<option>Pedreiro</option>
-				<option>Marceneiro</option>
-				</select>
-			</label>
-
-			<!--<button class="button button-full button-positive">
-  				Categoria*
-			</button>-->
-
-			<label class="item-bottom  item-input item-floating-label">
-				<span class="input-label">CEP</span>
-				<input type="number" placeholder="CEP">
-			</label>
-
-			<label class="item-bottom  item-input item-floating-label">
-				<span class="input-label">DESCRIÇÃO DO TRABALHO</span>
-				<textarea placeholder="DESCRIÇÃO DO TRABALHO"></textarea>
-			</label>
-
-		</div>
-
 			<ul class="list">
 				<li class="item item-toggle" style="border: none; border-bottom: 1px solid #ddd;">
 					<span style="color: #ddd;">Aceita receber contato?</span>
 					<label class="toggle toggle-assertive">
-						<input type="checkbox">
+						<input type="checkbox" ng-model="Contrato.contato">
 						<div class="track">
 							<div class="handle"></div>
 						</div>
@@ -57,9 +28,34 @@
 				</li>
 			</ul>
 
+			<label class="item-bottom item-input item-select">
+				<div class="input-label" style="color: #ddd;">
+					Qual serviço ?
+				</div>
+				<select ng-model="Contrato.categoria" ng-options="cat._id as cat.name for cat in categorias | orderBy:'cat.name'"  name="categoria" id="categoria">
+     				<option value="">Selecione</option>
+ 			</select>
+			</label>
+
+
+			<!--<button class="button button-full button-positive">
+  				Categoria*
+			</button>-->
+
+			<label class="item-bottom  item-input item-floating-label">
+				<span class="input-label">Cep</span>
+				<input type="number" placeholder="CEP" ng-model="Contrato.cep">
+			</label>
+
+			<label class="item-bottom  item-input item-floating-label">
+				<span class="input-label">Descrição</span>
+				<textarea placeholder="Descrição do trabalho" ng-model="Contrato.descricao"></textarea>
+			</label>
+
+		</div>
 
 		<div class="padding">
-			<button class="button button-block button-positive">Publicar</button>
+			<button class="button button-block button-positive" ng-click="contratarServicoCtrl()">Publicar</button>
 		</div>
 
 	</ion-content>

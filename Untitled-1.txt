@@ -1,0 +1,10 @@
+{
+    "categoria": "1" ,
+	"cidade": "1",
+	"telefone": "33943030",
+	"cartao": true,
+	"contato": true,
+	"descricao": "Teste de cadastro de serviço",
+	"createDate": ""
+
+}

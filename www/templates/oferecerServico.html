@@ -7,45 +7,38 @@
 					<div class="item-icon-left">
 						<i class="icon ion-settings" style="font-size: 42px; color: #488aff;"></i> Fale um pouco de você e do trabalho que você realiza ou realizou.
 					</div>
-
 				</div>
 			</div>
 
 			<label class="item-bottom item-input item-select">
 				<div class="input-label" style="color: #ddd;">
-					CATEGORIA
+					Categoria
 				</div>
-				<select>
-				<option selected></option>
-				<option>Eletricista</option>
-				<option>Pedreiro</option>
-				<option>Marceneiro</option>
-				</select>
+				<!--<select ng-model="Servico.categoria" ng-options="s.id as s.name for s in categorias | orderBy:'s.name'"  name="categoria" id="categoria">-->
+				<select ng-model="Servico.categoria" ng-options="cat._id as cat.name for cat in categorias | orderBy:'cat.name'"  name="categoria" id="categoria">
+     				<option value="">Selecione a categoria...</option>
+ 				</select>
 			</label>
-
 
 			<label class="item-bottom item-input item-select">
 				<div class="input-label" style="color: #ddd;">
-					CIDADE
+					Cidade
 				</div>
-				<select>
-				<option selected></option>
-				<option>Gama</option>
-				<option>Santa Maria</option>
-				<option>Brasília</option>
+				<select ng-model="Servico.cidade" ng-options="s.adminCode1 as s.adminName1 for s in cidades | orderBy:'s.adminName1'" name="cidade" id="cidade">
+					<option value="">Selecione a cidade...</option>
 				</select>
 			</label>
 
 			<label class="item-bottom item-input item-floating-label">
-				<span class="input-label">TELEFONE</span>
-				<input type="tel" placeholder="TELEFONE">
+				<span class="input-label">Telefone</span>
+				<input type="tel" placeholder="Telefone" ng-model="Servico.telefone">
 			</label>
 
 			<ul class="list">
 				<li class="item item-toggle" style="border: none; border-bottom: 1px solid #ddd;">
 					<span style="color: #ddd;">Aceita cartão de crédito?</span>
 					<label class="toggle toggle-assertive">
-						<input type="checkbox">
+						<input type="checkbox" ng-model="Servico.cartao">
 						<div class="track">
 							<div class="handle"></div>
 						</div>
@@ -57,7 +50,7 @@
 				<li class="item item-toggle" style="border: none; border-bottom: 1px solid #ddd;">
 					<span style="color: #ddd;">Aceita receber contato?</span>
 					<label class="toggle toggle-assertive">
-						<input type="checkbox">
+						<input type="checkbox" ng-model="Servico.contato">
 						<div class="track">
 							<div class="handle"></div>
 						</div>
@@ -66,16 +59,14 @@
 			</ul>
 
 			<label class="item-bottom  item-input item-floating-label">
-				<span class="input-label">DESCRIÇÃO DO TRABALHO</span>
-				<textarea placeholder="DESCRIÇÃO DO TRABALHO"></textarea>
+				<span class="input-label">Descrição do trabalho</span>
+				<textarea placeholder="Descrição" ng-model="Servico.descricao"></textarea>
 			</label>
-
 		</div>
 
 		<div class="padding">
-			<button class="button button-block button-positive">Publicar</button>
+			<button class="button button-block button-positive" ng-click="oferecerServicoCtrl()">Publicar</button>
 		</div>
 
-		</div>
 	</ion-content>
 </ion-view>

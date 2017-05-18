@@ -79,49 +79,7 @@ function LoginCtrl($http, $scope, $state, $ionicPopup, $rootScope, $log, $ionicL
         facebookConnectPlugin.login(['email', 'public_profile'], fbLoginSuccess, fbLoginError);
     };
 
-    // Função de login com o google
-    $scope.googleSignIn = function() {
-
-        // $ionicLoading.show({
-        //     template: 'Aguarde...',
-        //     duration: 3000
-        // }).then(function() {
-        //     console.log("The loading indicator is now displayed");
-        // });
-
-        // window.plugins.googleplus.login({},
-        //     function(obj) {
-
-        //         $rootScope.usuario = {
-        //             "nome": obj.displayName,
-        //             "urlFoto": obj.imageUrl,
-        //             "token": 'obj',
-        //             "email": obj.email
-        //         };
-
-        //         AuthService.loginGoogle(obj.email, 'token').then(function(authenticated) {
-        //             $state.go('app.listagem', {}, {
-        //                 reload: true
-        //             });
-        //             $scope.setCurrentUsername($rootScope.usuario.nome);
-        //             $scope.setCurrentUser($rootScope.usuario);
-        //             $ionicLoading.hide();
-        //         }, function(err) {
-        //             var alertPopup = $ionicPopup.alert({
-        //                 title: 'Login Falhou!',
-        //                 template: 'Usuário ou senha inválidos!'
-        //             });
-        //         });
-        //         console.log('Logado com sucesso!!!');
-        //     },
-        //     function(msg) {
-        //         alert('error' + JSON.stringify(obj));
-        //     }
-        // );
-
-    };
-
-    // // Funciona no google play
+    // Funciona no google play
     $scope.loginGoogle = function() {
 
         var requestToken = '';

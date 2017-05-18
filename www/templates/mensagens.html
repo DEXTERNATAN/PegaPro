@@ -1,14 +1,23 @@
 <ion-view title="Mensagens">
     <ion-content>
-        <div class="list">
+
+        <div class="list card" ng-if="!servicos[0]._id">
+            <div class="item item-text-wrap ">
+                <div class="item-icon-left">
+                    <i class="icon ion-chatbubble-working" style="font-size: 42px; color: #488aff;"></i> Não existem mensagens no momento.
+                </div>
+            </div>
+        </div>
+        
+        <div class="list" ng-repeat="servico in servicos | orderBy:'servico.descricao'">
 
             <a class="item item-avatar" href="#">
-                <img src="img/venkman.jpg">
-                <h2>Venkman</h2>
-                <p>Back off, man. I'm a scientist.</p>
+                <img src="img/notificacao-2.png">
+                <h2>{{servico.name}}</h2>
+                <p>{{servico.descricao}}</p>
             </a>
 
-            <a class="item item-avatar" href="#">
+            <!--<a class="item item-avatar" href="#">
                 <img src="img/spengler.jpg">
                 <h2>Egon</h2>
                 <p>We're gonna go full stream.</p>
@@ -54,8 +63,8 @@
                 <img src="img/spengler.jpg">
                 <h2>Egon</h2>
                 <p>We're gonna go full stream.</p>
-            </a>
-            
+            </a>-->
+
         </div>
     </ion-content>
 </ion-view>

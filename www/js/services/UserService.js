@@ -55,8 +55,9 @@ angular.module('pegapro')
                 }
             };
 
-            var User = $http.get(SERVERS.proxy + 'user/login', dadosDoLogin).then(successCallback, errorCallback);
-
+            var User = $http.get(SERVERS.prod + 'user/login?api_key=291984', dadosDoLogin).then(successCallback, errorCallback);
+             console.log('User: ', User);
+             //debugger
             function successCallback(response) {
                 //success code
                 // validando os dados do Usuario
@@ -75,7 +76,9 @@ angular.module('pegapro')
 
             function errorCallback(error) {
                 //error code
-                reject('Login Failed.');
+                reject(error);
+                console.log(error);
+                return error;
             }
 
         });

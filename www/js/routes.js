@@ -99,7 +99,8 @@ function configRoutes($stateProvider, $urlRouterProvider, $ionicFilterBarConfigP
     url: '/mensagens',
     views: {
       'menuContent': {
-        templateUrl: 'templates/mensagens.html'
+        templateUrl: 'templates/mensagens.html',
+        controller: 'oferecerServicoCtrl'
       }
     }
   })
@@ -108,7 +109,8 @@ function configRoutes($stateProvider, $urlRouterProvider, $ionicFilterBarConfigP
     url: '/contratarServico',
     views: {
       'menuContent': {
-        templateUrl: 'templates/contratarServico.html'
+        templateUrl: 'templates/contratarServico.html',
+        controller: 'contratarServicoCtrl'
       }
     }
   })
@@ -119,7 +121,7 @@ function configRoutes($stateProvider, $urlRouterProvider, $ionicFilterBarConfigP
     views: {
       'menuContent': {
         templateUrl: 'templates/oferecerServico.html',
-        controller: 'RegisterCtrl'
+        controller: 'oferecerServicoCtrl'
       }
     }
   })

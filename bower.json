@@ -13,6 +13,10 @@
     "angular-mocks": "https://github.com/angular/bower-angular-mocks.git",
     "ng-cordova-oauth": "https://github.com/nraboy/ng-cordova-oauth.git#*",
     "ion-floating-menu": "https://github.com/pregiotek/ion-floating-menu.git#*",
-    "ionic-filter-bar": "https://github.com/djett41/ionic-filter-bar.git"
+    "ionic-filter-bar": "https://github.com/djett41/ionic-filter-bar.git",
+    "angular-mask": "^3.1.1",
+    "angular-input-masks": "https://github.com/assisrafael/angular-input-masks.git",
+    "ui-mask": "https://github.com/angular-ui/ui-mask.git"
+
   }
 }

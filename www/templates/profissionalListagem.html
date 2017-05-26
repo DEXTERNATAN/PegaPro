@@ -1,4 +1,4 @@
-<ion-view view-title="PegaPro">
+<ion-view view-title="Profissionais" ng-controller="profissionalListCtrl as vm">
 
 	<div ng-click="showActionsheet()">
 		
@@ -6,38 +6,38 @@
 		</ion-floating-button>
 
 		<ion-floating-menu>
-			<ion-floating-item icon="ion-person" click="contratarServico()" text="Contratar serviço" button-class="btn-icon-az" text-class="txt-action-button"></ion-floating-item>
-			<ion-floating-item icon="ion-wrench" click="oferecerServico()" text="Oferecer serviço" button-class="btn-icon-am" text-class="txt-action-button"></ion-floating-item>
-			<ion-floating-item icon="ion-email-unread" click="enviarMensagens()" text="Mensagens" button-class="btn-icon-ve" text-class="txt-action-button"></ion-floating-item>
+			<ion-floating-item icon="ion-person" click="vm.contratarServico()" text="Contratar serviço" button-class="btn-icon-az" text-class="txt-action-button"></ion-floating-item>
+			<ion-floating-item icon="ion-wrench" click="vm.oferecerServico()" text="Oferecer serviço" button-class="btn-icon-am" text-class="txt-action-button"></ion-floating-item>
+			<ion-floating-item icon="ion-email-unread" click="vm.enviarMensagens()" text="Notificações" button-class="btn-icon-ve" text-class="txt-action-button"></ion-floating-item>
 		</ion-floating-menu>
 	
 	</div>
 
 	<ion-nav-buttons side="secondary">
-		<button class="button button-icon icon ion-ios-search-strong" ng-click="showFilterBar()"></button>
+		<button class="button button-icon icon ion-ios-search-strong" ng-click="vm.showFilterBar()"></button>
 	</ion-nav-buttons>
 
 	<ion-content scroll-sista>
-    <ion-refresher on-refresh="doRefresh()"></ion-refresher>
+    <ion-refresher on-refresh="vm.doRefresh()"></ion-refresher>
 		<ion-list>
-			<ion-item class="item-remove-animate item-avatar item-thumbnail-left item-icon-right" ng-repeat="profissional in listaProfissional | limitTo:listlength" type="item-text-wrap" href="#/app/profissionalDetalhes/{{profissional._id}}">
-				<img ng-src="{{profissional.urlfoto}}" alt="foto do perfil do profissional">
-				<h2>{{profissional.firstName}}&nbsp;{{profissional.lastName}} &nbsp; 
-{{$scope.isOpen}}</h2>
-				<p style="font-size: 0.69em; background: #fe9900;color: #fff;padding: 0px 6px;display: inline-block;border-radius: 3px;">{{profissional.profissao}}</p>
-				<p>{{profissional.especialidades}}</p>
+			
+			<ion-item class="item-remove-animate item-avatar item-thumbnail-left item-icon-right" ng-repeat="profissional in vm.listaProfissional | limitTo:vm.listlength | orderBy: 'name' " type="item-text-wrap" href="#/app/profissionalDetalhes/{{profissional._id}}">
+				<img ng-src="{{profissional.urlfoto || 'img/User_Avatar-512.png'}}" alt="foto do perfil do profissional">
+				<h2>{{profissional.firstName}}&nbsp;{{profissional.name}} &nbsp; {{$scope.isOpen}}</h2>
+				<p style="font-size: 0.69em; background: #fe9900;color: #fff;padding: 0px 6px;display: inline-block;border-radius: 3px;">{{profissional.profissao || profissional.categoria}}</p>
+				<p>{{profissional.especialidades || profissional.descricao}}</p>
 				<i class="icon ion-chevron-right icon-accessory"></i>
 
 				<!-- Colocar pra funcionar esse botão abaixo -->
-				<ion-option-button class="button-energized" ng-click="favorito(10)" style="border: 1px solid red;">
+				<ion-option-button class="button-energized" ng-click="vm.favorito(10)" style="border: 1px solid red;">
 					<i class="icon ion-heart"></i>
 				</ion-option-button>
 
 			</ion-item>
 		</ion-list>
 
-		<ion-infinite-scroll ng-if="listlength<=listaProfissional.length" on-infinite="loadMore()" distance="3%"></ion-infinite-scroll>
-		<div class="action-sheet-backdrop" ng-class="{active: AtivarModal == true}" buttons="buttons" ng-if="AtivarModal"></div>
+		<ion-infinite-scroll ng-if="vm.listlength<=vm.listProfissional.length" on-infinite="vm.loadMore()" distance="3%"></ion-infinite-scroll>
+		<div class="action-sheet-backdrop" ng-class="{active: vm.AtivarModal == true}" buttons="buttons" ng-if="vm.AtivarModal"></div>
 
 	</ion-content>
 </ion-view>

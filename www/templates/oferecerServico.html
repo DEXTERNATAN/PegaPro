@@ -1,72 +1,86 @@
 <ion-view title="Oferecer Serviço">
 	<ion-content scroll="true">
-		<div class="padding">
-
-			<div class="list card">
-				<div class="item item-text-wrap ">
-					<div class="item-icon-left">
-						<i class="icon ion-settings" style="font-size: 42px; color: #488aff;"></i> Fale um pouco de você e do trabalho que você realiza ou realizou.
-					</div>
+		<div class="div-ajuda">
+			<div class="item item-text-wrap ">
+				<div class="item-icon-left">
+					<i class="icon ion-settings" style="font-size: 42px; color: #488aff;"></i>
+					<span>Fale um pouco de você e do trabalho que você realiza ou realizou.</span>
 				</div>
 			</div>
-
-			<label class="item-bottom item-input item-select">
-				<div class="input-label" style="color: #ddd;">
-					Categoria
-				</div>
-				<!--<select ng-model="Servico.categoria" ng-options="s.id as s.name for s in categorias | orderBy:'s.name'"  name="categoria" id="categoria">-->
-				<select ng-model="Servico.categoria" ng-options="cat._id as cat.name for cat in categorias | orderBy:'cat.name'"  name="categoria" id="categoria">
-     				<option value="">Selecione a categoria...</option>
- 				</select>
-			</label>
-
-			<label class="item-bottom item-input item-select">
-				<div class="input-label" style="color: #ddd;">
-					Cidade
-				</div>
-				<select ng-model="Servico.cidade" ng-options="s.adminCode1 as s.adminName1 for s in cidades | orderBy:'s.adminName1'" name="cidade" id="cidade">
-					<option value="">Selecione a cidade...</option>
-				</select>
-			</label>
-
-			<label class="item-bottom item-input item-floating-label">
-				<span class="input-label">Telefone</span>
-				<input type="tel" placeholder="Telefone" ng-model="Servico.telefone">
-			</label>
-
-			<ul class="list">
-				<li class="item item-toggle" style="border: none; border-bottom: 1px solid #ddd;">
-					<span style="color: #ddd;">Aceita cartão de crédito?</span>
-					<label class="toggle toggle-assertive">
-						<input type="checkbox" ng-model="Servico.cartao">
-						<div class="track">
-							<div class="handle"></div>
-						</div>
-					</label>
-				</li>
-			</ul>
-
-			<ul class="list">
-				<li class="item item-toggle" style="border: none; border-bottom: 1px solid #ddd;">
-					<span style="color: #ddd;">Aceita receber contato?</span>
-					<label class="toggle toggle-assertive">
-						<input type="checkbox" ng-model="Servico.contato">
-						<div class="track">
-							<div class="handle"></div>
-						</div>
-					</label>
-				</li>
-			</ul>
-
-			<label class="item-bottom  item-input item-floating-label">
-				<span class="input-label">Descrição do trabalho</span>
-				<textarea placeholder="Descrição" ng-model="Servico.descricao"></textarea>
-			</label>
 		</div>
-
 		<div class="padding">
-			<button class="button button-block button-positive" ng-click="oferecerServicoCtrl()">Publicar</button>
-		</div>
+			<form id="frmServico" name="frmServico" ng-submit="oferecerServicoCtrl(frmServico)" novalidate>
+				<div class="list">
 
+					<ul class="list" ng-class="{ 'has-errors' : frmServico.cartao.$invalid && frmServico.cartao.$error.required && !frmServico.cartao.$pristine, 'no-errors' : frmServico.cartao.$valid}">
+						<li class="item item-toggle bottom-input" >
+							<span style="color: #efefef;">Aceita cartão de crédito?</span>
+							<label class="toggle toggle-assertive">
+							<input name="cartao" type="checkbox" ng-model="Servico.cartao" required>
+							<div class="track">
+								<div class="handle"></div>
+							</div>
+						</label>
+						</li>
+					</ul>
+					<span class="error" ng-show="frmServico.cartao.$invalid && frmServico.cartao.$error.required && !frmServico.cartao.$pristine" ng-message="required"><i class="ion-information-circled"></i> Campo contato obrigatório!</span>
+
+					<ul class="list"  ng-class="{ 'has-errors' : frmServico.contato.$invalid && frmServico.contato.$error.required && !frmServico.contato.$pristine, 'no-errors' : frmServico.contato.$valid}">
+						<li class="item item-toggle bottom-input" >
+							<span style="color: #efefef;">Aceita receber contato?</span>
+							<label class="toggle toggle-assertive">
+							<input type="checkbox" name="contato" ng-model="Servico.contato" required>
+							<div class="track">
+								<div class="handle"></div>
+							</div>
+						</label>
+						</li>
+					</ul>
+					
+					<span class="error" ng-show="frmServico.contato.$invalid && frmServico.contato.$error.required && !frmServico.contato.$pristine" ng-message="required"><i class="ion-information-circled"></i> Campo cartão obrigatório!</span>
+
+					<label class="item-bottom item-input item-select" ng-class="{ 'has-errors' : frmServico.categoria.$invalid && frmServico.categoria.$error.required && !frmServico.categoria.$pristine, 'no-errors' : frmServico.categoria.$valid}">
+						<div class="input-label" >Categoria</div>
+						<select ng-model="Servico.categoria" ng-options="cat._id as cat.name for cat in categorias | orderBy:'cat.name'"  name="categoria" id="categoria" required>
+							<option value="">Selecione a categoria...</option>
+						</select>
+					</label>
+				<div class="error-container" ng-show="frmServico.categoria.$invalid && frmServico.categoria.$error.required && !frmServico.categoria.$pristine">
+					<span class="error" ng-message="required"><i class="ion-information-circled"></i> Campo categoria obrigatório!</span>
+				</div>
+				
+					<label class="item-bottom item-input item-select" ng-class="{ 'has-errors' : frmServico.cidade.$invalid && frmServico.cidade.$error.required && !frmServico.cidade.$pristine, 'no-errors' : frmServico.cidade.$valid}">
+						<div class="input-label" >Cidade</div>
+						<select ng-model="Servico.cidade" ng-options="s.adminCode1 as s.adminName1 for s in cidades | orderBy:'s.adminName1'" name="cidade" id="cidade" required>
+							<option value="">Selecione a cidade...</option>
+						</select>
+					</label>
+					<span class="error" ng-show="frmServico.cidade.$invalid && frmServico.cidade.$error.required && !frmServico.cidade.$pristine" ng-message="required"><i class="ion-information-circled"></i> Campo cidade obrigatório!</span>
+
+				<!--<label class="item-bottom  item-input item-floating-label" ng-class="{ 'has-errors' : frmServico.cep.$invalid && frmServico.cep.$error.required && !frmServico.cep.$pristine, 'no-errors' : frmServico.cep.$valid}">
+					<span class="input-label">Cep</span>
+					<input type="tel" name="cep" placeholder="CEP" ng-model="Contrato.cep" ui-mask="99999-999"  ui-mask-placeholder model-view-value="true" required>
+				</label>
+				<span class="error" ng-show="frmServico.cep.$invalid && frmServico.cep.$error.required && !frmServico.cep.$pristine" ng-message="required"><i class="ion-information-circled"></i> Campo cep obrigatório!</span>-->
+
+
+					<label class="item-bottom item-input item-floating-label" ng-class="{ 'has-errors' : frmServico.telefone.$invalid && frmServico.telefone.$error.required && !frmServico.telefone.$pristine, 'no-errors' : frmServico.telefone.$valid}">
+						<span class="input-label">Telefone</span>
+						<input type="tel" name="telefone" ui-mask="(99) 99999-9999" ng-model="Servico.telefone" placeholder="Telefone" ui-mask-placeholder model-view-value="true" required>
+					</label>
+					<span class="error" ng-show="frmServico.telefone.$invalid && frmServico.telefone.$error.required && !frmServico.telefone.$pristine" ng-message="required"><i class="ion-information-circled"></i> Campo telefone obrigatório!</span>
+
+					<label class="item-bottom item-input item-floating-label"  ng-class="{ 'has-errors' : frmServico.descricao.$invalid && frmServico.descricao.$error.required && !frmServico.descricao.$pristine, 'no-errors' : frmServico.descricao.$valid}">
+						<span class="input-label">Descrição</span>
+						<textarea placeholder="Descrição" name="descricao" ng-model="Servico.descricao" required></textarea>
+					</label>
+					<span class="error" ng-show="frmServico.descricao.$invalid && frmServico.descricao.$error.required && !frmServico.descricao.$pristine" ng-message="required"><i class="ion-information-circled"></i> Campo Descrição obrigatório!</span>
+					<br>
+					<button class="button button-block button-positive" type="submit">Publicar</button>
+					
+
+				</div>
+			</form>
+		</div>
 	</ion-content>
 </ion-view>

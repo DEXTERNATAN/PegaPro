@@ -42,9 +42,9 @@ function RegisterCtrl($scope, $ionicPopup, $ionicActionSheet, $state, $http, $lo
 
         EmpresaService.registerUsers(dadosUsuario).then(function(dados) {
           alert('Usuário cadastrado com sucesso! Faça login.');
-          $state.go('login');
-        }, function(erro) {
-          alert('Error: Usuário não cadastrado!');
+          $state.go('app.listagem');
+        }, function(error) {
+          alert('Error: Usuário não cadastrado!', error);
         });
 
       });

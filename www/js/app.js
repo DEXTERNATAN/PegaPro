@@ -11,10 +11,10 @@ angular.module('pegapro', [
   'LocalStorageModule',
   'ion-floating-menu',
   'jett.ionic.filter.bar',
-  'jett.ionic.scroll.sista'
+  'jett.ionic.scroll.sista',
+  'ui.mask'
 
 ])
-
 .run(function($rootScope, $state, AuthService, AUTH_EVENTS) {
   $rootScope.$on('$stateChangeStart', function(event, next, nextParams, fromState) {
 

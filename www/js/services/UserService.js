@@ -1,6 +1,7 @@
 angular.module('pegapro')
 
 .service('AuthService', function($q, $http, $rootScope, USER_ROLES, SERVERS) {
+    
     var LOCAL_TOKEN_KEY = 'pegaproTokenKey';
     var username = '';
     var usuario = '';
@@ -43,6 +44,7 @@ angular.module('pegapro')
         isAuthenticated = false;
         $http.defaults.headers.common['X-Auth-Token'] = undefined;
         window.localStorage.removeItem(LOCAL_TOKEN_KEY);
+        window.localStorage.removeItem("CurrentUser");
     }
 
     var login = function(name, pw) {
@@ -56,17 +58,10 @@ angular.module('pegapro')
             };
 
             var User = $http.get(SERVERS.prod + 'user/login?api_key=291984', dadosDoLogin).then(successCallback, errorCallback);
-             console.log('User: ', User);
-             //debugger
+
             function successCallback(response) {
-                //success code
-                // validando os dados do Usuario
-                console.log('Usuario: ', response.data);
-                if (name == response.data.email && pw == response.data.password) {
-                    // if ((name == 'admin' && pw == '1') || (name == 'user' && pw == '1')) {
-                    // Make a request and receive your auth token from your server
-                    //storeUserCredentials(name + '.yourServerToken');
-                    //$scope.usuarioLogado = response.data;
+                console.log('response', response.data.user.email);
+                if (name == response.data.user.email && pw == response.data.user.password) {
                     storeUserCredentials(name + response.data.token);
                     resolve(response.data);
                 } else {
@@ -75,9 +70,7 @@ angular.module('pegapro')
             }
 
             function errorCallback(error) {
-                //error code
                 reject(error);
-                console.log(error);
                 return error;
             }
 

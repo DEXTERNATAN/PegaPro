@@ -3,9 +3,9 @@ angular.module('pegapro')
 
 function EmpresaService($http) {
 
-  //var urlProd = 'https://pegaproweb.herokuapp.com/';
+  var urlProd = 'https://pegaproweb.herokuapp.com/';
   //var urlProd = 'http://localhost:3000/';
-  var urlProd = '/api/';
+  //var urlProd = '/api/';
   return {
     getEmpresas: function () {
       return $http.get(urlProd + 'profissional').then(function (response) {

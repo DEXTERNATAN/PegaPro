@@ -29,7 +29,8 @@ function MainController($log, $scope, $state, $ionicPopup, $rootScope, AuthServi
   $scope.setCurrentUser = function(usuario) {
     $scope.usuario = usuario;
     $rootScope.usuario = usuario;
-    console.log('setCurrentUser', usuario);
+    window.localStorage.setItem('CurrentUser', JSON.stringify(usuario));
+    
   };
 
 

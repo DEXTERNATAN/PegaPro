@@ -35,9 +35,15 @@ function configRoutes($stateProvider, $urlRouterProvider, $ionicFilterBarConfigP
     views: {
       'menuContent': {
         templateUrl: 'templates/profissionalListagem.html',
-        controller: 'profissionalListCtrl'
+        controller: 'profissionalListCtrl as vm'
       }
     }
+    // ,
+    // resolve: {
+    //   Profissional: function (profissionalService) {
+    //     return profissionalService.getProfissional();
+    //   }
+    // }
     // Se quiser esconder a rota de algum usuario comum e mostrar apenas para usuarios administradores
     //,
     // data: {

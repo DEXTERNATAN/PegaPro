@@ -1,61 +1,58 @@
 <ion-view title="Contratar Serviço">
 	<ion-content scroll="false">
-		<div class="list padding">
 
-			<div class="list card">
-				<div class="item item-text-wrap ">
-					<div class="item-icon-left">
-						<i class="icon ion-help-circled" style="font-size: 42px; color: #488aff;"></i> Preencha os campos para anunciar sua necessidades aos profissionais e ter um retorno rápido.
-					</div>
-
+		<div class="div-ajuda">
+			<div class="item item-text-wrap ">
+				<div class="item-icon-left">
+					<i class="icon ion-help-circled" style="font-size: 42px; color: #488aff;"></i> Preencha os campos para anunciar sua necessidades aos profissionais e ter um retorno rápido.
 				</div>
 			</div>
+		</div>
 
-			<!--<label class="item-bottom item-input item-floating-label">
-    			<span class="input-label">TÍTULO DO SERVIÇO</span>
-    			<input type="text" placeholder="TÍTULO DO SERVIÇO">
-  			</label>-->
+		<div class="list padding">
 
-			<ul class="list">
-				<li class="item item-toggle" style="border: none; border-bottom: 1px solid #ddd;">
-					<span style="color: #ddd;">Aceita receber contato?</span>
-					<label class="toggle toggle-assertive">
-						<input type="checkbox" ng-model="Contrato.contato">
+			<form id="frmContratar" name="frmContratar" ng-submit="contratarServicoCtrl(frmContratar)" novalidate>
+
+				<ul class="list" ng-class="{ 'has-errors' : frmContratar.contato.$invalid && frmContratar.contato.$error.required && !frmContratar.contato.$pristine, 'no-errors' : frmContratar.contato.$valid}">
+					<li class="item item-toggle bottom-input">
+						<span style="color: #ddd;">Aceita receber contato?</span>
+						<label class="toggle toggle-assertive">
+						<input type="checkbox" name="contato" ng-model="Contrato.contato" required>
 						<div class="track">
 							<div class="handle"></div>
 						</div>
 					</label>
-				</li>
-			</ul>
+					</li>
+				</ul>
 
-			<label class="item-bottom item-input item-select">
-				<div class="input-label" style="color: #ddd;">
-					Qual serviço ?
-				</div>
-				<select ng-model="Contrato.categoria" ng-options="cat._id as cat.name for cat in categorias | orderBy:'cat.name'"  name="categoria" id="categoria">
-     				<option value="">Selecione</option>
- 			</select>
-			</label>
+				<span class="error" ng-show="frmContratar.contato.$invalid && frmContratar.contato.$error.required && !frmContratar.contato.$pristine" ng-message="required"><i class="ion-information-circled"></i> Campo contato obrigatório!</span>
+
+				<label class="item-bottom item-input item-select" ng-class="{ 'has-errors' : frmContratar.categoria.$invalid && frmContratar.categoria.$error.required && !frmContratar.categoria.$pristine, 'no-errors' : frmContratar.categoria.$valid}">
+					<div class="input-label" style="color: #ddd;">
+						Qual serviço ?
+					</div>
+					<select ng-model="Contrato.categoria" ng-options="cat._id as cat.name for cat in categorias | orderBy:'cat.name'"  name="categoria" id="categoria" required>
+     					<option value="">Selecione</option>
+ 					</select>
+				</label>
+				<span class="error" ng-show="frmContratar.categoria.$invalid && frmContratar.categoria.$error.required && !frmContratar.categoria.$pristine" ng-message="required"><i class="ion-information-circled"></i> Campo categoria obrigatório!</span>
+
+				<label class="item-bottom  item-input item-floating-label" ng-class="{ 'has-errors' : frmContratar.cep.$invalid && frmContratar.cep.$error.required && !frmContratar.cep.$pristine, 'no-errors' : frmContratar.cep.$valid}">
+					<span class="input-label">Cep</span>
+					<input type="tel" name="cep" placeholder="CEP" ng-model="Contrato.cep" ui-mask="99999-999"  ui-mask-placeholder model-view-value="true" required>
+				</label>
+				<span class="error" ng-show="frmContratar.cep.$invalid && frmContratar.cep.$error.required && !frmContratar.cep.$pristine" ng-message="required"><i class="ion-information-circled"></i> Campo cep obrigatório!</span>
+
+				<label class="item-bottom item-input item-floating-label" ng-class="{ 'has-errors' : frmContratar.descricao.$invalid && frmContratar.descricao.$error.required && !frmContratar.descricao.$pristine, 'no-errors' : frmContratar.descricao.$valid}">
+					<span class="input-label">Descrição</span>
+					<textarea placeholder="Descrição" name="descricao" ng-model="Contrato.descricao" required></textarea>
+				</label>
+				<span class="error" ng-show="frmContratar.descricao.$invalid && frmContratar.descricao.$error.required && !frmContratar.descricao.$pristine" ng-message="required"><i class="ion-information-circled"></i> Campo Descrição obrigatório!</span>
+				<br>
+				<button class="button button-block button-positive">Publicar</button>
 
 
-			<!--<button class="button button-full button-positive">
-  				Categoria*
-			</button>-->
-
-			<label class="item-bottom  item-input item-floating-label">
-				<span class="input-label">Cep</span>
-				<input type="number" placeholder="CEP" ng-model="Contrato.cep">
-			</label>
-
-			<label class="item-bottom  item-input item-floating-label">
-				<span class="input-label">Descrição</span>
-				<textarea placeholder="Descrição do trabalho" ng-model="Contrato.descricao"></textarea>
-			</label>
-
-		</div>
-
-		<div class="padding">
-			<button class="button button-block button-positive" ng-click="contratarServicoCtrl()">Publicar</button>
+			</form>
 		</div>
 
 	</ion-content>

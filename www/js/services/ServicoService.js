@@ -15,7 +15,7 @@ function ServicoService($http, SERVERS) {
       });
     },    
     registerServico: function (dadosServico) {
-        return $http.post(SERVERS.prod + 'servico?api_key=291984', dadosServico ).
+        return $http.post(SERVERS.prod + 'servico', dadosServico ).
         then(function (response) {
           return response.data;
         });

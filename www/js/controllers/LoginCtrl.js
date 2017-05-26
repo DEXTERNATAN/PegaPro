@@ -9,21 +9,49 @@ function LoginCtrl($http, $scope, $state, $ionicPopup, $rootScope, $log, $ionicL
     $rootScope.usuario = {};
     $scope.user = {};
 
+	$scope.show = function() {
+		$ionicLoading.show({
+			template: '<p>Aguarde. Carregando...</p><ion-spinner icon="lines"></ion-spinner>'
+		});
+	};
+
+    $scope.hide = function() {
+		$ionicLoading.hide();
+	};
+
     // Função de login direto com a base de dados
     $scope.login = function(data) {
-        AuthService.login(data.username, data.password).then(function(authenticated) {
-            $rootScope.usuario = authenticated;
+	    
+        $scope.show($ionicLoading);
+        
+        AuthService.login(data.username, data.password).then(function(response) {
+            
+            $rootScope.usuario = response.user;
+
             $state.go('app.listagem', {}, {
                 reload: true
             });
-            $scope.setCurrentUsername(data.username);
-            $scope.setCurrentUser(authenticated);
-        }, function(err) {
+    
+            $scope.setCurrentUser(response.user);
+            $scope.setCurrentUsername(response.user.nome);
+            
+        }).catch(function(fallback) {
+		    
             var alertPopup = $ionicPopup.alert({
                 title: 'Login Falhou!',
                 template: 'Usuário ou senha inválidos!'
             });
-        });
+
+	    }).finally(function($ionicLoading) {
+		    $scope.hide($ionicLoading);
+	    });
+        // }, function(err) {
+        //     var alertPopup = $ionicPopup.alert({
+        //         title: 'Login Falhou!',
+        //         template: 'Usuário ou senha inválidos!'
+        //     });
+        //     $scope.hide($ionicLoading);
+        // });
     };
 
     // Função de login com o facebook

@@ -89,3 +89,110 @@
     background-color: rgba(235, 235, 235, 0.8) !important;
 }
 
+
+/* Div de ajuda */
+.div-ajuda {
+  padding-bottom: 10px;
+  background-color: #efefef;
+}
+
+
+
+
+/* Validação de formulario */
+.item-floating-label .input-label.has-input {
+		/*color: #e7492e;*/
+    color: #0a9dc7;
+		font-size: 14px;
+}
+
+.input-label {
+    display: table;
+    padding: 7px 10px 7px 0px;
+    max-width: 200px;
+    width: 35%;
+    color: #efefef;
+    font-size: 16px;
+}
+
+/* Mudando o css do placeholder */
+*::-webkit-input-placeholder {
+  color: #ddd !important;
+}
+*:-moz-placeholder {
+  color: #ddd !important;
+}
+*:-ms-input-placeholder { /* IE10+ */
+  color: #ddd !important;
+}
+
+
+.item-bottom {
+    border-bottom: 1px solid;
+    /*border-color: #e7492e;*/
+    border-color: #0a9dc7;
+    font-weight: 400;
+}
+
+.bottom-input {
+  border: none; 
+  border-bottom: 1px solid #0a9dc7;
+  /*border-bottom: 1px solid #e7492e;*/
+}
+
+/* Mensagens de error do sistema */
+.error-container {
+  margin: 5px 0;
+}
+ 
+.error-container:last-child {
+    margin: 5px 0 0;
+}
+ 
+.error {
+  padding: 10px 16px;
+  font-family: "Arial Black", Gadget, sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  color: #555;
+  vertical-align: middle;
+}
+ 
+.error i {
+  font-size: 24px;
+  color: #B83E2C;  
+  vertical-align: middle;
+}
+ 
+.last-error-container > .error {
+  padding: 10px 16px 0;
+}
+ 
+.has-errors {
+  border-bottom: 3px solid #B83E2C;
+}
+ 
+.no-errors {
+  border-bottom: 3px solid green;
+}
+
+
+/* modal de carregando */
+.loading-backdrop{
+    margin-top: 44px; /*loading should stay under the header*/
+    background-color: rgb(237, 240, 241);
+}
+
+.loading{
+    background-color: #fff !important;
+    width: 75% !important;
+    border-width: 2px !important;
+    border-style: solid !important;
+
+}
+
+.loading p {
+  color: #000;
+}
+
+

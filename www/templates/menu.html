@@ -1,3 +1,42 @@
+<style>
+	.bar.bar-profile {
+    background-color: #444;
+    height: 170px;
+}
+
+.bar .profile {
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 0;
+    overflow: hidden;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+    padding-top: 15px;
+}
+
+.profile .name {
+    color: #FFFFFF;
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+}
+
+.profile-picture {
+    border-radius: 50%;
+	background-color: #FFFFFF;
+	width: 30%;
+}
+.menu .has-header {
+    top: 169px;
+}
+/*
+.item-menu-side {
+	background-color: #444;
+}*/
+
+</style>
 <ion-side-menus>
 	<ion-side-menu-content>
 		<ion-nav-bar class="bar bar-header bar-calm" style="background-color: #46c6f3" align-title="center">
@@ -5,7 +44,7 @@
 				<button class="button button-icon button-clear ion-navicon" menu-toggle="center"></button>
 			</ion-nav-buttons>
 			<ion-nav-back-button>Voltar
-    </ion-nav-back-button>
+			</ion-nav-back-button>
 			<ion-nav-buttons side="right">
 				<!--<button class="button button-icon button-clear ion-android-more-vertical" menu-toggle="center"></button>-->
 				<button class="button button-icon button-clear ion-email-unread" ng-click="enviarMensagem()"></button>
@@ -16,19 +55,29 @@
 	</ion-side-menu-content>
 
 	<ion-side-menu side="left">
-		<ion-header-bar class="bar bar-calm">
-			<h1 class="title">Dados Pessoais \o/</h1>
+
+		<!--<ion-header-bar class="bar bar-calm">
+			<h1 class="title">Dados Pessoais</h1>
+		</ion-header-bar>-->
+
+		<ion-header-bar class="bar-profile">
+			<div class="profile">
+				<img ng-show="usuarioLogado.urlFoto" class="profile-picture" src="{{usuarioLogado.urlFoto}}" />
+				<img ng-show="!usuarioLogado.urlFoto" class="profile-picture" src="img/User_Avatar-512.png" />
+				<h3 class="name">{{usuario.nome || usuario.name}}</h3>
+			</div>
 		</ion-header-bar>
+		
 		<ion-content>
-			<div class="list card">
+			<!--<div class="list card">
 				<div class="item item-avatar">
 					<h2> {{usuario.nome || usuario.name}} </h2>
 					<h3> {{usuario.email}} </h3>
 				</div>
 				<div class="item item-body"></div>
-			</div>
+			</div>-->
 			<ion-list>
-	
+
 				<ion-item item-type="item-icon-left" nav-clear menu-close href="#/app/listagem">
 					<i class="icon ion-android-home"></i>
 					<span style="font-weight: 600;"> Home</span>
@@ -38,12 +87,12 @@
 					<i class="icon ion-briefcase"></i>
 					<span style="font-weight: 600;"> Profissionais</span>
 				</ion-item>-->
-				
+
 				<!--<ion-item item-type="item-icon-left" nav-clear menu-close href="#/app/favoritos">
 					<i class="icon ion-star"></i>
 					<span style="font-weight: 600;">Favoritos</span>
 				</ion-item>-->
-				
+
 				<ion-item item-type="item-icon-left" nav-clear menu-close href="#/app/perfil">
 					<i class="icon ion-person"></i>
 					<span style="font-weight: 600;">Perfil</span>
@@ -51,25 +100,25 @@
 
 				<ion-item item-type="item-icon-left" nav-clear menu-close href="#/app/mensagens">
 					<i class="icon ion-email"></i>
-					<span style="font-weight: 600;">Mensagens</span>
+					<span style="font-weight: 600;">Notificações</span>
 				</ion-item>
 
 				<!--<ion-item item-type="item-icon-left" nav-clear menu-close href="#/app/ajuda">
 					<i class="icon ion-help-circled"></i>
 					<span style="font-weight: 600;">Ajuda</span>
 				</ion-item>-->
-			
-				<ion-item item-type="item-icon-left" nav-clear menu-close href="#/app/ajuda">
+
+				<!--<ion-item item-type="item-icon-left" nav-clear menu-close href="#/app/ajuda">
 					<i class="icon ion-pie-graph"></i>
 					<span style="font-weight: 600;">Gráficos</span>
-				</ion-item>
+				</ion-item>-->
 
 				<!--nav-clear menu-close href="#/app/Perfil"-->
 				<!--<ion-item item-type="item-icon-left" ng-click="showLogOutMenu()">-->
-					<ion-item item-type="item-icon-left" ng-click="logout()">
+				<ion-item item-type="item-icon-left" ng-click="logout()">
 					<i class="icon ion-power"></i>
-					<span style="font-weight: 600;" >Sair</span>
-					
+					<span style="font-weight: 600;">Sair</span>
+
 				</ion-item>
 
 			</ion-list>

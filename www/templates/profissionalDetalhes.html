@@ -3,7 +3,7 @@
     <div class="card card-detalhe-empregado">
       <p class="item-content item-avatar item-avatar-detalhes" href="#">
         <img src="{{listaProfissionalId.urlfoto}}">
-        <h2 class="item item-nome-destaque">{{listaProfissionalId.firstName}}&nbsp;{{listaProfissionalId.lastName}}</h2>
+        <h2 class="item item-nome-destaque">{{listaProfissionalId.firstName || listaProfissionalId.name}}&nbsp;{{listaProfissionalId.lastName}}</h2>
         <div class="item item-body item-rating">
           <ionic-ratings ratingsobj="ratingsObject" index="$index"></ionic-ratings>
         </div>
@@ -17,10 +17,11 @@
     </div>
     <div class="card card-panel-nome-detalhe">
       <div class="item item-text-wrap">
-        <h3>{{listaProfissionalId.profissao}}</h3>
+        <h3>{{listaProfissionalId.categoria}}</h3>
       </div>
-      <a class="item item-icon-left" href="tel:{{listaProfissionalId.phone.mobile | brPhoneNumber}}">
-        <i class="icon ion-ios-telephone"></i> Chamar agora
+      <a class="item item-icon-left" href="tel:{{listaProfissionalId.telefone | brPhoneNumber}}">
+        <i class="icon ion-ios-telephone"></i> Chamar agora<br/>
+        {{listaProfissionalId.telefone}}
       </a>
       <!--
         Distancia entre o profissional e o contratante
@@ -35,9 +36,10 @@
           Especialidades:
         </div>
         <p class="item" style="white-space: normal;">
-          {{listaProfissionalId.especialidades}}
+          <!--{{listaProfissionalId.especialidades}}-->
+          {{listaProfissionalId.descricao}}
         </p>
-        <div class="item item-divider" style="white-space: normal;">
+        <!--<div class="item item-divider" style="white-space: normal;">
           Resumo profissional:
         </div>
         <p class="item"  style="white-space: normal;">
@@ -48,7 +50,7 @@
         </div>
         <p class="item">
           {{listaProfissionalId.locais}}
-        </p>
+        </p>-->
         <!--<div class="item item-divider">
           Depoimentos
         </div>

@@ -1,18 +1,50 @@
-angular.module('pegapro')
-  .service('profissionalService', profissionalService);
+angular
+	.module('pegapro')
+	.factory('profissionalService', profissionalService);
 
-function profissionalService($http, SERVERS) {
-  
-  return {
-    getProfissional: function () {
-      return $http.get(SERVERS.proxy + 'profissional').then(function (response) {
-        return response.data;
-      });
-    },
-    getProfissionalId: function (id) {
-      return $http.get(SERVERS.proxy + 'profissional/' + id).then(function (response) {
-        return response.data;
-      });
-    },    
-  };
+function profissionalService($q, $http, $log, SERVERS) {
+	$log.debug('profissionalService criado com sucesso');
+
+	var service = {
+		getProfissional: getProfissional,
+		getProfissionalId: getProfissionalId
+	}
+
+	return service;
+
+
+	function getProfissional() {
+		var promiseResult = $q.defer();
+		var url = SERVERS.prod + 'profissional';
+		var promise = $http.get(url);
+
+		promise.then(function(response) {
+			return promiseResult.resolve(response.data);
+		})
+
+		promise.catch(function(error) {
+			return promiseResult.reject(error);
+		})
+
+		return promiseResult.promise;
+
+	}
+
+	function getProfissionalId(id) {
+		var promiseResult = $q.defer();
+		var url = SERVERS.prod + 'profissional/' + id;
+		var promise = $http.get(url);
+
+		promise.then(function(response) {
+			return promiseResult.resolve(response.data);
+		})
+
+		promise.catch(function(error) {
+			return promiseResult.reject(error);
+		})
+
+		return promiseResult.promise;
+
+	}
+
 }
